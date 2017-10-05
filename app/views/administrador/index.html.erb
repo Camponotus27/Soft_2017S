@@ -19,28 +19,25 @@
             <tbody>
               <% @administrador.each do |administrador| %>
                 <tr>
-                  <td><%= administrador.nombre %></td>
-                  <td><%= administrador.email %></td>
-                  <td class="sin_padding"><button class = 'w3-button w3-border w3-green w3-hover-blue'> 
-                                      Ver
+                  <td class="padding_table"><%= administrador.nombre %></td>
+                  <td class="padding_table"><%= administrador.email %></td>
+                  <td class="color-blanco-botones-tabla"><button class = 'imagen_eliminar'> 
+                                      
                       </button>
                     
                   </td>
-                  <td class="sin_padding" ><button class = 'w3-button w3-border w3-green w3-hover-blue'> 
-                                      Editar
+                  <td class="color-blanco-botones-tabla" >
+                      <button class = 'imagen_eliminar'> 
+                                      
                       </button>
 
 
                     
                   </td>
-                  <td><button class = 'w3-button w3-border w3-green w3-hover-blue max_tamaño'> 
-                                      Eliminar
+                  <td class="color-blanco-botones-tabla"><button class = 'imagen_eliminar'> 
                       </button>
 
-
-                      <img src="Eliminar.png" alt="Eliminar Icon" style="width:128px;height:148px;">
-
-                  </td class="sin_padding">
+                  </td>
 
                 </tr>
               <% end %>

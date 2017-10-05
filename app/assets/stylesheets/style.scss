@@ -83,18 +83,60 @@ table {
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
 }
+
+td{
+
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    height: 100%;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+
+}
+
+th{
+	padding: 8px;
+	background-color: #35E802;
+}
+
 
 tr:nth-child(even) {
     background-color: #8FE87B;
 }
 
-th{
-	background-color: #35E802; 
+
+.padding_table{
+	padding: 8px;
 }
 
-.sin_padding{
-	padding: 0px;
-	width: 100%;
+.color-blanco-botones-tabla{
+	background-color: #FFFFFF;
+}
+
+.imagen_eliminar{
+
+
+	background: #FFFFFF url('Eliminar.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+
+
+	border:none;
+	display:inline-block;
+	outline:0;
+	padding:22px 22px;
+	vertical-align:middle;
+	overflow:hidden;
+	text-decoration:none;
+	color:inherit;
+	text-align:center;
+ 	cursor:pointer;
+	white-space:nowrap;
 }
