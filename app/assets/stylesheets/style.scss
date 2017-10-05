@@ -1,0 +1,100 @@
+html,body{
+	margin: 0px;	
+}
+
+html,header{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+a,a:visited{
+	color: inherit !important;
+	text-decoration: none;
+}
+.color_fondo{
+	background-color: #04D604;
+}
+.color_boton{
+
+}
+.white{
+	color: #FFFFFF;
+	font-size: 20px
+}
+.large_padding{
+	padding: 10px 0px;
+}
+
+.no_list{
+	list-style-type: none;
+}
+
+.no-margin{
+	margin: 0px;
+}
+.top_padding_list{
+	padding-top: 10px;
+}
+
+#logo{
+	font-size: 30px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+.margin_todo{
+	margin: 20px;
+}
+
+.boton_padding{
+	margin-top: 20px;
+	margin-left: 20px;	
+
+}
+
+.formulario{
+	text-align: left;
+}
+
+.form-control{
+	border: none;
+	border-bottom: 1px solid;
+	outline: none;
+	width: 100%
+}
+
+.form-text{
+	margin-top: 1em;
+}
+
+.Olvidar-contraseña{
+	margin-left: 125px;
+	color: #8297FF;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #8FE87B;
+}
+
+th{
+	background-color: #35E802; 
+}
+
+.sin_padding{
+	padding: 0px;
+	width: 100%;
+}

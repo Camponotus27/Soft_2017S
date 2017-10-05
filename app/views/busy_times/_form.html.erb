@@ -1,0 +1,32 @@
+<%= form_with(model: busy_time, local: true) do |form| %>
+  <% if busy_time.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(busy_time.errors.count, "error") %> prohibited this busy_time from being saved:</h2>
+
+      <ul>
+      <% busy_time.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :identificador %>
+    <%= form.text_field :identificador, id: :busy_time_identificador %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tiempo_ini %>
+    <%= form.text_field :tiempo_ini, id: :busy_time_tiempo_ini %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tiempo_ter %>
+    <%= form.text_field :tiempo_ter, id: :busy_time_tiempo_ter %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

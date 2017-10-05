@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identificador: MyString
+  tiempo_ini: MyString
+  tiempo_ter: MyString
+
+two:
+  identificador: MyString
+  tiempo_ini: MyString
+  tiempo_ter: MyString

@@ -1,0 +1,67 @@
+<div class = "row center-xs">
+  <div class="col-xs-8 col-md-6">
+    <div class="Box formulario">
+
+
+
+              <h2>Registrarse</h2>
+
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+
+
+                <div class="field">
+                  <%= f.label :nombre , class:"form-text"%><br />
+                  <%= f.text_field :nombre, autofocus: true , class:"form-control" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :email , class:"form-text"%><br />
+                  <%= f.email_field :email, autofocus: true , class:"form-control"%>
+                </div>
+
+                <div class="field">
+                  <%= f.label :password, "Contraseña" ,  class:"form-text" %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characteres minimos)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "off" , class:"form-control" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :password_confirmation, "Confirmar contraseña" ,class:"form-text" %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "off" , class:"form-control"%>
+                </div>
+                <div class="field">
+                  <h1>Esto de rol es temporal!!</h1>
+                  <%= f.label :rol %><br />
+                  <select name = "user[permiso]" id="user_permiso">
+                    <option value="">selecione rol</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="especialista">Especialista</option>
+                    <option value="administrador">Administrador</option>
+                  </select>
+              </div>
+
+               <div class="row ">
+                  <div class="center-xs">
+
+                       <button type="submit" class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
+                              Registrarse
+                              </button>
+                       <a href= <%= new_user_session_path %>><button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
+                              Ingresar
+                             </button></a>
+
+
+                  </div>
+               </div>
+
+
+              <% end %>
+
+
+    </div>
+  </div>
+</div>
+

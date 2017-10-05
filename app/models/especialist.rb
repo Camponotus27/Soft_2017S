@@ -1,0 +1,2 @@
+class Especialist < ApplicationRecord
+end

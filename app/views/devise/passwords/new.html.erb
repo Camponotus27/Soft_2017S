@@ -1,0 +1,46 @@
+<div class = "row center-xs">
+  <div class="col-xs-8 col-md-6">
+    <div class="Box formulario">
+
+
+			<h2>¿Olvidaste tu contraseña?</h2>
+
+			<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+			  <%= devise_error_messages! %>
+
+			  <div class="field">
+			    <%= f.label :email , class:"form-text"%><br />
+			    <%= f.email_field :email, autofocus: true, class:"form-control" %>
+			  </div>
+
+
+			   <button type="submit" class = 'w3-button w3-border w3-green w3-hover-blue '> 
+                              Enviar para restablecer la contraseña
+                              </button>
+
+
+			    <div class="row ">
+                          <div class="center-xs">
+                           
+                             <a href= <%= new_user_session_path %>><button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
+                              Ingresar
+                             </button></a>
+      
+                            <a href= <%= new_user_registration_path %>><button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
+                              Nuevo Usuario
+                            </button></a>
+
+                          </div>
+                </div>
+
+
+
+
+			<% end %>
+
+		
+    </div>
+  </div>
+</div>
+
+

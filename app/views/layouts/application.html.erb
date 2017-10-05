@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clinica_soft2017</title>
+
+    
+    <%= csrf_meta_tags %>
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  	<header>
+  		<nav class = "color_fondo white large_padding">
+  			<ul class = "no_list row center-xs middle-xs">
+  				<li class="col-md-2">
+  					<h1 class="no-margin " id ="logo">
+  						<%= link_to "Centro", root_path %>
+  					</h1>
+  				<li class="col-md top_padding_list">
+  					<%= link_to "Nosotros", historia_index_path %>
+  				</li>
+
+
+          <% if user_signed_in?  %>
+
+                         <% if current_user.permiso == "cliente"%>
+                            <li class="col-md top_padding_list">
+                            <%= link_to "Eres un cliente", cliente_index_path %>
+                            </li>
+                         <% end %>
+
+                         <% if current_user.permiso == "especialista"%>
+                            <li class="col-md top_padding_list">
+                            <%= link_to "Eres un Especialista", especialistas_index_path %>
+                            </li>
+                         <% end %>
+
+                         <% if current_user.permiso == "administrador"%>
+                            <li class="col-md top_padding_list">
+                            <%= link_to "Eres un Administrador", administrador_indexprincipal_path %>
+                            </li>
+                         <% end %>
+
+          <% else %>
+                 <li class="col-md top_padding_list">
+                 <%= link_to "Anónimo", root_path %>
+                 </li>
+
+          <% end %>
+
+
+
+
+
+
+           <% if user_signed_in?  %>
+            <li class="col-md top_padding_list">
+             <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+  				  <li class="col-md top_padding_list">
+  					 <%= link_to "Ingresar", new_user_session_path %>
+  			   	</li>
+          <% end %>
+            
+
+
+
+
+
+
+
+  			</ul>
+  		</nav>
+
+
+  	</header>
+
+
+
+  <body>
+   <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+  	<div class = "margin_todo">
+  		<%= yield %>
+  	</div>
+    
+  </body>
+  
+
+
+</html>

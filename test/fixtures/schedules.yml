@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero: 
+  rut_esp: MyString
+  hora: MyString
+
+two:
+  numero: 
+  rut_esp: MyString
+  hora: MyString

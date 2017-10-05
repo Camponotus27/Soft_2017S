@@ -1,0 +1,52 @@
+<div class = "row center-xs">
+  <div class="col-xs-8 col-md-8">
+    <div class="Box formulario">
+                
+
+          <p id="notice"><%= notice %></p>
+
+          <h1>Listado de administradores</h1>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @administrador.each do |administrador| %>
+                <tr>
+                  <td><%= administrador.nombre %></td>
+                  <td><%= administrador.email %></td>
+                  <td class="sin_padding"><button class = 'w3-button w3-border w3-green w3-hover-blue'> 
+                                      Ver
+                      </button>
+                    
+                  </td>
+                  <td class="sin_padding" ><button class = 'w3-button w3-border w3-green w3-hover-blue'> 
+                                      Editar
+                      </button>
+
+
+                    
+                  </td>
+                  <td><button class = 'w3-button w3-border w3-green w3-hover-blue max_tamaño'> 
+                                      Eliminar
+                      </button>
+
+
+                      <img src="Eliminar.png" alt="Eliminar Icon" style="width:128px;height:148px;">
+
+                  </td class="sin_padding">
+
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+    </div>
+  </div>
+</div>

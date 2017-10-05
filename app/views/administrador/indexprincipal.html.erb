@@ -1,0 +1,47 @@
+<div class = "row center-xs">
+  <div class="col-xs-8 col-md-6">
+    <div class="Box formulario">
+                
+
+             <% if current_user.nombre != ""  %>   
+				<h1>Bienvenido <%= current_user.nombre%>! </h1>
+			 <% else %>
+			 	<h1>Bienvenido!</h1>
+          	 <% end %>
+
+			<h3>Elije que vamos a hacer hoy</h3>
+
+
+ 			  <div class="row ">
+                    <div class="center-xs">
+                    		  <a href= <%= administrador_index_path %>>
+                    		  	<button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
+				                              Administrar Administradores
+				              </button>
+				              </a>
+
+							  <a href= <%=  root_path %>>
+							  	<button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
+				                              Administrar Especilistas
+				              </button>
+				              </a>
+
+
+				              <a href= <%=   root_path %>>
+				              	<button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
+				                              Administrar Clientes
+				             	 </button>
+				              </a>
+
+				               
+
+
+          			</div>
+              </div>
+
+  	</div>
+  </div>
+</div>
+
+  
+

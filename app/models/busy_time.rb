@@ -1,0 +1,2 @@
+class BusyTime < ApplicationRecord
+end
