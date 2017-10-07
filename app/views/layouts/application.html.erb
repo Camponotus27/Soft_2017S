@@ -9,14 +9,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
   	<header>
   		<nav class = "color_fondo white large_padding">
   			<ul class = "no_list row center-xs middle-xs">
   				<li class="col-md-2">
+
   					<h1 class="no-margin " id ="logo">
   						<%= link_to "Centro", root_path %>
   					</h1>
+
   				<li class="col-md top_padding_list">
   					<%= link_to "Nosotros", historia_index_path %>
   				</li>
@@ -43,6 +46,7 @@
                          <% end %>
 
           <% else %>
+
                  <li class="col-md top_padding_list">
                  <%= link_to "Anónimo", root_path %>
                  </li>
@@ -50,18 +54,18 @@
           <% end %>
 
 
-
-
-
-
            <% if user_signed_in?  %>
+
             <li class="col-md top_padding_list">
              <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+
             </li>
           <% else %>
+
   				  <li class="col-md top_padding_list">
   					 <%= link_to "Ingresar", new_user_session_path %>
   			   	</li>
+
           <% end %>
             
 
@@ -80,13 +84,25 @@
 
 
   <body>
-   <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
 
-  	<div class = "margin_todo">
-  		<%= yield %>
-  	</div>
-    
+<div class = "row center-xs">
+  <div class="col-xs-8 col-md-8">
+    <div class="Box formulario">
+
+
+
+
+                 <p class="notice"><%= notice %></p>
+                     <p class="alert"><%= alert %></p>
+
+                	<div class = "margin_todo">
+                		<%= yield %>
+                	</div>
+
+    </div>
+  </div>
+</div>
+                  
   </body>
   
 

@@ -1,11 +1,11 @@
 class AdministradorController < ApplicationController
   
   
-  #before_action :set_busy_time, only: [:show, :edit, :update, :destroy]
+# before_action :set_administrador, only: [:show, :edit, :update, :destroy]
 
 
   def index
-    @administrador = User.where( :permiso => "administrador")
+    @administrador = User.where( :permiso => "administrador").where.not( :email => current_user.email)
   end
 
   def show
@@ -33,19 +33,22 @@ class AdministradorController < ApplicationController
   # DELETE /busy_times/1
   # DELETE /busy_times/1.json
   def destroy
+    @administrador  = User.find(params[:id])
+    @administrador.destroy
+
+    redirect_to :action => :index
   end
 
   private
     # callback
     def set_busy_time
-     # @busy_time = BusyTime.find(params[:id])
+     # @administrador = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def busy_time_params
       #params.require(:busy_time).permit(:identificador, :tiempo_ini, :tiempo_ter)
     end
-
 
 
 end

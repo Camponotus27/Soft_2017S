@@ -1,20 +1,15 @@
-<div class = "row center-xs">
-  <div class="col-xs-8 col-md-6">
-    <div class="Box formulario">
+
                 
                  <h2>Inicio sesion</h2>
 
                    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 
-                <div class = "field">
-                  <%= f.label :nombre, "Nombre" , class:"form-text"%><br />
-                  <%= f.text_field :nombre , autofocus: true , class:"form-control"%>
-                </div>
+          
 
                 <div class="field">
                   <%= f.label :email, class:"form-text" %><br />
-                  <%= f.email_field :email , class:"form-control"%>
+                  <%= f.email_field :email , autofocus: true, class:"form-control"%>
                 </div>
 
                 <div class="field">
@@ -53,10 +48,3 @@
 
               
                 </div>
-
-    </div>
-  </div>
-</div>
-
-  
-
