@@ -1,4 +1,4 @@
-form.submitbody {
+body {
   background-color: #fff;
   color: #333;
   margin: 33px;
@@ -26,10 +26,10 @@ a {
     color: #666;
   }
 
-  /*&:hover {
+  &:hover {
     color: #fff;
     background-color: #000;
-  }*/
+  }
 }
 
 th {

@@ -1,0 +1,52 @@
+<%= form_with(model: registro, local: true) do |form| %>
+  <% if registro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(registro.errors.count, "error") %> prohibited this registro from being saved:</h2>
+
+      <ul>
+      <% registro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :codigo %>
+    <%= form.number_field :codigo, id: :registro_codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.datetime_select :fecha, id: :registro_fecha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Profesional %>
+    <%= form.text_field :Profesional, id: :registro_Profesional %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cliente %>
+    <%= form.text_field :cliente, id: :registro_cliente %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comuna_atencion %>
+    <%= form.text_field :comuna_atencion, id: :registro_comuna_atencion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :servicio %>
+    <%= form.text_field :servicio, id: :registro_servicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horario_dia %>
+    <%= form.text_field :horario_dia, id: :registro_horario_dia %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

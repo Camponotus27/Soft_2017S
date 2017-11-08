@@ -1,7 +1,5 @@
 class AdministradorController < ApplicationController
   
-  
-# before_action :set_administrador, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -9,7 +7,8 @@ class AdministradorController < ApplicationController
   end
 
   def show
-  end
+     @administrador  = User.find(params[:id])
+   end
 
   # GET /busy_times/new
   def new
@@ -18,6 +17,7 @@ class AdministradorController < ApplicationController
 
   # GET /busy_times/1/edit
   def edit
+    @administrador  = User.find(params[:id])
   end
 
   # POST /busy_times
@@ -28,6 +28,7 @@ class AdministradorController < ApplicationController
   # PATCH/PUT /busy_times/1
   # PATCH/PUT /busy_times/1.json
   def update
+    @administrador  = User.find(params[:id])
   end
 
   # DELETE /busy_times/1

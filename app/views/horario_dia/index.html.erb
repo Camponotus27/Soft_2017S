@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Horario Dia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hora1</th>
+      <th>Hora2</th>
+      <th>Hora3</th>
+      <th>Hora4</th>
+      <th>Hora5</th>
+      <th>Hora6</th>
+      <th>Hora7</th>
+      <th>Hora8</th>
+      <th>Hora7</th>
+      <th>Hora9</th>
+      <th>Hora10</th>
+      <th>Hora11</th>
+      <th>Hora12</th>
+      <th>Hora13</th>
+      <th>Hora14</th>
+      <th>Hora15</th>
+      <th>Hora16</th>
+      <th>Hora17</th>
+      <th>Hora18</th>
+      <th>Hora19</th>
+      <th>Hora20</th>
+      <th>Hora21</th>
+      <th>Hora22</th>
+      <th>Hora23</th>
+      <th>Hora24</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @horario_dia.each do |horario_dium| %>
+      <tr>
+        <td><%= horario_dium.Hora1 %></td>
+        <td><%= horario_dium.Hora2 %></td>
+        <td><%= horario_dium.Hora3 %></td>
+        <td><%= horario_dium.Hora4 %></td>
+        <td><%= horario_dium.Hora5 %></td>
+        <td><%= horario_dium.Hora6 %></td>
+        <td><%= horario_dium.Hora7 %></td>
+        <td><%= horario_dium.Hora8 %></td>
+        <td><%= horario_dium.Hora7 %></td>
+        <td><%= horario_dium.Hora9 %></td>
+        <td><%= horario_dium.Hora10 %></td>
+        <td><%= horario_dium.Hora11 %></td>
+        <td><%= horario_dium.Hora12 %></td>
+        <td><%= horario_dium.Hora13 %></td>
+        <td><%= horario_dium.Hora14 %></td>
+        <td><%= horario_dium.Hora15 %></td>
+        <td><%= horario_dium.Hora16 %></td>
+        <td><%= horario_dium.Hora17 %></td>
+        <td><%= horario_dium.Hora18 %></td>
+        <td><%= horario_dium.Hora19 %></td>
+        <td><%= horario_dium.Hora20 %></td>
+        <td><%= horario_dium.Hora21 %></td>
+        <td><%= horario_dium.Hora22 %></td>
+        <td><%= horario_dium.Hora23 %></td>
+        <td><%= horario_dium.Hora24 %></td>
+        <td><%= link_to 'Show', horario_dium %></td>
+        <td><%= link_to 'Edit', edit_horario_dium_path(horario_dium) %></td>
+        <td><%= link_to 'Destroy', horario_dium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Horario Dium', new_horario_dium_path %>

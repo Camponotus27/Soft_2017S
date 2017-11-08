@@ -1,0 +1,2 @@
+class TipoHora < ApplicationRecord
+end

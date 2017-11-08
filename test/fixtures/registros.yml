@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: 1
+  fecha: 2017-11-04 15:40:47
+  Profesional: MyString
+  cliente: MyString
+  comuna_atencion: MyString
+  servicio: MyString
+  horario_dia: MyString
+
+two:
+  codigo: 1
+  fecha: 2017-11-04 15:40:47
+  Profesional: MyString
+  cliente: MyString
+  comuna_atencion: MyString
+  servicio: MyString
+  horario_dia: MyString

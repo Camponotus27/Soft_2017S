@@ -2,12 +2,23 @@ Rails.application.routes.draw do
 
 
 
+  resources :tipo_horas
+  resources :horario_dia
+  resources :horario_mes
+  resources :registros
+  resources :servicios
+  resources :comunas
+  resources :profesions
   get 'cliente/index'
+
 
   get 'especialistas/index'
 
   get 'administrador/indexprincipal'
   resources :administrador
+ 
+
+
 
 
 

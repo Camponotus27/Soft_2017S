@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Hora1: MyString
+  Hora2: MyString
+  Hora3: MyString
+  Hora4: MyString
+  Hora5: MyString
+  Hora6: MyString
+  Hora7: MyString
+  Hora8: MyString
+  Hora7: MyString
+  Hora9: MyString
+  Hora10: MyString
+  Hora11: MyString
+  Hora12: MyString
+  Hora13: MyString
+  Hora14: MyString
+  Hora15: MyString
+  Hora16: MyString
+  Hora17: MyString
+  Hora18: MyString
+  Hora19: MyString
+  Hora20: MyString
+  Hora21: MyString
+  Hora22: MyString
+  Hora23: MyString
+  Hora24: MyString
+
+two:
+  Hora1: MyString
+  Hora2: MyString
+  Hora3: MyString
+  Hora4: MyString
+  Hora5: MyString
+  Hora6: MyString
+  Hora7: MyString
+  Hora8: MyString
+  Hora7: MyString
+  Hora9: MyString
+  Hora10: MyString
+  Hora11: MyString
+  Hora12: MyString
+  Hora13: MyString
+  Hora14: MyString
+  Hora15: MyString
+  Hora16: MyString
+  Hora17: MyString
+  Hora18: MyString
+  Hora19: MyString
+  Hora20: MyString
+  Hora21: MyString
+  Hora22: MyString
+  Hora23: MyString
+  Hora24: MyString

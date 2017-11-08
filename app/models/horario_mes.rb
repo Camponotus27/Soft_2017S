@@ -1,0 +1,2 @@
+class HorarioMes < ApplicationRecord
+end

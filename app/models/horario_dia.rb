@@ -1,0 +1,2 @@
+class HorarioDia < ApplicationRecord
+end

@@ -10,7 +10,7 @@
               <tr>
                 <th>Nombre</th>
                 <th>Email</th>
-                <th class="color-blanco-botones-tabla" colspan="3"></th>
+                <th class="color-blanco-botones-tabla" colspan="2"></th>
               </tr>
             </thead>
 
@@ -22,19 +22,17 @@
 
                   <td class="color-blanco-botones-tabla">
 
-                      <button  class = 'imagen_ver'></button>
-                    
-                  </td>
-                  <td class="color-blanco-botones-tabla" >
 
-                      <button class = 'imagen_editar'></button>
+                     <%= button_to "",administrador_path(administrador) , :method => :get , class: "imagen_ver" %>
 
+                    <%= link_to 'Show', administrador_path(administrador) %>
 
+                  
                   </td>
                   <td class = "color-blanco-botones-tabla ">
  
                    
-                     <%= button_to "" , { :action => :destroy, :id => administrador.id }, :method => :delete, :data => { :confirm => 'Esta seguro de elimiarlo de los rgistros?' } , class: "imagen_eliminar" %>
+                     <%= button_to "" , { :action => :destroy, :id => administrador.id }, :method => :delete, :data => { :confirm => 'Estas seguro de elimiarlo de los registros?' } , class: "imagen_eliminar" %>
 
 
   

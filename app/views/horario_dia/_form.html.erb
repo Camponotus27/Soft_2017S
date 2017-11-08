@@ -1,0 +1,142 @@
+<%= form_with(model: horario_dium, local: true) do |form| %>
+  <% if horario_dium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(horario_dium.errors.count, "error") %> prohibited this horario_dium from being saved:</h2>
+
+      <ul>
+      <% horario_dium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Hora1 %>
+    <%= form.text_field :Hora1, id: :horario_dium_Hora1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora2 %>
+    <%= form.text_field :Hora2, id: :horario_dium_Hora2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora3 %>
+    <%= form.text_field :Hora3, id: :horario_dium_Hora3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora4 %>
+    <%= form.text_field :Hora4, id: :horario_dium_Hora4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora5 %>
+    <%= form.text_field :Hora5, id: :horario_dium_Hora5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora6 %>
+    <%= form.text_field :Hora6, id: :horario_dium_Hora6 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora7 %>
+    <%= form.text_field :Hora7, id: :horario_dium_Hora7 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora8 %>
+    <%= form.text_field :Hora8, id: :horario_dium_Hora8 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora7 %>
+    <%= form.text_field :Hora7, id: :horario_dium_Hora7 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora9 %>
+    <%= form.text_field :Hora9, id: :horario_dium_Hora9 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora10 %>
+    <%= form.text_field :Hora10, id: :horario_dium_Hora10 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora11 %>
+    <%= form.text_field :Hora11, id: :horario_dium_Hora11 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora12 %>
+    <%= form.text_field :Hora12, id: :horario_dium_Hora12 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora13 %>
+    <%= form.text_field :Hora13, id: :horario_dium_Hora13 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora14 %>
+    <%= form.text_field :Hora14, id: :horario_dium_Hora14 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora15 %>
+    <%= form.text_field :Hora15, id: :horario_dium_Hora15 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora16 %>
+    <%= form.text_field :Hora16, id: :horario_dium_Hora16 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora17 %>
+    <%= form.text_field :Hora17, id: :horario_dium_Hora17 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora18 %>
+    <%= form.text_field :Hora18, id: :horario_dium_Hora18 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora19 %>
+    <%= form.text_field :Hora19, id: :horario_dium_Hora19 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora20 %>
+    <%= form.text_field :Hora20, id: :horario_dium_Hora20 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora21 %>
+    <%= form.text_field :Hora21, id: :horario_dium_Hora21 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora22 %>
+    <%= form.text_field :Hora22, id: :horario_dium_Hora22 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora23 %>
+    <%= form.text_field :Hora23, id: :horario_dium_Hora23 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hora24 %>
+    <%= form.text_field :Hora24, id: :horario_dium_Hora24 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

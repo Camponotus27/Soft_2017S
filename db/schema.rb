@@ -10,35 +10,83 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170914142322) do
+ActiveRecord::Schema.define(version: 20171104190854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "busy_times", force: :cascade do |t|
-    t.string "identificador"
-    t.string "tiempo_ini"
-    t.string "tiempo_ter"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comunas", force: :cascade do |t|
     t.string "nombre"
-  end
-
-  create_table "hours", force: :cascade do |t|
-    t.string "identificador"
-    t.string "tiempo_ini"
-    t.string "tiempo_ter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "schedules", force: :cascade do |t|
-    t.integer "numero"
-    t.string "rut_esp"
-    t.string "hora"
+  create_table "horario_dia", force: :cascade do |t|
+    t.string "Hora1"
+    t.string "Hora2"
+    t.string "Hora3"
+    t.string "Hora4"
+    t.string "Hora5"
+    t.string "Hora6"
+    t.string "Hora7"
+    t.string "Hora8"
+    t.string "Hora9"
+    t.string "Hora10"
+    t.string "Hora11"
+    t.string "Hora12"
+    t.string "Hora13"
+    t.string "Hora14"
+    t.string "Hora15"
+    t.string "Hora16"
+    t.string "Hora17"
+    t.string "Hora18"
+    t.string "Hora19"
+    t.string "Hora20"
+    t.string "Hora21"
+    t.string "Hora22"
+    t.string "Hora23"
+    t.string "Hora24"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "horario_mes", force: :cascade do |t|
+    t.integer "horario"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profesions", force: :cascade do |t|
+    t.string "nombre"
+    t.string "descripcion"
+    t.string "servicio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "registros", force: :cascade do |t|
+    t.integer "codigo"
+    t.datetime "fecha"
+    t.string "Profesional"
+    t.string "cliente"
+    t.string "comuna_atencion"
+    t.string "servicio"
+    t.string "horario_dia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "servicios", force: :cascade do |t|
+    t.string "nombre"
+    t.float "tarifa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tipo_horas", force: :cascade do |t|
+    t.string "descripcion"
+    t.string "dueno_hora"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,11 +105,13 @@ ActiveRecord::Schema.define(version: 20170914142322) do
     t.string "rut"
     t.string "nombre"
     t.string "permiso"
-    t.text "calle"
     t.integer "numero_contacto"
     t.integer "horario"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "comuna"
+    t.string "profesion"
+    t.string "horario_mes"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

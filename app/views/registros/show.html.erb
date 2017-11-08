@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @registro.codigo %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @registro.fecha %>
+</p>
+
+<p>
+  <strong>Profesional:</strong>
+  <%= @registro.Profesional %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @registro.cliente %>
+</p>
+
+<p>
+  <strong>Comuna atencion:</strong>
+  <%= @registro.comuna_atencion %>
+</p>
+
+<p>
+  <strong>Servicio:</strong>
+  <%= @registro.servicio %>
+</p>
+
+<p>
+  <strong>Horario dia:</strong>
+  <%= @registro.horario_dia %>
+</p>
+
+<%= link_to 'Edit', edit_registro_path(@registro) %> |
+<%= link_to 'Back', registros_path %>
