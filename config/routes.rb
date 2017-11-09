@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :servicios
   resources :comunas
   resources :profesions
+
   get 'cliente/index'
 
 
