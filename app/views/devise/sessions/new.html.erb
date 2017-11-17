@@ -31,20 +31,25 @@
                               Ingresar
                               </button>
       
-                            <a href= <%= new_user_registration_path %>><button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
-                              Nuevo Usuario
-                            </button></a>
-
-                          </div>
+                         
                 </div>
+            
+ <% end %>  
+                
+             
+
+                </div>
+
                 <div class="Olvidar-contraseña">
                       <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
                         <%= link_to "Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
                       <% end -%>
                 </div>
                 
+                <div class="row ">  <a href= <%= new_user_registration_path %>><button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
+                              Nuevo Usuario</button></a>
 
-              <% end %>
 
-              
+                        <p class="SubTestoNuevoUsuario">Si no tienes cuenta, crea una facilmente en este boton</p>
                 </div>
+                   

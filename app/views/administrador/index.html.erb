@@ -15,7 +15,7 @@
             </thead>
 
             <tbody>
-              <% @administrador.each do |administrador| %>
+              <% @administradors.each do |administrador| %>
                 <tr>
                   <td class="padding_table"><%= administrador.nombre %></td>
                   <td class="padding_table"><%= administrador.email %></td>
@@ -24,9 +24,6 @@
 
 
                      <%= button_to "",administrador_path(administrador) , :method => :get , class: "imagen_ver" %>
-
-                    <%= link_to 'Show', administrador_path(administrador) %>
-
                   
                   </td>
                   <td class = "color-blanco-botones-tabla ">

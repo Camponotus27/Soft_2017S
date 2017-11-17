@@ -3,7 +3,7 @@ class AdministradorController < ApplicationController
 
 
   def index
-    @administrador = User.where( :permiso => "administrador").where.not( :email => current_user.email)
+    @administradors = User.where( :permiso => "administrador").where.not( :email => current_user.email)
   end
 
   def show

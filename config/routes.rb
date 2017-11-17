@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
  
+ 
   
   get 'ingresar/index'
 
@@ -33,10 +34,6 @@ Rails.application.routes.draw do
  # get 'principal/index'
 
   root 'principal#index'
-
-  resources :busy_times
-  resources :hours
-  resources :schedules
   
    #los resources contienen:
   # get "/hours"		index

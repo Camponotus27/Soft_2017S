@@ -35,26 +35,26 @@
 
                          <% if current_user.permiso == "cliente"%>
                             <li class="col-md top_padding_list">
-                            <%= link_to "Eres un cliente", cliente_index_path %>
+                            <%= link_to "Eres un : Cliente", cliente_index_path %>
                             </li>
                          <% end %>
 
                          <% if current_user.permiso == "especialista"%>
                             <li class="col-md top_padding_list">
-                            <%= link_to "Eres un Especialista", especialistas_index_path %>
+                            <%= link_to "Eres un : Especialista", especialistas_index_path %>
                             </li>
                          <% end %>
 
                          <% if current_user.permiso == "administrador"%>
                             <li class="col-md top_padding_list">
-                            <%= link_to "Eres un Administrador", administrador_indexprincipal_path %>
+                            <%= link_to "Eres un : Administrador", administrador_indexprincipal_path %>
                             </li>
                          <% end %>
 
           <% else %>
 
                  <li class="col-md top_padding_list">
-                 <%= link_to "Anónimo", root_path %>
+                 <%= link_to "Eres un : Visitante", root_path %>
                  </li>
 
           <% end %>
@@ -69,7 +69,7 @@
           <% else %>
 
   				  <li class="col-md top_padding_list">
-  					 <%= link_to "Ingresar", new_user_session_path %>
+  					 <%= link_to "Iniciar Sesion", new_user_session_path %>
   			   	</li>
 
           <% end %>
