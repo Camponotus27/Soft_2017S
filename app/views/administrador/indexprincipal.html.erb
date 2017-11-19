@@ -9,30 +9,20 @@
 
 			<h3>Elije que vamos a hacer hoy</h3>
 
-			<h2>Administrar :</h2>
+			<h2>Administrar personal:</h2>
 
 
 
  			  <div class="row ">
-                    <div class="center-xs">
-                    		  <a href= <%= administrador_index_path %>>
-                    		  	<button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
-				                              Administradores
-				              </button>
-				              </a>
+                   
+             					
+                    		<dir><%= button_to "Administradores",administrador_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+				              
+                    		<dir><%= button_to "Profesionales",root_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+				               
+                    		<dir><%= button_to "Clientes",root_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+				                
 
-							  <a href= <%=  root_path %>>
-							  	<button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
-				                              Especilistas
-				              </button>
-				              </a>
-
-
-				              <a href= <%=   root_path %>>
-				              	<button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
-				                              AClientes
-				             	 </button>
-				              </a>
 
 				               
 

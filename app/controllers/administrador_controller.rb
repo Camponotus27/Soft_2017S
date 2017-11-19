@@ -29,6 +29,17 @@ class AdministradorController < ApplicationController
   # PATCH/PUT /busy_times/1.json
   def update
     @administrador  = User.find(params[:id])
+
+    respond_to do |format|
+      if @administrador.update(administrador_params)
+        format.html { redirect_to administrador_index_path, notice: 'Se actualizo correctamente el nivel de permiso' }
+
+      else
+        format.html { render :edit }
+  
+      end
+    end
+
   end
 
   # DELETE /busy_times/1
@@ -47,8 +58,8 @@ class AdministradorController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def busy_time_params
-      #params.require(:busy_time).permit(:identificador, :tiempo_ini, :tiempo_ter)
+    def administrador_params
+      params.require(:administrador).permit(:permiso)
     end
 
 

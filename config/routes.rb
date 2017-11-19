@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   get 'cliente/index'
 
 
-  get 'especialistas/index'
+  get 'profesional/index'
+
 
   get 'administrador/indexprincipal'
   resources :administrador
@@ -24,15 +25,11 @@ Rails.application.routes.draw do
 
 
   devise_for :users, :controllers => { registrations: 'registrations' }
- 
+  #get 'user/nuevoAdministrador'
  
   
   get 'ingresar/index'
-
   get 'historia/index'
-
- # get 'principal/index'
-
   root 'principal#index'
   
    #los resources contienen:
