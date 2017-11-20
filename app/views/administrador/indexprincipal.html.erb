@@ -1,6 +1,4 @@
 
-                
-
              <% if current_user.nombre != ""  %>   
 				<h1>Bienvenido <%= current_user.nombre%>! </h1>
 			 <% else %>
@@ -13,20 +11,13 @@
 
 
 
- 			  <div class="row ">
-                   
+ 			  <div class="row ">           
              					
                     		<dir><%= button_to "Administradores",administrador_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
 				              
                     		<dir><%= button_to "Profesionales",root_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
 				               
                     		<dir><%= button_to "Clientes",root_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
-				                
-
-
-				               
-
-
-          			</div>
+	
               </div>
 

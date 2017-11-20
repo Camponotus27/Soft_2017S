@@ -35,7 +35,7 @@ class AdministradorController < ApplicationController
         format.html { redirect_to administrador_index_path, notice: 'Se actualizo correctamente el nivel de permiso' }
 
       else
-        format.html { render :edit }
+        format.html { render :edit  , notice: 'No se actualizo'}
   
       end
     end

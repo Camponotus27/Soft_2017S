@@ -264,3 +264,37 @@ padding: 0;
   text-align: center;  
   align-content: middle;
 }
+
+.alerta-margen-rojo{
+	outline: dashed #FF0000;
+	margin: 10px;	
+
+}
+.alerta-margen-verde{
+	outline: dashed #00AA00;
+	margin: 10px;	
+
+}
+
+.imagen_principal{
+    background-image: url(principal.jpg);
+    background-origin: inherit !important;
+    background-clip: inherit !important;
+    background-size: 100%;
+    background-repeat: no-repeat !important;
+    height: 320px ;
+    color: white !important;
+    display: block !important;
+    align-content: middle !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+
+    display: flex;
+  	align-items: center;
+
+}
+
+.centrar-vertical{
+
+}
+

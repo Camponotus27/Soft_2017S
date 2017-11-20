@@ -6,11 +6,13 @@ class User < ActiveRecord::Base
 
   validates :rut,  :uniqueness => {:message => "ya regitrado"}, allow_blank: true
 
-  validates :nombre, :presence => {:message => "no puede estar vacio"}
-
+  validates :nombre, :apellido_materno, :apellido_paterno, :presence => {:message => "no puede estar vacio"}
+  validates :nombre, :apellido_materno, :apellido_paterno, length: { maximum: 50 , :message => "muy largo, tiene que ser menor a 50 caracteres"}
+  validates :nombre, :apellido_materno, :apellido_paterno,  format: { with: /\A[a-zA-Z]+\z/,  message: "solo permite letras"} ,allow_blank: true
 
  # validates :email, :presence => {:message => "email no puede estar vacio"}
   validates :email,  :uniqueness => {:message => "ya regitrado"},allow_blank: true
+  validates :email, length: { maximum: 100 , :message => "muy largo no puede tener mas de 100 caracteres"}
 
 
   validates :numero_contacto, :presence => {:message => "no puede estar vacio"}
