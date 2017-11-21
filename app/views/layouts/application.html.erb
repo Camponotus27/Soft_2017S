@@ -3,7 +3,7 @@
   <head>
     <title>Clinica_soft2017</title>
 
-    
+
     <%= csrf_meta_tags %>
 
 
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
   </head>
   	<header>
   		<nav class = "color_fondo white large_padding">
@@ -36,12 +36,14 @@
                          <% if current_user.permiso == "cliente"%>
                             <li class="col-md top_padding_list">
                             <%= link_to "Eres un : Cliente", cliente_index_path %>
+
+
                             </li>
                          <% end %>
 
-                         <% if current_user.permiso == "especialista"%>
+                         <% if current_user.permiso == "profesional"%>
                             <li class="col-md top_padding_list">
-                            <%= link_to "Eres un : Especialista", especialistas_index_path %>
+                            <%= link_to "Eres un : profesional", profesional_index_path %>
                             </li>
                          <% end %>
 
@@ -61,6 +63,9 @@
 
 
            <% if user_signed_in?  %>
+           <li class="col-md top_padding_list">
+         <%= link_to "editar perfil", "http://localhost:3000/users/edit" %>
+</li>
 
             <li class="col-md top_padding_list">
              <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
@@ -73,7 +78,7 @@
   			   	</li>
 
           <% end %>
-            
+
 
 
 
@@ -103,12 +108,11 @@
 <div class="w3-teal">
   <button class="w3-button w3-teal w3-xlarge w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
   <div class="w3-container">
-    <h1>My Page</h1>
+    <h1>Centro Psicopedagógico Construyamos</h1>
   </div>
 </div>
 
 <div class="w3-container">
-  <p>Prueba</p>
 </div>
 
 </div>
@@ -121,7 +125,7 @@ function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
 </script>
-     
+
 
 
 
@@ -145,9 +149,9 @@ function w3_close() {
     </div>
   </div>
 </div>
-                  
+
   </body>
-  
+
 
 
 </html>

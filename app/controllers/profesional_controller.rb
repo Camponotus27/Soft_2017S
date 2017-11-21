@@ -1,22 +1,23 @@
 class ProfesionalController < ApplicationController
-  
+
   def index
-    @administradors = User.where( :permiso => "administrador").where.not( :email => current_user.email)
+    @Profesional = User.where( :permiso => "profesional").where.not( :email => current_user.email)
   end
 
   def show
-     @administrador  = User.find(params[:id])
+     @Profesional  = User.find(params[:id])
    end
 
   # GET /busy_times/new
   def new
-    @administrador = User.new
+    @Profesional = User.new
   end
 
   # GET /busy_times/1/edit
   def edit
-    @administrador  = User.find(params[:id])
+    @Profesional  = User.find(params[:id])
   end
+
 
   # POST /busy_times
   # POST /busy_times.json
@@ -26,15 +27,15 @@ class ProfesionalController < ApplicationController
   # PATCH/PUT /busy_times/1
   # PATCH/PUT /busy_times/1.json
   def update
-    @administrador  = User.find(params[:id])
+    @Profesional  = User.find(params[:id])
 
     respond_to do |format|
-      if @administrador.update(administrador_params)
+      if @Profesional.update(administrador_params)
         format.html { redirect_to administrador_index_path, notice: 'Se actualizo correctamente el nivel de permiso' }
 
       else
         format.html { render :edit  , notice: 'No se actualizo'}
-  
+
       end
     end
 
@@ -43,13 +44,16 @@ class ProfesionalController < ApplicationController
   # DELETE /busy_times/1
   # DELETE /busy_times/1.json
   def destroy
-    @administrador  = User.find(params[:id])
-    @administrador.destroy
+    @Profesional  = User.find(params[:id])
+    @Profesional.destroy
 
     redirect_to :action => :index
   end
 
   private
+    def user_params
+      params.require(:user).permit(:nombre, :apellido_paterno, :apellido_materno, :rut, :numero_contacto, :email)
+    end
     # callback
     def set_busy_time
      # @administrador = User.find(params[:id])
@@ -57,6 +61,6 @@ class ProfesionalController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def administrador_params
-      params.require(:administrador).permit(:permiso)
+      params.require(:Profesional).permit(:permiso)
     end
 end

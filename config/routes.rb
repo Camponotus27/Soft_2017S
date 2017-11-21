@@ -16,11 +16,11 @@ Rails.application.routes.draw do
 
 
   get 'profesional/index'
+  resources :profesional
 
 
   get 'administrador/indexprincipal'
   resources :administrador
- 
 
 
 
@@ -28,12 +28,12 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   #get 'user/nuevoAdministrador'
- 
-  
+
+
   get 'ingresar/index'
   get 'historia/index'
   root 'principal#index'
-  
+
    #los resources contienen:
   # get "/hours"		index
   # post "/hours"		create

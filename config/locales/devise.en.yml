@@ -57,8 +57,8 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
     sessions:
-      signed_in: "Te as ingresado correctamente."
-      signed_out: "Te as salido correctamente"
+      signed_in: "se aa ingresado correctamente."
+      signed_out: "Se ha salido correctamente"
       already_signed_out: "Cerraste sesion satisfactoriamente."
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
