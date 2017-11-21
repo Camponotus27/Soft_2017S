@@ -1,2 +1,54 @@
-<h1>Cliente#index</h1>
-<p>Find me in app/views/cliente/index.html.erb</p>
+
+          <h1>Listado de cliente</h1>
+
+          <table class="padding_table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Permiso</th>
+                <th class="color-blanco-botones-tabla" colspan="3"> </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @clientes.each do |cliente| %>
+                <tr>
+                  <td class="padding_table"><%= cliente.nombre %></td>
+                  <td class="padding_table"><%= cliente.email %></td>
+                  <td class="padding_table"><%= cliente.permiso %></td>
+
+
+                  <td class="color-blanco-botones-tabla">
+                     <%= button_to "apdate",edit_administrador_path(cliente), :method => :get , class: "imagen_ver" %>      
+                  </td>
+
+                  <td class="color-blanco-botones-tabla">
+                     <%= button_to "",cliente_path(cliente) , :method => :get , class: "imagen_ver" %>      
+                  </td>
+
+                  <td class = "color-blanco-botones-tabla ">
+                     <%= button_to "" , { :action => :destroy, :id => cliente.id }, :method => :delete, :data => { :confirm => 'Estas seguro de elimiarlo de los registros?' } , class: "imagen_eliminar" %>
+                  </td>
+
+                </tr>
+              <% end %>
+
+            </tbody>
+          </table>
+
+
+
+              <div class="row ">
+                <div class="center-xs">
+
+
+                            <a href= <%=   administrador_indexprincipal_path %>>
+                            <button class = 'w3-button w3-border w3-red w3-hover-blue boton_padding'> 
+                                          Atrás
+                           </button>
+                          </a>
+
+
+                </div>
+              </div>

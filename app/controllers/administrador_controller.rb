@@ -8,7 +8,7 @@ class AdministradorController < ApplicationController
 
   def show
      @administrador  = User.find(params[:id])
-   end
+  end
 
   # GET /busy_times/new
   def new

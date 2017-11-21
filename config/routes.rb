@@ -20,7 +20,8 @@ Rails.application.routes.draw do
 
   get 'administrador/indexprincipal'
   resources :administrador
- 
+  resources :cliente
+  resources :profesional 
 
 
 
