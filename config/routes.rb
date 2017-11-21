@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'profesionales/index'
+
   resources :tipo_horas
   resources :horario_dia
   resources :horario_mes

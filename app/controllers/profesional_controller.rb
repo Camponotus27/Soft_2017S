@@ -1,21 +1,21 @@
-class ClienteController < ApplicationController
+class ProfesionalController < ApplicationController
   
   def index
-     @clientes = User.where( :permiso => "cliente")
+    @administradors = User.where( :permiso => "administrador").where.not( :email => current_user.email)
   end
 
   def show
-     @cliente  = User.find(params[:id])
+     @administrador  = User.find(params[:id])
    end
 
   # GET /busy_times/new
   def new
-    @cliente = User.new
+    @administrador = User.new
   end
 
   # GET /busy_times/1/edit
   def edit
-    @cliente  = User.find(params[:id])
+    @administrador  = User.find(params[:id])
   end
 
   # POST /busy_times
@@ -26,10 +26,10 @@ class ClienteController < ApplicationController
   # PATCH/PUT /busy_times/1
   # PATCH/PUT /busy_times/1.json
   def update
-    @cliente  = User.find(params[:id])
+    @administrador  = User.find(params[:id])
 
     respond_to do |format|
-      if @cliente.update(administrador_params)
+      if @administrador.update(administrador_params)
         format.html { redirect_to administrador_index_path, notice: 'Se actualizo correctamente el nivel de permiso' }
 
       else
@@ -43,17 +43,20 @@ class ClienteController < ApplicationController
   # DELETE /busy_times/1
   # DELETE /busy_times/1.json
   def destroy
-    @cliente  = User.find(params[:id])
-    @cliente.destroy
+    @administrador  = User.find(params[:id])
+    @administrador.destroy
 
     redirect_to :action => :index
   end
 
   private
-  
+    # callback
+    def set_busy_time
+     # @administrador = User.find(params[:id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def administrador_params
-      params.require(:cliente).permit(:permiso)
+      params.require(:administrador).permit(:permiso)
     end
 end

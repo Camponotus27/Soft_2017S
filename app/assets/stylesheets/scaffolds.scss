@@ -40,25 +40,25 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: #F2DEDE;
   display: table;
+  border-radius:8px;
 }
 
-#error_explanation {
+#error_explanation{
   width: 450px;
-  border: 2px solid red;
   padding: 7px 7px 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #F2DEDE;
+  outline: dashed #FF0000;
+  margin: 10px;
+  border-radius:8px;
+  color: #a94442 ;
 
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
+
+
+  h2{
+   display: none;
   }
 
   ul li {
