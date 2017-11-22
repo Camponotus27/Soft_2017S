@@ -1,0 +1,43 @@
+  <%= form_for @cliente, url: cliente_path(@cliente), html: { method: :put } do |f|  %>
+
+
+  <div class="field vertical-center">
+
+            <dir  class="row middle-xs" >
+            <p>    
+            <strong>Permiso: </strong>  
+            <%= cliente.permiso %></p>
+            <h1>------></h1>
+
+                <div class="field"></h1>
+                        
+                          <select name = "cliente[permiso]" id="cliente_permiso">
+                            <option value="cliente">Cliente</option>
+                            <option value="profesional">Especialista</option>
+                            <option value="administrador">Administrador</option>
+                          </select>
+                      </div>
+           </dir>
+
+  </div>
+
+
+
+
+
+                    <dir class="row"> 
+
+                               <dir><%= button_to "Actualizar", cliente_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>   
+
+
+                               <dir><%= button_to "Atrás", cliente_index_path, :method => :get, class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+                             
+
+                    </dir>
+
+
+<% end %>
+
+
+						       

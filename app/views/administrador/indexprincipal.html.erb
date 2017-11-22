@@ -5,19 +5,55 @@
 			 	<h1>Bienvenido!</h1>
           	 <% end %>
 
-			<h3>Elije que vamos a hacer hoy</h3>
+             <dir class="row">
+                  <h3>Elije que vamos a hacer hoy</h3>
+             </dir>
+		
 
-			<h2>Administrar personal:</h2>
+      <div class="w3-container w3-blue">
 
+        <h2>Administrar personal:</h2>
 
-
- 			  <div class="row ">           
-             					
-                    		<dir><%= button_to "Administradores",administrador_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
-				              
-                    		<dir><%= button_to "Profesionales",root_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
-				               
-                    		<dir><%= button_to "Clientes",root_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
-	
+               <div class="row ">           
+                      
+                        <dir><%= button_to "Administradores",administrador_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+                      
+                        <dir><%= button_to "Profesionales",profesional_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+                       
+                        <dir><%= button_to "Clientes", cliente_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+  
               </div>
+
+      </div>
+
+      <div class="w3-container w3-blue">
+        
+
+              <h2>Tipos de servicios:</h2>
+
+              <div class="row ">
+
+                        <dir><%= button_to "Servicios", servicios_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+              </div>
+
+      </div>
+
+      <div class="w3-container w3-blue">
+        
+
+              <h2>Tus datos:</h2>
+
+              <div class="row ">
+
+                        <dir><%= button_to "Editar perfil", edit_user_registration_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+              </div>
+
+      </div>
+
+
+			        
+
+
 

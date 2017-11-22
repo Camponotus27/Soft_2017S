@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Nombre:</strong>	
+  <%= @cliente.nombre %>
+</p>
+
+<p>
+  <strong>Email:</strong>	
+  <%= @cliente.email %>
+</p>
+<p>
+  <strong>Run:</strong>	
+  <%= @cliente.rut %>
+</p>
+
+<p>
+  <strong>Permiso:</strong> 
+  <%= @cliente.permiso %>
+</p>
+
+  <strong>Numero contacto:</strong>	
+  <%= @cliente.numero_contacto %>
+
+
+</p>
+
+
+	  <div class="row ">
+        <div class="center-xs">
+                      
+
+          <dir><%= button_to "Atrás",cliente_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+      
+
+
+
+          			</div>
+              </div>

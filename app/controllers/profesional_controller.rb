@@ -30,7 +30,7 @@ class ProfesionalController < ApplicationController
 
     respond_to do |format|
       if @profesional.update(administrador_params)
-        format.html { redirect_to administrador_index_path, notice: 'Se actualizo correctamente el nivel de permiso' }
+        format.html { redirect_to profesional_index_path, notice: 'Se actualizo correctamente el nivel de permiso' }
 
       else
         format.html { render :edit  , notice: 'No se actualizo'}

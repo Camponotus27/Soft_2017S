@@ -23,7 +23,7 @@
   				<li class="col-md-2">
 
   					<h1 class="no-margin " id ="logo">
-  						<%= link_to "Centro", root_path %>
+  						<%= link_to "Home", root_path %>
   					</h1>
 
   				<li class="col-md top_padding_list">
@@ -35,7 +35,7 @@
 
                          <% if current_user.permiso == "cliente"%>
                             <li class="col-md top_padding_list">
-                            <%= link_to "Eres un : Cliente", cliente_index_path %>
+                            <%= link_to "Eres un : Cliente", cliente_indexprincipal_path %>
 
 
                             </li>
@@ -43,7 +43,7 @@
 
                          <% if current_user.permiso == "profesional"%>
                             <li class="col-md top_padding_list">
-                            <%= link_to "Eres un : profesional", profesional_index_path %>
+                            <%= link_to "Eres un : profesional", profesional_indexprincipal_path %>
                             </li>
                          <% end %>
 
@@ -63,9 +63,7 @@
 
 
            <% if user_signed_in?  %>
-           <li class="col-md top_padding_list">
-         <%= link_to "editar perfil", "http://localhost:3000/users/edit" %>
-</li>
+        
 
             <li class="col-md top_padding_list">
              <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>

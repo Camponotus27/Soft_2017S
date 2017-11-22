@@ -30,7 +30,7 @@ class ClienteController < ApplicationController
 
     respond_to do |format|
       if @cliente.update(administrador_params)
-        format.html { redirect_to administrador_index_path, notice: 'Se actualizo correctamente el nivel de permiso' }
+        format.html { redirect_to cliente_index_path, notice: 'Se actualizo correctamente el nivel de permiso' }
 
       else
         format.html { render :edit  , notice: 'No se actualizo'}
@@ -40,8 +40,7 @@ class ClienteController < ApplicationController
 
   end
 
-  # DELETE /busy_times/1
-  # DELETE /busy_times/1.json
+
   def destroy
     @cliente  = User.find(params[:id])
     @cliente.destroy

@@ -1,10 +1,10 @@
 <%= form_with(model: horario_me, local: true) do |form| %>
   <% if horario_me.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(horario_me.errors.count, "error") %> prohibited this horario_me from being saved:</h2>
+      <h2><%= pluralize(horario_mes.errors.count, "error") %> prohibited this horario_mes from being saved:</h2>
 
       <ul>
-      <% horario_me.errors.full_messages.each do |message| %>
+      <% horario_mes.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
