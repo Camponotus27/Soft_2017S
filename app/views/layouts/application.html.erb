@@ -31,11 +31,12 @@
   				</li>
 
 
+
           <% if user_signed_in?  %>
 
                          <% if current_user.permiso == "cliente"%>
                             <li class="col-md top_padding_list">
-                            <%= link_to "Eres un : Cliente", cliente_indexprincipal_path %>
+                            <%= link_to "Eres un : Cliente", cliente_index_path %>
 
 
                             </li>
@@ -61,9 +62,13 @@
 
           <% end %>
 
+          <li class="col-md top_padding_list">
+            <%= link_to "editar", '/users/edit'  %>
+          </li>
+          
 
            <% if user_signed_in?  %>
-        
+
 
             <li class="col-md top_padding_list">
              <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
