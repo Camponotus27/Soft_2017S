@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Nombre:</strong>
@@ -11,8 +10,8 @@
 </p>
 
 <p>
-  <strong>Servicio:</strong>
-  <%= @profesion.servicio %>
+  <strong> Servicios:</strong>
+  <%= @profesion.servicio.nombre %>	  A : <%= @profesion.servicio.tarifa %>
 </p>
 
 <%= link_to 'Edit', edit_profesion_path(@profesion) %> |

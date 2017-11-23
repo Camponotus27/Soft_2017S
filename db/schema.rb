@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171123003014) do
+ActiveRecord::Schema.define(version: 20171123192009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(version: 20171123003014) do
     t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "has_servicio_profesions", force: :cascade do |t|
-    t.bigint "profesion_id"
-    t.bigint "servicio_id"
-    t.index ["profesion_id"], name: "index_has_servicio_profesions_on_profesion_id"
-    t.index ["servicio_id"], name: "index_has_servicio_profesions_on_servicio_id"
   end
 
   create_table "horario_dia", force: :cascade do |t|
@@ -67,9 +60,9 @@ ActiveRecord::Schema.define(version: 20171123003014) do
   create_table "profesions", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
-    t.string "servicio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "servicio_id"
   end
 
   create_table "registros", force: :cascade do |t|
@@ -125,4 +118,5 @@ ActiveRecord::Schema.define(version: 20171123003014) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "profesions", "servicios"
 end

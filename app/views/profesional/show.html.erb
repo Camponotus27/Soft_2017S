@@ -25,19 +25,31 @@
   <%= @profesional.numero_contacto %>
 </p>
 
-<p>
-  <strong>Horario:</strong> 
-  <%= @profesional.horario %>
+<p style="color: red">
+  <strong style="color: #333333">Horario:</strong>
+    <% if @profesional.horario == nil %>
+        no actualizado
+    <% else%>
+         <%= @profesional.horario %>
+    <% end %>
 </p>
 
-<p>
-  <strong>Comuna:</strong> 
-  <%= @profesional.comuna %>
+<p style="color: red">
+  <strong style="color: #333333">Comuna:</strong>
+    <% if @profesional.comuna == nil %>
+        no actualizado
+    <% else%>
+         <%= @profesional.comuna %>
+    <% end %>
 </p>
 
-<p>
-  <strong>profesion:</strong> 
-  <%= @profesional.profesion %>
+<p style="color: red">
+  <strong style="color: #333333">Profesion:</strong>
+    <% if @profesional.profesion == nil %>
+        no actualizado
+    <% else%>
+         <%= @profesional.profesion %>
+    <% end %>
 </p>
 
 

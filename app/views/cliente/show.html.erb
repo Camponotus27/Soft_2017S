@@ -26,7 +26,7 @@
 </p>
 
 <p style="color: red">
-  <strong style="color: black">Horario:</strong>
+  <strong style="color: #333333">Horario:</strong>
     <% if @cliente.horario == nil %>
         no actualizado
     <% else%>
@@ -34,18 +34,17 @@
     <% end %>
 </p>
 
-<p>
-  <strong>Comuna:</strong> 
-  <%= @cliente.comuna %>
+<p style="color: red">
+  <strong style="color: #333333">Comuna:</strong>
+    <% if @cliente.comuna == nil %>
+        no actualizado
+    <% else%>
+         <%= @cliente.comuna %>
+    <% end %>
 </p>
 
-<p>
-  <strong>profesion:</strong> 
-  <%= @cliente.profesion %>
-</p>
 
 
-</p>
 
 
 	  <div class="row ">

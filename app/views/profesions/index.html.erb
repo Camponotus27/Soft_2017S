@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Profesions</h1>
+<h1>Profesiones</h1>
 
 <table>
   <thead>
@@ -17,10 +16,23 @@
       <tr>
         <td><%= profesion.nombre %></td>
         <td><%= profesion.descripcion %></td>
-        <td><%= profesion.servicio %></td>
+
+        <td> <% if profesion.servicio.nil?%>
+
+                  No espesificado
+            
+            <% else %>
+
+                 <%= profesion.servicio.nombre %>
+
+             <%end%> 
+
+         </td>
+
+
         <td><%= link_to 'Show', profesion %></td>
         <td><%= link_to 'Edit', edit_profesion_path(profesion) %></td>
-        <td><%= link_to 'Destroy', profesion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', profesion, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +40,11 @@
 
 <br>
 
-<%= link_to 'New Profesion', new_profesion_path %>
+<div class="row">
+  
+  <dir><%= button_to "Nuevo",new_profesion_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+<dir><%= button_to "Atrás",administrador_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+</div>
+

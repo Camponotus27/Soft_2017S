@@ -23,8 +23,11 @@
 
   <div class="field">
     <%= form.label :servicio %>
-    <%= form.text_field :servicio, id: :profesion_servicio %>
+    <%= form.select( "servicio_id", Servicio.all.collect {|p| [ p.nombre, p.id ] }, {include_blank: 'None'}) %>
   </div>
+
+ 
+
 
   <div class="actions">
     <%= form.submit %>
