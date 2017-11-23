@@ -29,7 +29,7 @@ class ClienteController < ApplicationController
     @cliente  = User.find(params[:id])
 
     respond_to do |format|
-      if @cliente.update(administrador_params)
+      if @cliente.update(cliente_params)
         format.html { redirect_to cliente_index_path, notice: 'Se actualizo correctamente el nivel de permiso' }
 
       else
@@ -52,7 +52,7 @@ class ClienteController < ApplicationController
   
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def administrador_params
+    def cliente_params
       params.require(:cliente).permit(:permiso)
     end
 end

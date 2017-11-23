@@ -3,7 +3,7 @@
 
 <p>
   <strong>Nombre:</strong>	
-  <%= @cliente.nombre %>
+  <%= @cliente.nombre %>  <%= @cliente.apellido_materno %>  <%= @cliente.apellido_paterno %>
 </p>
 
 <p>
@@ -20,8 +20,29 @@
   <%= @cliente.permiso %>
 </p>
 
+<p>
   <strong>Numero contacto:</strong>	
   <%= @cliente.numero_contacto %>
+</p>
+
+<p style="color: red">
+  <strong style="color: black">Horario:</strong>
+    <% if @cliente.horario == nil %>
+        no actualizado
+    <% else%>
+         <%= @cliente.horario %>
+    <% end %>
+</p>
+
+<p>
+  <strong>Comuna:</strong> 
+  <%= @cliente.comuna %>
+</p>
+
+<p>
+  <strong>profesion:</strong> 
+  <%= @cliente.profesion %>
+</p>
 
 
 </p>

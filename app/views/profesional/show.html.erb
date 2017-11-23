@@ -3,7 +3,7 @@
 
 <p>
   <strong>Nombre:</strong>	
-  <%= @profesional.nombre %>
+  <%= @profesional.nombre %>  <%= @profesional.apellido_materno %>  <%= @profesional.apellido_paterno %>
 </p>
 
 <p>
@@ -20,11 +20,26 @@
   <%= @profesional.permiso %>
 </p>
 
+<p>
   <strong>Numero contacto:</strong>	
   <%= @profesional.numero_contacto %>
-
-
 </p>
+
+<p>
+  <strong>Horario:</strong> 
+  <%= @profesional.horario %>
+</p>
+
+<p>
+  <strong>Comuna:</strong> 
+  <%= @profesional.comuna %>
+</p>
+
+<p>
+  <strong>profesion:</strong> 
+  <%= @profesional.profesion %>
+</p>
+
 
 
 	  <div class="row ">
