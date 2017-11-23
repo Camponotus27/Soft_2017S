@@ -36,7 +36,7 @@
 
                          <% if current_user.permiso == "cliente"%>
                             <li class="col-md top_padding_list">
-                            <%= link_to "Eres un : Cliente", cliente_index_path %>
+                            <%= link_to "Eres un : Cliente", cliente_indexprincipal_path %>
 
 
                             </li>
@@ -61,11 +61,6 @@
                  </li>
 
           <% end %>
-
-          <li class="col-md top_padding_list">
-            <%= link_to "editar", '/users/edit'  %>
-          </li>
-          
 
            <% if user_signed_in?  %>
 
