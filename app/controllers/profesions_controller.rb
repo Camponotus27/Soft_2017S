@@ -15,6 +15,8 @@ class ProfesionsController < ApplicationController
   end
 
   def edit
+    @servicios = Servicio.all
+    @assignments = Assignment.where( :profesion_id => @profesion.id )
   end
 
   def create

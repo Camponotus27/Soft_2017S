@@ -14,7 +14,7 @@
 
   <% @profesion.servicios.each do |servicio| %>
 
-  	<h1><%= link_to servicio.nombre, servicio %></h1>
+  	<h1><%= servicio.nombre %></h1>
 
   		<div>
   			<%= servicio.tarifa %> - <%= link_to "Eliminar" , servicio , method: :delete %>

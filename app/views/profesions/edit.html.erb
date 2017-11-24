@@ -1,23 +1,7 @@
 <h1>Editing Profesion</h1>
 
 
-<p>
-  <strong> Servicios:</strong>
-  
-  <% profesion.servicios do |p| %>
-
-  	<h1> link_to servicio.nombre, servicio</h1>
-
-  		<div>
-  			<%= servicio.tarifa %> - <%= link_to "Eliminar" , servicio , method: :delete %>
-  		</div>
-
-  <% end %>
-</p>
-
-
-
-
+<%= render 'edit', profesion: @profesion %>
 
 
 <%= link_to 'Show', @profesion %> |

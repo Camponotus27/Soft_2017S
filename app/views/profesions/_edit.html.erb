@@ -21,16 +21,43 @@
     <%= form.text_field :descripcion, id: :profesion_descripcion %>
   </div>
 
+
+
+        <% array = Array.new %>
+
+        <%  @servicios.each do |s| %>
+
+              <% array.push s.id %>
+
+
+        <% end %>
+
+
+
+         <% @assignments.each  do |a|%>
+
+            <% a.servicio_id  = array.pop %>
+
+          <% end %>
+
+
+
   <div class="field">
     <%= form.label :servicio%>
       <% @servicios.each  do |s|%>
-       
 
-            <div class="field" >
-              
-                  <%= check_box_tag  "servicios[]" , s.id %> <%= s.nombre%>
+                   
 
-            </div>
+                                <div class="field" >
+                                  
+                                      <% if  array.any? { |item| item == s.id }%>
+
+                                            <%= check_box_tag  "servicios[]" , s.id  %> <%= s.nombre %>      
+                                      <% end  %>
+
+
+                                </div>
+
 
       <% end %>    
 

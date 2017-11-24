@@ -5,6 +5,7 @@ class Profesion < ApplicationRecord
 	
 
 	after_create :save_servicios
+	after_update :save_servicios
 
 
 	def servicios= (value)
