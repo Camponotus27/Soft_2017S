@@ -1,3 +1,24 @@
 class Profesion < ApplicationRecord
-	belongs_to  :servicio
+
+	has_many :assignments
+	has_many :servicios, through:  :assignments
+	
+
+	after_create :save_servicios
+
+
+	def servicios= (value)
+
+		@servicios = value
+		
+	end
+
+	private
+
+	def save_servicios
+		@servicios.each do |servicio_id|
+			assignments.create(servicio_id: servicio_id , profesion_id: self.id )
+		end
+	end
+
 end

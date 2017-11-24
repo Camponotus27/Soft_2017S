@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171123192009) do
+ActiveRecord::Schema.define(version: 20171123205923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
+    t.bigint "profesion_id"
+    t.bigint "servicio_id"
+    t.date "assigned_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profesion_id"], name: "index_assignments_on_profesion_id"
+    t.index ["servicio_id"], name: "index_assignments_on_servicio_id"
+  end
 
   create_table "comunas", force: :cascade do |t|
     t.string "nombre"
@@ -60,15 +70,15 @@ ActiveRecord::Schema.define(version: 20171123192009) do
   create_table "profesions", force: :cascade do |t|
     t.string "nombre"
     t.string "descripcion"
+    t.string "servicio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "servicio_id"
   end
 
   create_table "registros", force: :cascade do |t|
     t.integer "codigo"
     t.datetime "fecha"
-    t.string "Profesional"
+    t.string "profesional"
     t.string "cliente"
     t.string "comuna_atencion"
     t.string "servicio"
@@ -118,5 +128,6 @@ ActiveRecord::Schema.define(version: 20171123192009) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "profesions", "servicios"
+  add_foreign_key "assignments", "profesions"
+  add_foreign_key "assignments", "servicios"
 end

@@ -1,0 +1,36 @@
+<%= form_with(model: assignment, local: true) do |form| %>
+  <% if assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+
+      <ul>
+      <% assignment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+<div class="field">
+    <%= form.label :profesion_id %><br />
+    <%= form.select :profesion_id, Profesion.all.map{|p| [p.nombre, p.id]} %>
+  </div>
+  <div class="field">
+    <%= form.label :servicio_id %><br />
+    <%= form.select :servicio_id, Servicio.all.map{|w| [w.nombre, w.id]} %>
+  </div>
+  <div class="field">
+    <%= form.label :assigned_at %><br />
+    <%= form.date_select :assigned_at %>
+  </div>
+
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

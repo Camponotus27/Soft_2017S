@@ -1,34 +1,29 @@
 class ProfesionsController < ApplicationController
   before_action :set_profesion, only: [:show, :edit, :update, :destroy]
 
-  # GET /profesions
-  # GET /profesions.json
   def index
     @profesions = Profesion.all
   end
 
-  # GET /profesions/1
-  # GET /profesions/1.json
   def show
+
   end
 
-  # GET /profesions/new
   def new
-    @profesion = Profesion.new
+     @servicios = Servicio.all
+     @profesion = Profesion.new
   end
 
-  # GET /profesions/1/edit
   def edit
   end
 
-  # POST /profesions
-  # POST /profesions.json
   def create
     @profesion = Profesion.new(profesion_params)
+    @profesion.servicios = params[:servicios]
 
     respond_to do |format|
       if @profesion.save
-        format.html { redirect_to @profesion, notice: 'Profesion was successfully created.' }
+        format.html { redirect_to @profesion, notice: 'La profesion de creo correctamente.' }
         format.json { render :show, status: :created, location: @profesion }
       else
         format.html { render :new }
@@ -37,12 +32,13 @@ class ProfesionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /profesions/1
-  # PATCH/PUT /profesions/1.json
   def update
+
+    @profesion.servicios = params[:servicios]
+    
     respond_to do |format|
       if @profesion.update(profesion_params)
-        format.html { redirect_to @profesion, notice: 'Profesion was successfully updated.' }
+        format.html { redirect_to @profesion, notice: 'La profesion de cactualzo correctamente.' }
         format.json { render :show, status: :ok, location: @profesion }
       else
         format.html { render :edit }
@@ -51,8 +47,6 @@ class ProfesionsController < ApplicationController
     end
   end
 
-  # DELETE /profesions/1
-  # DELETE /profesions/1.json
   def destroy
     @profesion.destroy
     respond_to do |format|
@@ -69,6 +63,6 @@ class ProfesionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profesion_params
-      params.require(:profesion).permit(:nombre, :descripcion, :servicio_id)
+      params.require(:profesion).permit(:nombre, :descripcion, :servicios)
     end
 end

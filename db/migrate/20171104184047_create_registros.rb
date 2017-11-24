@@ -3,7 +3,7 @@ class CreateRegistros < ActiveRecord::Migration[5.1]
     create_table :registros do |t|
       t.integer :codigo
       t.datetime :fecha
-      t.string :Profesional
+      t.string :profesional
       t.string :cliente
       t.string :comuna_atencion
       t.string :servicio

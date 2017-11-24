@@ -22,9 +22,24 @@
   </div>
 
   <div class="field">
-    <%= form.label :servicio %>
-    <%= form.select( "servicio_id", Servicio.all.collect {|p| [ p.nombre, p.id ] }, {include_blank: 'None'}) %>
+    <label> Servicio(s) </label>
+      <% @servicios.each  do |s|%>
+       
+
+            <div class="field" >
+              
+                  <%= check_box_tag  "servicios[]" , s.id %> <%= s.nombre%>
+
+            </div>
+
+      <% end %>    
+
   </div>
+
+
+
+
+
 
  
 

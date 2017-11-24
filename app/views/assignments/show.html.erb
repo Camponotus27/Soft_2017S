@@ -1,0 +1,20 @@
+
+<p>
+  <strong>Profesion:</strong>
+  <%= @assignment.profesion.nombre %>
+</p>
+
+<p>
+  <strong>Servicio:</strong>
+  <%= @assignment.servicio.nombre %>
+</p>
+
+<p>
+  <strong>Assigned at:</strong>
+  <%= @assignment.assigned_at %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
+<%= link_to 'Back', assignments_path %>
