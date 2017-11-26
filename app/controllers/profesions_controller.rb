@@ -2,11 +2,11 @@ class ProfesionsController < ApplicationController
   before_action :set_profesion, only: [:show, :edit, :update, :destroy]
 
   def index
-    @profesions = Profesion.all
+      @profesions = Profesion.all
   end
 
   def show
-
+      @assignments = Assignment.where( :profesion_id => @profesion.id )
   end
 
   def new
@@ -26,10 +26,8 @@ class ProfesionsController < ApplicationController
     respond_to do |format|
       if @profesion.save
         format.html { redirect_to @profesion, notice: 'La profesion de creo correctamente.' }
-        format.json { render :show, status: :created, location: @profesion }
       else
         format.html { render :new }
-        format.json { render json: @profesion.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,10 +39,8 @@ class ProfesionsController < ApplicationController
     respond_to do |format|
       if @profesion.update(profesion_params)
         format.html { redirect_to @profesion, notice: 'La profesion de cactualzo correctamente.' }
-        format.json { render :show, status: :ok, location: @profesion }
       else
         format.html { render :edit }
-        format.json { render json: @profesion.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -52,8 +48,7 @@ class ProfesionsController < ApplicationController
   def destroy
     @profesion.destroy
     respond_to do |format|
-      format.html { redirect_to profesions_url, notice: 'Profesion was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to profesions_url, notice: 'Se la eliminado la profesion.' }
     end
   end
 
