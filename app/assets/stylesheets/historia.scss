@@ -5,3 +5,8 @@
 p {
   image: url(/assets/MISION_v_v.png);
 }
+body {
+  background: {
+     image: asset_url("fondo.jpg");
+  }
+}
