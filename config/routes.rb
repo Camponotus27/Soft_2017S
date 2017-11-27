@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :horarios
   resources :assignments
   resources :tipo_horas
   resources :horario_dia
