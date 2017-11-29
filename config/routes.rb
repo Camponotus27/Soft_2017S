@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  resources :dia_semanas
+  resources :horario_semanas
   resources :horarios
   resources :assignments
   resources :tipo_horas

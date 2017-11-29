@@ -1,0 +1,102 @@
+<%= form_with(model: dia_semana, local: true) do |form| %>
+  <% if dia_semana.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dia_semana.errors.count, "error") %> prohibited this dia_semana from being saved:</h2>
+
+      <ul>
+      <% dia_semana.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :dia_semana_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora8 %>
+    <%= form.number_field :hora8, id: :dia_semana_hora8 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora9 %>
+    <%= form.number_field :hora9, id: :dia_semana_hora9 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora10 %>
+    <%= form.number_field :hora10, id: :dia_semana_hora10 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora11 %>
+    <%= form.number_field :hora11, id: :dia_semana_hora11 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora12 %>
+    <%= form.number_field :hora12, id: :dia_semana_hora12 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora13 %>
+    <%= form.number_field :hora13, id: :dia_semana_hora13 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora14 %>
+    <%= form.number_field :hora14, id: :dia_semana_hora14 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora15 %>
+    <%= form.number_field :hora15, id: :dia_semana_hora15 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora16 %>
+    <%= form.number_field :hora16, id: :dia_semana_hora16 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora17 %>
+    <%= form.number_field :hora17, id: :dia_semana_hora17 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora18 %>
+    <%= form.number_field :hora18, id: :dia_semana_hora18 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora19 %>
+    <%= form.number_field :hora19, id: :dia_semana_hora19 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora20 %>
+    <%= form.number_field :hora20, id: :dia_semana_hora20 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora21 %>
+    <%= form.number_field :hora21, id: :dia_semana_hora21 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora22 %>
+    <%= form.number_field :hora22, id: :dia_semana_hora22 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora23 %>
+    <%= form.number_field :hora23, id: :dia_semana_hora23 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

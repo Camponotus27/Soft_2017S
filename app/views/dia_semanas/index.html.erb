@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dia Semanas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Hora8</th>
+      <th>Hora9</th>
+      <th>Hora10</th>
+      <th>Hora11</th>
+      <th>Hora12</th>
+      <th>Hora13</th>
+      <th>Hora14</th>
+      <th>Hora15</th>
+      <th>Hora16</th>
+      <th>Hora17</th>
+      <th>Hora18</th>
+      <th>Hora19</th>
+      <th>Hora20</th>
+      <th>Hora21</th>
+      <th>Hora22</th>
+      <th>Hora23</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dia_semanas.each do |dia_semana| %>
+      <tr>
+        <td><%= dia_semana.nombre %></td>
+        <td><%= dia_semana.hora8 %></td>
+        <td><%= dia_semana.hora9 %></td>
+        <td><%= dia_semana.hora10 %></td>
+        <td><%= dia_semana.hora11 %></td>
+        <td><%= dia_semana.hora12 %></td>
+        <td><%= dia_semana.hora13 %></td>
+        <td><%= dia_semana.hora14 %></td>
+        <td><%= dia_semana.hora15 %></td>
+        <td><%= dia_semana.hora16 %></td>
+        <td><%= dia_semana.hora17 %></td>
+        <td><%= dia_semana.hora18 %></td>
+        <td><%= dia_semana.hora19 %></td>
+        <td><%= dia_semana.hora20 %></td>
+        <td><%= dia_semana.hora21 %></td>
+        <td><%= dia_semana.hora22 %></td>
+        <td><%= dia_semana.hora23 %></td>
+        <td><%= link_to 'Show', dia_semana %></td>
+        <td><%= link_to 'Edit', edit_dia_semana_path(dia_semana) %></td>
+        <td><%= link_to 'Destroy', dia_semana, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dia Semana', new_dia_semana_path %>
