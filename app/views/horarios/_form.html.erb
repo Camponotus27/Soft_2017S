@@ -12,13 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :comuna %>
-    <%= form.text_field :comuna, id: :horario_comuna %>
+    <%= form.select(:comuna) do %>
+  <% [['zona 1 ', "zona 1"], ['zona 2', 'zona 2'], ['zona 3', 'zona 3']].each do |c| -%>
+    <%= content_tag(:option, c.first, value: c.last) %>
+  <% end %>
+<% end %>
+  </div>
+
+
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.date_select :fecha, id: :horario_fecha %>
   </div>
 
   <div class="field">
     <%= form.label :hora %>
-    <%= form.datetime_select :hora, id: :horario_hora %>
+    <%= form.time_select :hora, id: :horario_hora %>
+  </div>
+
+  <div class="field">
+    <%= form.label :disponible %>
+    <%= form.check_box :disponible, id: :horario_disponible %>
   </div>
 
   <div class="field">
@@ -30,3 +45,16 @@
     <%= form.submit %>
   </div>
 <% end %>
+<div class="w3-container w3-purple" style="margin-bottom: 14px">
+
+
+
+<div class="cuadro container">
+ <%= image_tag "comunas.png",  :alt => "comunas_santiago", :title => "zonas_de_atencion"%>
+</div>
+
+
+<div class="fourteen columns offset-one  left">
+<%= image_tag "sectores.png", :alt => "colores_comunas", :title => "colores_comunas"%>
+</div>
+</div>

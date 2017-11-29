@@ -6,8 +6,18 @@
 </p>
 
 <p>
+  <strong>Fecha:</strong>
+  <%= @horario.fecha %>
+</p>
+
+<p>
   <strong>Hora:</strong>
   <%= @horario.hora %>
+</p>
+
+<p>
+  <strong>Disponible:</strong>
+  <%= @horario.disponible %>
 </p>
 
 <p>
@@ -15,5 +25,5 @@
   <%= @horario.comentario %>
 </p>
 
-<%= link_to 'Edit', edit_horario_path(@horario) %> |
-<%= link_to 'Back', horarios_path %>
+<%= link_to 'Modificar', edit_horario_path(@horario) %> |
+<%= link_to 'Volver', horarios_path %>
