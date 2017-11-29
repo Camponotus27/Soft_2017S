@@ -1,2 +1,0 @@
-class DiaSemana < ApplicationRecord
-end
