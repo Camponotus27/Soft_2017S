@@ -1,68 +1,69 @@
-<p id="notice"><%= notice %></p>
 
+ <div class="w3-container" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
 
-<p>
-  <strong>Nombre:</strong>	
-  <%= @profesional.nombre %>  <%= @profesional.apellido_materno %>  <%= @profesional.apellido_paterno %>
-</p>
+        <p>
+          <strong>Nombre:</strong>	
+          <%= @profesional.nombre %>  <%= @profesional.apellido_materno %>  <%= @profesional.apellido_paterno %>
+        </p>
 
-<p>
-  <strong>Email:</strong>	
-  <%= @profesional.email %>
-</p>
-<p>
-  <strong>Run:</strong>	
-  <%= @profesional.rut %>
-</p>
+        <p>
+          <strong>Email:</strong>	
+          <%= @profesional.email %>
+        </p>
+        <p>
+          <strong>Run:</strong>	
+          <%= @profesional.rut %>
+        </p>
 
-<p>
-  <strong>Permiso:</strong> 
-  <%= @profesional.permiso %>
-</p>
+        <p>
+          <strong>Permiso:</strong> 
+          <%= @profesional.permiso %>
+        </p>
 
-<p>
-  <strong>Numero contacto:</strong>	
-  <%= @profesional.numero_contacto %>
-</p>
+        <p>
+          <strong>Numero contacto:</strong>	
+          <%= @profesional.numero_contacto %>
+        </p>
 
-<p style="color: red">
-  <strong style="color: #333333">Horario:</strong>
-    <% if @profesional.horario == nil %>
-        no actualizado
-    <% else%>
-         <%= @profesional.horario %>
-    <% end %>
-</p>
+        <p style="color: red">
+          <strong style="color: #333333">Horario:</strong>
+            <% if @profesional.horario == nil %>
+                no actualizado
+            <% else%>
+                 <%= @profesional.horario %>
+            <% end %>
+        </p>
 
-<p style="color: red">
-  <strong style="color: #333333">Comuna:</strong>
-    <% if @profesional.comuna == nil %>
-        no actualizado
-    <% else%>
-         <%= @profesional.comuna %>
-    <% end %>
-</p>
+        <p style="color: red">
+          <strong style="color: #333333">Comuna:</strong>
+            <% if @profesional.comuna == nil %>
+                no actualizado
+            <% else%>
+                 <%= @profesional.comuna %>
+            <% end %>
+        </p>
 
-<p style="color: red">
-  <strong style="color: #333333">Profesion:</strong>
-    <% if @profesional.profesion == nil %>
-        no actualizado
-    <% else%>
-         <%= @profesional.profesion %>
-    <% end %>
-</p>
-
-
-
-	  <div class="row ">
-        <div class="center-xs">
-                      
-
-          <dir><%= button_to "Atrás",profesional_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
-
-      
+        <p style="color: red">
+          <strong style="color: #333333">Profesion:</strong>
+            <% if @profesional.profesion == nil %>
+                no actualizado
+            <% else%>
+                 <%= @profesional.profesion %>
+            <% end %>
+        </p>
 
 
 
-          			</div>
-              </div>
+        	  <div class="row ">
+                <div class="center-xs">
+                              
+
+                  <dir><%= button_to "Atrás",profesional_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+              
+
+
+
+                  			</div>
+                      </div>
+</div>

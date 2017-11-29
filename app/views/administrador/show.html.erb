@@ -1,41 +1,43 @@
-<p id="notice"><%= notice %></p>
+
+ <div class="w3-container" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
+
+    <p>
+      <strong>Nombre:</strong>	
+      <%= @administrador.nombre %>  <%= @administrador.apellido_materno %>  <%= @administrador.apellido_paterno %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>	
+      <%= @administrador.email %>
+    </p>
+    <p>
+      <strong>Run:</strong>	
+      <%= @administrador.rut %>
+    </p>
+
+    <p>
+      <strong>Permiso:</strong> 
+      <%= @administrador.permiso %>
+    </p>
+
+      <strong>Numero contacto:</strong>	
+      <%= @administrador.numero_contacto %>
 
 
-<p>
-  <strong>Nombre:</strong>	
-  <%= @administrador.nombre %>  <%= @administrador.apellido_materno %>  <%= @administrador.apellido_paterno %>
-</p>
-
-<p>
-  <strong>Email:</strong>	
-  <%= @administrador.email %>
-</p>
-<p>
-  <strong>Run:</strong>	
-  <%= @administrador.rut %>
-</p>
-
-<p>
-  <strong>Permiso:</strong> 
-  <%= @administrador.permiso %>
-</p>
-
-  <strong>Numero contacto:</strong>	
-  <%= @administrador.numero_contacto %>
+    </p>
 
 
-</p>
+    	  <div class="row ">
+            <div class="center-xs">
+                          
 
+              <dir><%= button_to "Atrás",administrador_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
 
-	  <div class="row ">
-        <div class="center-xs">
-                      
-
-          <dir><%= button_to "Atrás",administrador_index_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
-
-      
+          
 
 
 
-          			</div>
-              </div>
+              			</div>
+                  </div>
+
+</div>

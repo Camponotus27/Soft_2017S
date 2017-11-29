@@ -1,29 +1,34 @@
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @profesion.nombre %>
-</p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @profesion.descripcion %>
-</p>
+ <div class="w3-container" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
 
-<p>
-  <strong> Servicios:</strong>
+    <p>
+      <strong>Nombre:</strong>
+      <%= @profesion.nombre %>
+    </p>
 
-  <% @profesion.servicios.each do |servicio| %>
+    <p>
+      <strong>Descripcion:</strong>
+      <%= @profesion.descripcion %>
+    </p>
 
-  	<h1><%= servicio.nombre %></h1>
+    <p>
+      <strong> Servicios:</strong>
 
-  		<div>
-  			<%= servicio.tarifa %> - <%= link_to "Eliminar" , @assignment , method: :delete %>
-  		</div>
+      <% @profesion.servicios.each do |servicio| %>
 
-  <% end %>
-</p>
+      	<h1><%= servicio.nombre %></h1>
+
+      		<div>
+      			<%= servicio.tarifa %> - <%= link_to "Eliminar" , @assignment , method: :delete %>
+      		</div>
+
+      <% end %>
+    </p>
 
 
 
-<%= link_to 'Edit', edit_profesion_path(@profesion) %> |
-<%= link_to 'Back', profesions_path %>
+    <%= link_to 'Edit', edit_profesion_path(@profesion) %> |
+    <%= link_to 'Back', profesions_path %>
+
+  </div>
