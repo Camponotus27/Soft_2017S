@@ -17,7 +17,7 @@
   	<h1><%= servicio.nombre %></h1>
 
   		<div>
-  			<%= servicio.tarifa %> - <%= link_to "Eliminar" , servicio , method: :delete %>
+  			<%= servicio.tarifa %> - <%= link_to "Eliminar" , @assignment , method: :delete %>
   		</div>
 
   <% end %>

@@ -33,10 +33,9 @@
         <% end %>
 
 
+         <% @assignments.each  do |a| %>
 
-         <% @assignments.each  do |a|%>
-
-            <% a.servicio_id  = array.pop %>
+            <% array.delete(a.servicio_id) %>
 
           <% end %>
 
@@ -47,14 +46,13 @@
       <% @servicios.each  do |s|%>
 
                    
-
                                 <div class="field" >
                                   
                                       <% if  array.any? { |item| item == s.id }%>
 
-                                            <%= check_box_tag  "servicios[]" , s.id  %> <%= s.nombre %>      
-                                      <% end  %>
+                                            <%= check_box_tag  "servicios[]" , s.id  %> <%= s.nombre %>    
 
+                                      <% end  %>
 
                                 </div>
 
