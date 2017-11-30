@@ -1,4 +1,6 @@
 
+
+ <div class="w3-container" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
           <h1>Listado de cliente</h1>
 
           <table class="padding_table">
@@ -39,16 +41,10 @@
 
 
 
-              <div class="row ">
-                <div class="center-xs">
-
-
-                            <a href= <%=   administrador_indexprincipal_path %>>
-                            <button class = 'w3-button w3-border w3-red w3-hover-blue boton_padding'> 
-                                          Atrás
-                           </button>
-                          </a>
-
-
-                </div>
+       <div class="row ">
+          
+                      <dir><%= button_to "Atrás", administrador_indexprincipal_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+                
+                
               </div>
+</div>

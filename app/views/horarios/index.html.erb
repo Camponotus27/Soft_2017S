@@ -6,7 +6,9 @@
   <thead>
     <tr>
       <th>Comuna</th>
+      <th>Fecha</th>
       <th>Hora</th>
+      <th>Disponible</th>
       <th>Comentario</th>
       <th colspan="3"></th>
     </tr>
@@ -16,11 +18,13 @@
     <% @horarios.each do |horario| %>
       <tr>
         <td><%= horario.comuna %></td>
+        <td><%= horario.fecha %></td>
         <td><%= horario.hora %></td>
+        <td><%= horario.disponible %></td>
         <td><%= horario.comentario %></td>
-        <td><%= link_to 'Show', horario %></td>
-        <td><%= link_to 'Edit', edit_horario_path(horario) %></td>
-        <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', horario %></td>
+        <td><%= link_to 'Modificar', edit_horario_path(horario) %></td>
+        <td><%= link_to 'Eliminar', horario, method: :delete, data: { confirm: '¿Seguro que desea eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Horario', new_horario_path %>
+<%= link_to 'Nuevo Horario', new_horario_path %>

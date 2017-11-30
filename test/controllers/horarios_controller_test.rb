@@ -17,7 +17,7 @@ class HorariosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create horario" do
     assert_difference('Horario.count') do
-      post horarios_url, params: { horario: { comentario: @horario.comentario, comuna: @horario.comuna, hora: @horario.hora } }
+      post horarios_url, params: { horario: { comentario: @horario.comentario, comuna: @horario.comuna, disponible: @horario.disponible, fecha: @horario.fecha, hora: @horario.hora } }
     end
 
     assert_redirected_to horario_url(Horario.last)
@@ -34,7 +34,7 @@ class HorariosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update horario" do
-    patch horario_url(@horario), params: { horario: { comentario: @horario.comentario, comuna: @horario.comuna, hora: @horario.hora } }
+    patch horario_url(@horario), params: { horario: { comentario: @horario.comentario, comuna: @horario.comuna, disponible: @horario.disponible, fecha: @horario.fecha, hora: @horario.hora } }
     assert_redirected_to horario_url(@horario)
   end
 

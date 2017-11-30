@@ -1,13 +1,17 @@
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @servicio.nombre %>
-</p>
+ <div class="w3-container" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
 
-<p>
-  <strong>Tarifa:</strong>
-  <%= @servicio.tarifa %>
-</p>
+				<p>
+				  <strong>Nombre:</strong>
+				  <%= @servicio.nombre %>
+				</p>
 
-<%= link_to 'Edit', edit_servicio_path(@servicio) %> |
-<%= link_to 'Back', servicios_path %>
+				<p>
+				  <strong>Tarifa:</strong>
+				  <%= @servicio.tarifa %>
+				</p>
+
+				<%= link_to 'Edit', edit_servicio_path(@servicio) %> |
+				<%= link_to 'Back', servicios_path %>
+
+</div>

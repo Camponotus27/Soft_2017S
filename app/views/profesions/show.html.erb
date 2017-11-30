@@ -1,17 +1,13 @@
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @profesion.nombre %>
-</p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @profesion.descripcion %>
-</p>
+ <div class="w3-container" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
 
-<p>
-  <strong> Servicios:</strong>
+    <p>
+      <strong>Nombre:</strong>
+      <%= @profesion.nombre %>
+    </p>
 
+<<<<<<< HEAD
   <% @profesion.assignments.each do |assignment| %>
 
   	<h1><%= assignment.servicio.nombre %></h1>
@@ -19,11 +15,30 @@
   		<div>
   			<%= assignment.servicio.tarifa %> - <%= link_to "eliminarServicio" , eliminarServicio_path(assignment.id) , method: :delete %>
   		</div>
+=======
+    <p>
+      <strong>Descripcion:</strong>
+      <%= @profesion.descripcion %>
+    </p>
 
-  <% end %>
-</p>
+    <p>
+      <strong> Servicios:</strong>
+
+      <% @profesion.servicios.each do |servicio| %>
+>>>>>>> 6b4e00bdc7307cfec41a39bb3753707bdbc25dd8
+
+      	<h1><%= servicio.nombre %></h1>
+
+      		<div>
+      			<%= servicio.tarifa %> - <%= link_to "Eliminar" , @assignment , method: :delete %>
+      		</div>
+
+      <% end %>
+    </p>
 
 
 
-<%= link_to 'Edit', edit_profesion_path(@profesion) %> |
-<%= link_to 'Back', profesions_path %>
+    <%= link_to 'Edit', edit_profesion_path(@profesion) %> |
+    <%= link_to 'Back', profesions_path %>
+
+  </div>
