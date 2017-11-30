@@ -1,0 +1,242 @@
+                      Prefix Verb   URI Pattern                             Controller#Action
+                    horarios GET    /horarios(.:format)                     horarios#index
+                             POST   /horarios(.:format)                     horarios#create
+                 new_horario GET    /horarios/new(.:format)                 horarios#new
+                edit_horario GET    /horarios/:id/edit(.:format)            horarios#edit
+                     horario GET    /horarios/:id(.:format)                 horarios#show
+                             PATCH  /horarios/:id(.:format)                 horarios#update
+                             PUT    /horarios/:id(.:format)                 horarios#update
+                             DELETE /horarios/:id(.:format)                 horarios#destroy
+                 assignments GET    /assignments(.:format)                  assignments#index
+                             POST   /assignments(.:format)                  assignments#create
+              new_assignment GET    /assignments/new(.:format)              assignments#new
+             edit_assignment GET    /assignments/:id/edit(.:format)         assignments#edit
+                  assignment GET    /assignments/:id(.:format)              assignments#show
+                             PATCH  /assignments/:id(.:format)              assignments#update
+                             PUT    /assignments/:id(.:format)              assignments#update
+                             DELETE /assignments/:id(.:format)              assignments#destroy
+                  tipo_horas GET    /tipo_horas(.:format)                   tipo_horas#index
+                             POST   /tipo_horas(.:format)                   tipo_horas#create
+               new_tipo_hora GET    /tipo_horas/new(.:format)               tipo_horas#new
+              edit_tipo_hora GET    /tipo_horas/:id/edit(.:format)          tipo_horas#edit
+                   tipo_hora GET    /tipo_horas/:id(.:format)               tipo_horas#show
+                             PATCH  /tipo_horas/:id(.:format)               tipo_horas#update
+                             PUT    /tipo_horas/:id(.:format)               tipo_horas#update
+                             DELETE /tipo_horas/:id(.:format)               tipo_horas#destroy
+                 horario_dia GET    /horario_dia(.:format)                  horario_dia#index
+                             POST   /horario_dia(.:format)                  horario_dia#create
+            new_horario_dium GET    /horario_dia/new(.:format)              horario_dia#new
+           edit_horario_dium GET    /horario_dia/:id/edit(.:format)         horario_dia#edit
+                horario_dium GET    /horario_dia/:id(.:format)              horario_dia#show
+                             PATCH  /horario_dia/:id(.:format)              horario_dia#update
+                             PUT    /horario_dia/:id(.:format)              horario_dia#update
+                             DELETE /horario_dia/:id(.:format)              horario_dia#destroy
+                 horario_mes GET    /horario_mes(.:format)                  horario_mes#index
+                             POST   /horario_mes(.:format)                  horario_mes#create
+              new_horario_me GET    /horario_mes/new(.:format)              horario_mes#new
+             edit_horario_me GET    /horario_mes/:id/edit(.:format)         horario_mes#edit
+                  horario_me GET    /horario_mes/:id(.:format)              horario_mes#show
+                             PATCH  /horario_mes/:id(.:format)              horario_mes#update
+                             PUT    /horario_mes/:id(.:format)              horario_mes#update
+                             DELETE /horario_mes/:id(.:format)              horario_mes#destroy
+                   registros GET    /registros(.:format)                    registros#index
+                             POST   /registros(.:format)                    registros#create
+                new_registro GET    /registros/new(.:format)                registros#new
+               edit_registro GET    /registros/:id/edit(.:format)           registros#edit
+                    registro GET    /registros/:id(.:format)                registros#show
+                             PATCH  /registros/:id(.:format)                registros#update
+                             PUT    /registros/:id(.:format)                registros#update
+                             DELETE /registros/:id(.:format)                registros#destroy
+                   servicios GET    /servicios(.:format)                    servicios#index
+                             POST   /servicios(.:format)                    servicios#create
+                new_servicio GET    /servicios/new(.:format)                servicios#new
+               edit_servicio GET    /servicios/:id/edit(.:format)           servicios#edit
+                    servicio GET    /servicios/:id(.:format)                servicios#show
+                             PATCH  /servicios/:id(.:format)                servicios#update
+                             PUT    /servicios/:id(.:format)                servicios#update
+                             DELETE /servicios/:id(.:format)                servicios#destroy
+                     comunas GET    /comunas(.:format)                      comunas#index
+                             POST   /comunas(.:format)                      comunas#create
+                  new_comuna GET    /comunas/new(.:format)                  comunas#new
+                 edit_comuna GET    /comunas/:id/edit(.:format)             comunas#edit
+                      comuna GET    /comunas/:id(.:format)                  comunas#show
+                             PATCH  /comunas/:id(.:format)                  comunas#update
+                             PUT    /comunas/:id(.:format)                  comunas#update
+                             DELETE /comunas/:id(.:format)                  comunas#destroy
+                  profesions GET    /profesions(.:format)                   profesions#index
+                             POST   /profesions(.:format)                   profesions#create
+               new_profesion GET    /profesions/new(.:format)               profesions#new
+              edit_profesion GET    /profesions/:id/edit(.:format)          profesions#edit
+                   profesion GET    /profesions/:id(.:format)               profesions#show
+                             PATCH  /profesions/:id(.:format)               profesions#update
+                             PUT    /profesions/:id(.:format)               profesions#update
+                             DELETE /profesions/:id(.:format)               profesions#destroy
+               cliente_index GET    /cliente/index(.:format)                cliente#index
+           profesional_index GET    /profesional/index(.:format)            profesional#index
+administrador_indexprincipal GET    /administrador/indexprincipal(.:format) administrador#indexprincipal
+         administrador_index GET    /administrador(.:format)                administrador#index
+                             POST   /administrador(.:format)                administrador#create
+           new_administrador GET    /administrador/new(.:format)            administrador#new
+          edit_administrador GET    /administrador/:id/edit(.:format)       administrador#edit
+               administrador GET    /administrador/:id(.:format)            administrador#show
+                             PATCH  /administrador/:id(.:format)            administrador#update
+                             PUT    /administrador/:id(.:format)            administrador#update
+                             DELETE /administrador/:id(.:format)            administrador#destroy
+      cliente_indexprincipal GET    /cliente/indexprincipal(.:format)       cliente#indexprincipal
+                             GET    /cliente(.:format)                      cliente#index
+                             POST   /cliente(.:format)                      cliente#create
+                 new_cliente GET    /cliente/new(.:format)                  cliente#new
+                edit_cliente GET    /cliente/:id/edit(.:format)             cliente#edit
+                     cliente GET    /cliente/:id(.:format)                  cliente#show
+                             PATCH  /cliente/:id(.:format)                  cliente#update
+                             PUT    /cliente/:id(.:format)                  cliente#update
+                             DELETE /cliente/:id(.:format)                  cliente#destroy
+  profesional_indexprincipal GET    /profesional/indexprincipal(.:format)   profesional#indexprincipal
+                             GET    /profesional(.:format)                  profesional#index
+                             POST   /profesional(.:format)                  profesional#create
+             new_profesional GET    /profesional/new(.:format)              profesional#new
+            edit_profesional GET    /profesional/:id/edit(.:format)         profesional#edit
+                 profesional GET    /profesional/:id(.:format)              profesional#show
+                             PATCH  /profesional/:id(.:format)              profesional#update
+                             PUT    /profesional/:id(.:format)              profesional#update
+                             DELETE /profesional/:id(.:format)              profesional#destroy
+            new_user_session GET    /users/sign_in(.:format)                devise/sessions#new
+                user_session POST   /users/sign_in(.:format)                devise/sessions#create
+        destroy_user_session DELETE /users/sign_out(.:format)               devise/sessions#destroy
+           new_user_password GET    /users/password/new(.:format)           devise/passwords#new
+          edit_user_password GET    /users/password/edit(.:format)          devise/passwords#edit
+               user_password PATCH  /users/password(.:format)               devise/passwords#update
+                             PUT    /users/password(.:format)               devise/passwords#update
+                             POST   /users/password(.:format)               devise/passwords#create
+    cancel_user_registration GET    /users/cancel(.:format)                 registrations#cancel
+       new_user_registration GET    /users/sign_up(.:format)                registrations#new
+      edit_user_registration GET    /users/edit(.:format)                   registrations#edit
+           user_registration PATCH  /users(.:format)                        registrations#update
+                             PUT    /users(.:format)                        registrations#update
+                             DELETE /users(.:format)                        registrations#destroy
+                             POST   /users(.:format)                        registrations#create
+              ingresar_index GET    /ingresar/index(.:format)               ingresar#index
+              historia_index GET    /historia/index(.:format)               historia#index
+                        root GET    /                                       principal#index
+                             DELETE /assigment/edit/:id(.:format)           assigment#eliminarPro
+                      Prefix Verb   URI Pattern                             Controller#Action
+                    horarios GET    /horarios(.:format)                     horarios#index
+                             POST   /horarios(.:format)                     horarios#create
+                 new_horario GET    /horarios/new(.:format)                 horarios#new
+                edit_horario GET    /horarios/:id/edit(.:format)            horarios#edit
+                     horario GET    /horarios/:id(.:format)                 horarios#show
+                             PATCH  /horarios/:id(.:format)                 horarios#update
+                             PUT    /horarios/:id(.:format)                 horarios#update
+                             DELETE /horarios/:id(.:format)                 horarios#destroy
+                 assignments GET    /assignments(.:format)                  assignments#index
+                             POST   /assignments(.:format)                  assignments#create
+              new_assignment GET    /assignments/new(.:format)              assignments#new
+             edit_assignment GET    /assignments/:id/edit(.:format)         assignments#edit
+                  assignment GET    /assignments/:id(.:format)              assignments#show
+                             PATCH  /assignments/:id(.:format)              assignments#update
+                             PUT    /assignments/:id(.:format)              assignments#update
+                             DELETE /assignments/:id(.:format)              assignments#destroy
+                  tipo_horas GET    /tipo_horas(.:format)                   tipo_horas#index
+                             POST   /tipo_horas(.:format)                   tipo_horas#create
+               new_tipo_hora GET    /tipo_horas/new(.:format)               tipo_horas#new
+              edit_tipo_hora GET    /tipo_horas/:id/edit(.:format)          tipo_horas#edit
+                   tipo_hora GET    /tipo_horas/:id(.:format)               tipo_horas#show
+                             PATCH  /tipo_horas/:id(.:format)               tipo_horas#update
+                             PUT    /tipo_horas/:id(.:format)               tipo_horas#update
+                             DELETE /tipo_horas/:id(.:format)               tipo_horas#destroy
+                 horario_dia GET    /horario_dia(.:format)                  horario_dia#index
+                             POST   /horario_dia(.:format)                  horario_dia#create
+            new_horario_dium GET    /horario_dia/new(.:format)              horario_dia#new
+           edit_horario_dium GET    /horario_dia/:id/edit(.:format)         horario_dia#edit
+                horario_dium GET    /horario_dia/:id(.:format)              horario_dia#show
+                             PATCH  /horario_dia/:id(.:format)              horario_dia#update
+                             PUT    /horario_dia/:id(.:format)              horario_dia#update
+                             DELETE /horario_dia/:id(.:format)              horario_dia#destroy
+                 horario_mes GET    /horario_mes(.:format)                  horario_mes#index
+                             POST   /horario_mes(.:format)                  horario_mes#create
+              new_horario_me GET    /horario_mes/new(.:format)              horario_mes#new
+             edit_horario_me GET    /horario_mes/:id/edit(.:format)         horario_mes#edit
+                  horario_me GET    /horario_mes/:id(.:format)              horario_mes#show
+                             PATCH  /horario_mes/:id(.:format)              horario_mes#update
+                             PUT    /horario_mes/:id(.:format)              horario_mes#update
+                             DELETE /horario_mes/:id(.:format)              horario_mes#destroy
+                   registros GET    /registros(.:format)                    registros#index
+                             POST   /registros(.:format)                    registros#create
+                new_registro GET    /registros/new(.:format)                registros#new
+               edit_registro GET    /registros/:id/edit(.:format)           registros#edit
+                    registro GET    /registros/:id(.:format)                registros#show
+                             PATCH  /registros/:id(.:format)                registros#update
+                             PUT    /registros/:id(.:format)                registros#update
+                             DELETE /registros/:id(.:format)                registros#destroy
+                   servicios GET    /servicios(.:format)                    servicios#index
+                             POST   /servicios(.:format)                    servicios#create
+                new_servicio GET    /servicios/new(.:format)                servicios#new
+               edit_servicio GET    /servicios/:id/edit(.:format)           servicios#edit
+                    servicio GET    /servicios/:id(.:format)                servicios#show
+                             PATCH  /servicios/:id(.:format)                servicios#update
+                             PUT    /servicios/:id(.:format)                servicios#update
+                             DELETE /servicios/:id(.:format)                servicios#destroy
+                     comunas GET    /comunas(.:format)                      comunas#index
+                             POST   /comunas(.:format)                      comunas#create
+                  new_comuna GET    /comunas/new(.:format)                  comunas#new
+                 edit_comuna GET    /comunas/:id/edit(.:format)             comunas#edit
+                      comuna GET    /comunas/:id(.:format)                  comunas#show
+                             PATCH  /comunas/:id(.:format)                  comunas#update
+                             PUT    /comunas/:id(.:format)                  comunas#update
+                             DELETE /comunas/:id(.:format)                  comunas#destroy
+                  profesions GET    /profesions(.:format)                   profesions#index
+                             POST   /profesions(.:format)                   profesions#create
+               new_profesion GET    /profesions/new(.:format)               profesions#new
+              edit_profesion GET    /profesions/:id/edit(.:format)          profesions#edit
+                   profesion GET    /profesions/:id(.:format)               profesions#show
+                             PATCH  /profesions/:id(.:format)               profesions#update
+                             PUT    /profesions/:id(.:format)               profesions#update
+                             DELETE /profesions/:id(.:format)               profesions#destroy
+               cliente_index GET    /cliente/index(.:format)                cliente#index
+           profesional_index GET    /profesional/index(.:format)            profesional#index
+administrador_indexprincipal GET    /administrador/indexprincipal(.:format) administrador#indexprincipal
+         administrador_index GET    /administrador(.:format)                administrador#index
+                             POST   /administrador(.:format)                administrador#create
+           new_administrador GET    /administrador/new(.:format)            administrador#new
+          edit_administrador GET    /administrador/:id/edit(.:format)       administrador#edit
+               administrador GET    /administrador/:id(.:format)            administrador#show
+                             PATCH  /administrador/:id(.:format)            administrador#update
+                             PUT    /administrador/:id(.:format)            administrador#update
+                             DELETE /administrador/:id(.:format)            administrador#destroy
+      cliente_indexprincipal GET    /cliente/indexprincipal(.:format)       cliente#indexprincipal
+                             GET    /cliente(.:format)                      cliente#index
+                             POST   /cliente(.:format)                      cliente#create
+                 new_cliente GET    /cliente/new(.:format)                  cliente#new
+                edit_cliente GET    /cliente/:id/edit(.:format)             cliente#edit
+                     cliente GET    /cliente/:id(.:format)                  cliente#show
+                             PATCH  /cliente/:id(.:format)                  cliente#update
+                             PUT    /cliente/:id(.:format)                  cliente#update
+                             DELETE /cliente/:id(.:format)                  cliente#destroy
+  profesional_indexprincipal GET    /profesional/indexprincipal(.:format)   profesional#indexprincipal
+                             GET    /profesional(.:format)                  profesional#index
+                             POST   /profesional(.:format)                  profesional#create
+             new_profesional GET    /profesional/new(.:format)              profesional#new
+            edit_profesional GET    /profesional/:id/edit(.:format)         profesional#edit
+                 profesional GET    /profesional/:id(.:format)              profesional#show
+                             PATCH  /profesional/:id(.:format)              profesional#update
+                             PUT    /profesional/:id(.:format)              profesional#update
+                             DELETE /profesional/:id(.:format)              profesional#destroy
+            new_user_session GET    /users/sign_in(.:format)                devise/sessions#new
+                user_session POST   /users/sign_in(.:format)                devise/sessions#create
+        destroy_user_session DELETE /users/sign_out(.:format)               devise/sessions#destroy
+           new_user_password GET    /users/password/new(.:format)           devise/passwords#new
+          edit_user_password GET    /users/password/edit(.:format)          devise/passwords#edit
+               user_password PATCH  /users/password(.:format)               devise/passwords#update
+                             PUT    /users/password(.:format)               devise/passwords#update
+                             POST   /users/password(.:format)               devise/passwords#create
+    cancel_user_registration GET    /users/cancel(.:format)                 registrations#cancel
+       new_user_registration GET    /users/sign_up(.:format)                registrations#new
+      edit_user_registration GET    /users/edit(.:format)                   registrations#edit
+           user_registration PATCH  /users(.:format)                        registrations#update
+                             PUT    /users(.:format)                        registrations#update
+                             DELETE /users(.:format)                        registrations#destroy
+                             POST   /users(.:format)                        registrations#create
+              ingresar_index GET    /ingresar/index(.:format)               ingresar#index
+              historia_index GET    /historia/index(.:format)               historia#index
+                        root GET    /                                       principal#index
+            eliminarServicio DELETE /assigment/edit/:id(.:format)           assigment#eliminarPro

@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :cliente
 
   get 'profesional/indexprincipal'
-  resources :profesional 
+  resources :profesional
 
 
 
@@ -33,12 +33,15 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   #get 'user/nuevoAdministrador'
- 
-  
+
+
   get 'ingresar/index'
   get 'historia/index'
   root 'principal#index'
-  
+
+  #para eliminar un servicio desde profesion
+  delete 'assigment/edit/:id',to:'assignments#eliminarPro', as: 'eliminarServicio'
+
    #los resources contienen:
   # get "/hours"		index
   # post "/hours"		create

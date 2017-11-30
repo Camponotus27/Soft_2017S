@@ -12,12 +12,12 @@
 <p>
   <strong> Servicios:</strong>
 
-  <% @profesion.servicios.each do |servicio| %>
+  <% @profesion.assignments.each do |assignment| %>
 
-  	<h1><%= servicio.nombre %></h1>
+  	<h1><%= assignment.servicio.nombre %></h1>
 
   		<div>
-  			<%= servicio.tarifa %> - <%= link_to "Eliminar" , @assignment , method: :delete %>
+  			<%= assignment.servicio.tarifa %> - <%= link_to "eliminarServicio" , eliminarServicio_path(assignment.id) , method: :delete %>
   		</div>
 
   <% end %>
