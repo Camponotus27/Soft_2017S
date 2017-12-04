@@ -53,11 +53,13 @@ a{
 
 }
 
-a,a:hover{
-	color: inherit !important;
+a:hover{
+		color: inherit !important;
+	background-color: rgba(0,0,0,0.0) !important;
 	text-decoration: none !important;
 	text-decoration-line: none !important; 
 }
+
 
 .ul_header{
 	margin-top: 0px;

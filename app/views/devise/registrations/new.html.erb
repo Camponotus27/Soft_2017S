@@ -1,5 +1,5 @@
 
- <div class="w3-container" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
+ <div class="w3-container w3-round-large" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
 
               <h2>Registrarse</h2>
 
@@ -60,20 +60,16 @@
                
           
 
-               <div class="row ">
-                  <div class="center-xs">
-
-                       <button type="submit" class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'>
-                              Registrarse
-                              </button>
-                              
-                       <a href= <%= new_user_session_path %>><button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'>
-                              Ingresar
-                             </button></a>
-
-
+              <div class="row  around-xs">
+                  <div class="col-xs-2  ">
+                          <button type="submit" class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'>
+                                        Registrarse
+                          </button>
                   </div>
-               </div>
+                       <div class="col-xs-2  ">
+                         <%= button_to "Iniciar",new_user_session_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %>                                             
+                       </div>
+              </div>
 
 
               <% end %>
