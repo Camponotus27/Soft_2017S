@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_ini: 2017-11-30
+  fecha_ter: 2017-11-30
+  dia_horario_semana_lunes: one
+  dia_horario_semana_martes: one
+  dia_horario_semana_miercoles: one
+  dia_horario_semana_jueves: one
+  dia_horario_semana_viernes: one
+  dia_horario_semana_sabado: one
+  dia_horario_semana_domingo: one
+
+two:
+  fecha_ini: 2017-11-30
+  fecha_ter: 2017-11-30
+  dia_horario_semana_lunes: two
+  dia_horario_semana_martes: two
+  dia_horario_semana_miercoles: two
+  dia_horario_semana_jueves: two
+  dia_horario_semana_viernes: two
+  dia_horario_semana_sabado: two
+  dia_horario_semana_domingo: two

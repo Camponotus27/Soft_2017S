@@ -1,0 +1,62 @@
+<%= form_with(model: horario_semana, local: true) do |form| %>
+  <% if horario_semana.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(horario_semana.errors.count, "error") %> prohibited this horario_semana from being saved:</h2>
+
+      <ul>
+      <% horario_semana.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fecha_ini %>
+    <%= form.date_select :fecha_ini, id: :horario_semana_fecha_ini %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_ter %>
+    <%= form.date_select :fecha_ter, id: :horario_semana_fecha_ter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_horario_semana_lunes_id %>
+    <%= form.text_field :dia_horario_semana_lunes_id, id: :horario_semana_dia_horario_semana_lunes_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_horario_semana_martes_id %>
+    <%= form.text_field :dia_horario_semana_martes_id, id: :horario_semana_dia_horario_semana_martes_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_horario_semana_miercoles_id %>
+    <%= form.text_field :dia_horario_semana_miercoles_id, id: :horario_semana_dia_horario_semana_miercoles_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_horario_semana_jueves_id %>
+    <%= form.text_field :dia_horario_semana_jueves_id, id: :horario_semana_dia_horario_semana_jueves_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_horario_semana_viernes_id %>
+    <%= form.text_field :dia_horario_semana_viernes_id, id: :horario_semana_dia_horario_semana_viernes_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_horario_semana_sabado_id %>
+    <%= form.text_field :dia_horario_semana_sabado_id, id: :horario_semana_dia_horario_semana_sabado_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_horario_semana_domingo_id %>
+    <%= form.text_field :dia_horario_semana_domingo_id, id: :horario_semana_dia_horario_semana_domingo_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

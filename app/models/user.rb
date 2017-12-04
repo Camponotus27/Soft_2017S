@@ -37,4 +37,14 @@ class User < ActiveRecord::Base
 
 
 
+
+#relaciones
+
+  has_many :usercomunas
+  has_many :comunas, through:  :usercomunas
+
+
+  has_many :userprofesions
+  has_many :profesions, through:  :userprofesions
+
 end

@@ -1,0 +1,32 @@
+<%= form_with(model: diahorario, local: true) do |form| %>
+  <% if diahorario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(diahorario.errors.count, "error") %> prohibited this diahorario from being saved:</h2>
+
+      <ul>
+      <% diahorario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :horario_semana_id %>
+    <%= form.text_field :horario_semana_id, id: :diahorario_horario_semana_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_horario_semana_id %>
+    <%= form.text_field :dia_horario_semana_id, id: :diahorario_dia_horario_semana_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia %>
+    <%= form.text_field :dia, id: :diahorario_dia %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

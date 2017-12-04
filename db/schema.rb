@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129212744) do
+ActiveRecord::Schema.define(version: 20171201000422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20171129212744) do
   create_table "assignments", force: :cascade do |t|
     t.bigint "profesion_id"
     t.bigint "servicio_id"
-    t.date "assigned_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profesion_id"], name: "index_assignments_on_profesion_id"
@@ -29,42 +28,49 @@ ActiveRecord::Schema.define(version: 20171129212744) do
     t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "users_id"
+    t.index ["users_id"], name: "index_comunas_on_users_id"
   end
 
-  create_table "horario_dia", force: :cascade do |t|
-    t.string "Hora1"
-    t.string "Hora2"
-    t.string "Hora3"
-    t.string "Hora4"
-    t.string "Hora5"
-    t.string "Hora6"
-    t.string "Hora7"
-    t.string "Hora8"
-    t.string "Hora9"
-    t.string "Hora10"
-    t.string "Hora11"
-    t.string "Hora12"
-    t.string "Hora13"
-    t.string "Hora14"
-    t.string "Hora15"
-    t.string "Hora16"
-    t.string "Hora17"
-    t.string "Hora18"
-    t.string "Hora19"
-    t.string "Hora20"
-    t.string "Hora21"
-    t.string "Hora22"
-    t.string "Hora23"
-    t.string "Hora24"
+  create_table "dia_horario_semanas", force: :cascade do |t|
+    t.date "fecha_dia"
+    t.integer "hora8"
+    t.integer "hora9"
+    t.integer "hora10"
+    t.integer "hora11"
+    t.integer "hora12"
+    t.integer "hora13"
+    t.integer "hora14"
+    t.integer "hora15"
+    t.integer "hora16"
+    t.integer "hora17"
+    t.integer "hora18"
+    t.integer "hora19"
+    t.integer "hora20"
+    t.integer "hora21"
+    t.integer "hora22"
+    t.integer "hora23"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "horario_mes", force: :cascade do |t|
-    t.integer "horario"
-    t.string "descripcion"
+  create_table "diahorarios", force: :cascade do |t|
+    t.bigint "horario_semana_id"
+    t.bigint "dia_horario_semana_id"
+    t.string "dia"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["dia_horario_semana_id"], name: "index_diahorarios_on_dia_horario_semana_id"
+    t.index ["horario_semana_id"], name: "index_diahorarios_on_horario_semana_id"
+  end
+
+  create_table "horario_semanas", force: :cascade do |t|
+    t.date "fecha_ini"
+    t.date "fecha_ter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "users_id"
+    t.index ["users_id"], name: "index_horario_semanas_on_users_id"
   end
 
   create_table "horarios", force: :cascade do |t|
@@ -83,6 +89,8 @@ ActiveRecord::Schema.define(version: 20171129212744) do
     t.string "servicio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "users_id"
+    t.index ["users_id"], name: "index_profesions_on_users_id"
   end
 
   create_table "registros", force: :cascade do |t|
@@ -104,11 +112,22 @@ ActiveRecord::Schema.define(version: 20171129212744) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tipo_horas", force: :cascade do |t|
-    t.string "descripcion"
-    t.string "dueno_hora"
+  create_table "usercomunas", force: :cascade do |t|
+    t.bigint "comuna_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["comuna_id"], name: "index_usercomunas_on_comuna_id"
+    t.index ["user_id"], name: "index_usercomunas_on_user_id"
+  end
+
+  create_table "userprofesions", force: :cascade do |t|
+    t.bigint "profesion_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profesion_id"], name: "index_userprofesions_on_profesion_id"
+    t.index ["user_id"], name: "index_userprofesions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -140,4 +159,13 @@ ActiveRecord::Schema.define(version: 20171129212744) do
 
   add_foreign_key "assignments", "profesions"
   add_foreign_key "assignments", "servicios"
+  add_foreign_key "comunas", "users", column: "users_id"
+  add_foreign_key "diahorarios", "dia_horario_semanas"
+  add_foreign_key "diahorarios", "horario_semanas"
+  add_foreign_key "horario_semanas", "users", column: "users_id"
+  add_foreign_key "profesions", "users", column: "users_id"
+  add_foreign_key "usercomunas", "comunas"
+  add_foreign_key "usercomunas", "users"
+  add_foreign_key "userprofesions", "profesions"
+  add_foreign_key "userprofesions", "users"
 end

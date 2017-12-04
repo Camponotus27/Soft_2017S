@@ -2,6 +2,18 @@ Rails.application.routes.draw do
 
 
 
+  resources :userprofesions
+  resources :usercomunas
+  resources :diahorarios
+  resources :horario_semanas
+  resources :dia_horario_semana_domingos
+  resources :dia_horario_semana_sabados
+  resources :dia_horario_semana_viernes
+  resources :dia_horario_semana_jueves
+  resources :dia_horario_semana_miercoles
+  resources :dia_horario_semana_martes
+  resources :dia_horario_semana_lunes
+  resources :dia_horario_semanas
   resources :horarios
   resources :assignments
   resources :tipo_horas
@@ -31,8 +43,13 @@ Rails.application.routes.draw do
 
 
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => {registrations: 'registrations'}
+
+  put 'registroprofesionales/update/:id', to: 'registroprofesionales#update' , as: 'updateRegistroprofesionales'
+
   #get 'user/nuevoAdministrador'
+
+  #get 'user/editdatos',to:'registrations#edit'
 
 
   get 'ingresar/index'

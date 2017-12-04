@@ -28,7 +28,7 @@ class AssignmentsController < ApplicationController
 
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }
+        format.html { redirect_to @assignment, notice: 'La relacion de creo satisfactoriamente.' }
         format.json { render :show, status: :created, location: @assignment }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AssignmentsController < ApplicationController
   def update
     respond_to do |format|
       if @assignment.update(assignment_params)
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully updated.' }
+        format.html { redirect_to @assignment, notice: 'La relacion se actualizo correctamente.' }
         format.json { render :show, status: :ok, location: @assignment }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AssignmentsController < ApplicationController
 
     @assignment.destroy
     respond_to do |format|
-      format.html { redirect_to assignments_url, notice: 'Assignment was successfully destroyed.' }
+      format.html { redirect_to assignments_url, notice: 'La relacion se ha eliminado correctamente.' }
       format.json { head :no_content }
     end
   end
@@ -65,7 +65,7 @@ class AssignmentsController < ApplicationController
   def eliminarPro
       @assignment.destroy
       respond_to do |format|
-        format.html {redirect_to root_path, notice: 'fue eliminado'}
+        format.html {redirect_to profesions_path, notice: 'Se elimino el servicio de la profesion.'}
       end
   end
 

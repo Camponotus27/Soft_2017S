@@ -43,9 +43,15 @@
                          <% end %>
 
                          <% if current_user.permiso == "profesional"%>
-                            <li class="col-md top_padding_list">
-                            <%= link_to "Eres un : Profesional", profesional_indexprincipal_path %>
-                            </li>
+                                  <% if  current_user.comuna == nil || current_user.profesion == nil %>
+                                               <li class="col-md top_padding_list">
+                                              <%= link_to "Eres un : Profesional", edit_user_registration_path %>
+                                              </li>
+                                  <% else %>
+                                          <li class="col-md top_padding_list">
+                                              <%= link_to "Eres un : Profesional", profesional_indexprincipal_path %>
+                                              </li>
+                                  <% end %>
                          <% end %>
 
                          <% if current_user.permiso == "administrador"%>

@@ -1,0 +1,52 @@
+<%= form_with(model: usercomuna, local: true) do |f| %>
+
+      
+<!--
+
+                                   <%= f.label :profesion ,  class:"form-text"%>
+                 
+                                    <div class="field" style="width: 100% ; height: 200px ; overflow-y: scroll ; overflow-x:  hidden;">
+                                  
+                                            <% Profesion.all.each  do |s| %>
+                                             
+
+                                                  <div class="field" >
+                                                    
+                                                        <%= check_box_tag  "profesions[]" , s.id %> <%= s.nombre%>
+
+                                                  </div>
+
+                                            <% end %> 
+
+                                    </div>
+
+                                  <%= f.label :comuna ,  class:"form-text"%>
+
+                                  <div class="field" style="width: 100% ; height: 200px ; overflow-y: scroll ; overflow-x:  hidden;">
+                                  
+                                            <% Comuna.all.each  do |s| %>
+                                             
+
+                                                  <div class="field" >
+                                                    
+                                                        <%= check_box_tag  "comunas[]" , s.id %> <%= s.nombre%>
+
+                                                  </div>
+
+                                            <% end %>    
+
+                                </div>
+               
+-->
+
+
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>

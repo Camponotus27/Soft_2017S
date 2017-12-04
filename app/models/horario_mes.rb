@@ -1,2 +1,0 @@
-class HorarioMes < ApplicationRecord
-end

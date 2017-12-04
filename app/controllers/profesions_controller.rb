@@ -7,7 +7,7 @@ class ProfesionsController < ApplicationController
 
   def show
       @assignments = Assignment.where( :profesion_id => @profesion.id )
-  end
+  end 
 
   def new
      @servicios = Servicio.all
@@ -38,7 +38,7 @@ class ProfesionsController < ApplicationController
     
     respond_to do |format|
       if @profesion.update(profesion_params)
-        format.html { redirect_to @profesion, notice: 'La profesion de cactualzo correctamente.' }
+        format.html { redirect_to @profesion, notice: 'La profesion de actualizo correctamente.' }
       else
         format.html { render :edit }
       end
@@ -60,6 +60,6 @@ class ProfesionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profesion_params
-      params.require(:profesion).permit(:nombre, :descripcion, :servicios)
+      params.require(:profesion).permit(:nombre, :descripcion)
     end
 end

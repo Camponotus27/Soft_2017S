@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horario_semana: one
+  dia_horario_semana: one
+  dia: MyString
+
+two:
+  horario_semana: two
+  dia_horario_semana: two
+  dia: MyString

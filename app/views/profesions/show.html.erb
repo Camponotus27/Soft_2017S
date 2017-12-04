@@ -7,15 +7,7 @@
       <%= @profesion.nombre %>
     </p>
 
-<<<<<<< HEAD
-  <% @profesion.assignments.each do |assignment| %>
 
-  	<h1><%= assignment.servicio.nombre %></h1>
-
-  		<div>
-  			<%= assignment.servicio.tarifa %> - <%= link_to "eliminarServicio" , eliminarServicio_path(assignment.id) , method: :delete %>
-  		</div>
-=======
     <p>
       <strong>Descripcion:</strong>
       <%= @profesion.descripcion %>
@@ -24,14 +16,13 @@
     <p>
       <strong> Servicios:</strong>
 
-      <% @profesion.servicios.each do |servicio| %>
->>>>>>> 6b4e00bdc7307cfec41a39bb3753707bdbc25dd8
+   <% @profesion.assignments.each do |assignment| %>
 
-      	<h1><%= servicio.nombre %></h1>
+    <h1><%= assignment.servicio.nombre %></h1>
 
-      		<div>
-      			<%= servicio.tarifa %> - <%= link_to "Eliminar" , @assignment , method: :delete %>
-      		</div>
+      <div>
+        <%= assignment.servicio.tarifa %> - <%= link_to "Eliminar" , eliminarServicio_path(assignment.id) , method: :delete %>
+      </div>
 
       <% end %>
     </p>

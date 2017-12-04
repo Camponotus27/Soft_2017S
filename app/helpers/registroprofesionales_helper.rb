@@ -1,0 +1,2 @@
+module RegistroprofesionalesHelper
+end

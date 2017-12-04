@@ -1,15 +1,68 @@
 
+ <div class="w3-container" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
              
 
-              <h2>Editar perfil <%# resource_name.to_s.humanize %></h2>
+              <h2>Editar perfil <% resource_name.to_s.humanize %></h2>
 
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
                 <%= devise_error_messages! %>
 
-                <div class="field">
-                  <%= f.label :email %><br />
-                  <%= f.email_field :email, autofocus: true , class:"form-control"  %>
+
+
+              <div class="field" style="width: 100% ; height: 200px ; overflow-y: scroll ; overflow-x:  hidden;">
+                      <%= f.label :comuna , class:"form-text" %><br>
+                      <%= hidden_field_tag "user[comuna_ids][]", nil %>
+                      <% Comuna.all.each do |comuna| %>
+                          <%= check_box_tag "user[comuna_ids][]", comuna.id %>
+                          <%= label_tag dom_id(comuna), comuna.nombre %><br>
+
+                      <% end %>
+              </div>
+
+                <div class="field" style="width: 100% ; height: 200px ; overflow-y: scroll ; overflow-x:  hidden;">
+                      <%= f.label :profesion , class:"form-text" %><br>
+                      <%# hidden_field_tag "user[profesion_ids][]", "hola" %>
+                      <% Profesion.all.each do |profesion| %>
+                          <%= check_box_tag "user[profesion_ids][]", profesion.id, id: dom_id(profesion) %>
+                          <%= label_tag dom_id(profesion), profesion.nombre %><br>
+                      <% end %>
                 </div>
+
+
+
+                <div class="field">
+                      <%= f.label :nombre , class:"form-text"%><br />
+                      <%= f.text_field :nombre , autofocus: true , class:"form-control" %>
+                </div>
+
+                 <div class="field">
+                      <%= f.label :apellido_paterno , class:"form-text"%><br />
+                      <%= f.text_field :apellido_paterno, class:"form-control" %>
+                </div>
+
+                 <div class="field">
+                      <%= f.label :apellido_materno , class:"form-text"%><br />
+                      <%= f.text_field :apellido_materno, class:"form-control" %>
+                </div>
+
+                <div class="field">
+                      <%= f.label :rut , class:"form-text"%><br />
+                      <%= f.text_field :rut, class:"form-control" %>
+                </div>
+
+
+                <div class="field">
+
+                      <%= f.label :numero_contacto , "Numero de contacto", class:"form-text"%><br />
+                      <%= f.text_field :numero_contacto, class:"form-control"%>
+                </div>
+
+
+                  <div class="field">
+                      <%= f.label :email , class:"form-text"%><br />
+                      <%= f.email_field :email, class:"form-control"%>
+                </div>
+
 
                 <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                   <div>Actualmnete se espera confirmacion de: <%= resource.unconfirmed_email %></div>
@@ -35,11 +88,11 @@
                 </div>
 
                 <div class="actions">
-                  <%= f.submit "Update" %>
+                  <%= f.submit "Actualizar Informacion" , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %>
                 </div>
               <% end %>
 
-              <div class="w3-container" style="background-color: #EDF7FF">
+              <div class="w3-container" style="background-color: #EDF7FF ; margin-top: 50px">
 
 
                       <h3>Cancelar mi cuenta</h3>
@@ -49,5 +102,7 @@
               </div>
 
 
-
               <dir class="row"><%= button_to "Atras",root_path , :method => :get ,   class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+ 
+</div>

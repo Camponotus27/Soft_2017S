@@ -2,6 +2,9 @@ class Profesion < ApplicationRecord
 
 	has_many :assignments
 	has_many :servicios, through:  :assignments
+
+	has_many :userprofesions
+    has_many :users, through:  :userprofesions
 	
 
 	after_create :save_servicios
@@ -22,4 +25,4 @@ class Profesion < ApplicationRecord
 		end
 	end
 
-end
+end 
