@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
 
+  has_many :horarios
 
   validates :rut, :rut => {:message => "no valido"}, allow_blank: true
-  validates :rut, :rut => {:message => "no puede estar vacio"}
+  validates :rut, :presence => {:message => "no puede estar vacio"}
 
   validates :rut,  :uniqueness => {:message => "ya regitrado"}, allow_blank: true
 

@@ -1,55 +1,63 @@
+ <div class="w3-container" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
 
                 
-                 <h2>Inicio sesion</h2>
+                       <h2>Inicio sesion</h2>
 
-                   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 
-          
-
-                <div class="field">
-                  <%= f.label :email, class:"form-text" %><br />
-                  <%= f.email_field :email , autofocus: true, class:"form-control"%>
-                </div>
-
-                <div class="field">
-                  <%= f.label :contraseña , class:"form-text"%><br />
-                  <%= f.password_field :password, autocomplete: "off", class:"form-control"%>
-                </div>
-
-                <% if devise_mapping.rememberable? -%>
-                  <div class= "field row  form-text">
-                    <%= f.check_box :remember_me , class:"check-box"%>
-                    <%= f.label :recordar %>
-                  </div>
-                <% end -%>
-
-                <div class="row ">
-                          <div class="center-xs">
-                           
-                              <button type="submit" class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
-                              Ingresar
-                              </button>
-      
-                         
-                </div>
-            
- <% end %>  
                 
-             
 
-                </div>
+                      <div class="field">
+                        <%= f.label :email, class:"form-text" %><br />
+                        <%= f.email_field :email , autofocus: true, class:"form-control"%>
+                      </div>
 
-                <div class="Olvidar-contraseña">
-                      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-                        <%= link_to "Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
+                      <div class="field">
+                        <%= f.label :contraseña , class:"form-text"%><br />
+                        <%= f.password_field :password, autocomplete: "off", class:"form-control"%>
+                      </div>
+
+                      <% if devise_mapping.rememberable? -%>
+                        <div class= "field row  form-text">
+                          <%= f.check_box :remember_me , class:"check-box"%>
+                          <%= f.label :recordar %>
+                        </div>
                       <% end -%>
-                </div>
-                
-                <div class="row ">  <a href= <%= new_user_registration_path %>><button class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
-                              Nuevo Usuario</button></a>
 
-
-                        <p class="SubTestoNuevoUsuario">Si no tienes cuenta, crea una facilmente en este boton</p>
-                </div>
+                      <div class="row ">
+                                <div class="center-xs">
+                                 
+                                    <button type="submit" class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'> 
+                                    Ingresar
+                                    </button>
+            
+                               
+                      </div>
+                  
+       <% end %>  
+                      
                    
+
+                      </div>
+
+                      <div class="Olvidar-contraseña">
+                            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                              <%= link_to "Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
+                            <% end -%>
+                      </div>
+                      
+                      <div class="row  "> 
+
+
+                         <%= button_to "Nuevo Usuario",new_user_registration_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> 
+
+
+                        
+
+                      </div>
+                         
+                      <p class="SubTestoNuevoUsuario" style="margin: 0px">Si no tienes cuenta, crea una facilmente en este boton</p>
+
+
+</div>

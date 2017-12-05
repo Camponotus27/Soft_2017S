@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :horarios
   resources :userprofesions
   resources :usercomunas
   resources :diahorarios
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
   resources :dia_horario_semana_martes
   resources :dia_horario_semana_lunes
   resources :dia_horario_semanas
-  resources :horarios
   resources :assignments
   resources :tipo_horas
   resources :horario_dia

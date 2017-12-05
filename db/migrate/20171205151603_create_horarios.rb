@@ -1,11 +1,12 @@
 class CreateHorarios < ActiveRecord::Migration[5.1]
   def change
     create_table :horarios do |t|
-      t.string :comuna
+      t.string :profesional
+      t.string :zona
       t.date :fecha
-      t.time :hora
-      t.boolean :disponible
-      t.text :comentario
+      t.string :hora
+      t.boolean :disponibilidad
+      t.string :descripcion
 
       t.timestamps
     end

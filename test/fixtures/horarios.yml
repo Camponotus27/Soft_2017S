@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  comuna: MyString
-  fecha: 2017-11-29
-  hora: 2017-11-29 18:27:44
-  disponible: false
-  comentario: MyText
+  profesional: MyString
+  zona: MyString
+  fecha: 2017-12-05
+  hora: MyString
+  disponibilidad: false
+  descripcion: MyString
 
 two:
-  comuna: MyString
-  fecha: 2017-11-29
-  hora: 2017-11-29 18:27:44
-  disponible: false
-  comentario: MyText
+  profesional: MyString
+  zona: MyString
+  fecha: 2017-12-05
+  hora: MyString
+  disponibilidad: false
+  descripcion: MyString

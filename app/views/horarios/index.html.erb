@@ -5,31 +5,50 @@
 <table>
   <thead>
     <tr>
-      <th>Comuna</th>
+      <th>Profesional</th>
+      <th>Zona</th>
       <th>Fecha</th>
       <th>Hora</th>
-      <th>Disponible</th>
-      <th>Comentario</th>
+      <th>Disponibilidad</th>
+      <th>Descripcion</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
+
     <% @horarios.each do |horario| %>
       <tr>
-        <td><%= horario.comuna %></td>
+        <td><%= horario.profesional %></td>
+        <td><%= horario.zona %></td>
         <td><%= horario.fecha %></td>
         <td><%= horario.hora %></td>
-        <td><%= horario.disponible %></td>
-        <td><%= horario.comentario %></td>
-        <td><%= link_to 'Mostrar', horario %></td>
-        <td><%= link_to 'Modificar', edit_horario_path(horario) %></td>
-        <td><%= link_to 'Eliminar', horario, method: :delete, data: { confirm: '¿Seguro que desea eliminar?' } %></td>
-      </tr>
-    <% end %>
+        <td><%= horario.disponibilidad %></td>
+        <td><%= horario.descripcion %></td>
+
+
+
+                       <% if current_user.nombre == horario.profesional%>
+                       <td><%= link_to 'Edit', edit_horario_path(horario) %></td>
+                       <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                     </tr> <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+
+                  <% else %>
+                  <% if current_user.permiso == "administrador"%>
+                  <td><%= link_to 'Edit', edit_horario_path(horario) %></td>
+                  <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr> <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+                <% end %>
+                <% end %>
+
+
+                <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'Nuevo Horario', new_horario_path %>
+<%= link_to 'New Horario', new_horario_path %>
