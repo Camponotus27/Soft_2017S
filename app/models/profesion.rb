@@ -1,9 +1,9 @@
 class Profesion < ApplicationRecord
 
-	has_many :assignments
+	has_many :assignments , :dependent => :destroy
 	has_many :servicios, through:  :assignments
 
-	has_many :userprofesions
+	has_many :userprofesions , :dependent => :destroy
     has_many :users, through:  :userprofesions
 	
 

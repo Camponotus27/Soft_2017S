@@ -43,13 +43,34 @@
                          <% end %>
 
                          <% if current_user.permiso == "profesional"%>
-                                  <% if  current_user.comuna == nil || current_user.profesion == nil %>
+
+                                         <% array4 = Array.new %>
+
+                                         <%  Userprofesion.all.each do |s| %> 
+                                                    <% if  array4.include?(s.user_id)%>
+                                                    
+                                                    <%else%>
+                                                        <% array4.push s.user_id %>
+                                                    <%end%>
+
+                                         <% end %>
+
+                                         <%  Usercomuna.all.each do |s| %>                
+                                                    <% if  array4.include?(s.user_id)%>
+                                                    
+                                                    <%else%>
+                                                        <% array4.push s.user_id %>
+                                                    <%end%>
+                                         <% end %>
+
+
+                                  <% if  array4.include?(current_user.id)  %>
                                                <li class="col-md top_padding_list">
-                                              <%= link_to "Eres un : Profesional", edit_user_registration_path %>
+                                              <%= link_to "Eres un : Profesional", profesional_indexprincipal_path %>
                                               </li>
                                   <% else %>
                                           <li class="col-md top_padding_list">
-                                              <%= link_to "Eres un : Profesional", profesional_indexprincipal_path %>
+                                              <%= link_to "Eres un : Profesional", edit_user_registration_path %>
                                               </li>
                                   <% end %>
                          <% end %>
@@ -157,7 +178,9 @@ function w3_close() {
                 <% end %>
 
                 	<div class = "margin_todo" style="z-index: 1s;">
+
                 		<%= yield %>
+
                 	</div>
 
     </div>

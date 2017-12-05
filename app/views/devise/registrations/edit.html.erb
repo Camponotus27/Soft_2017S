@@ -2,35 +2,126 @@
  <div class="w3-container" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
              
 
+
               <h2>Editar perfil <% resource_name.to_s.humanize %></h2>
 
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
                 <%= devise_error_messages! %>
 
+                       <% array2 = Array.new %>
+
+                       <%  Usercomuna.all.each do |usercomuna| %>
+
+                         <% array2.push usercomuna.comuna_id %>
+
+                       <% end %>
 
 
-              <div class="field" style="width: 100% ; height: 200px ; overflow-y: scroll ; overflow-x:  hidden;">
-                      <%= f.label :comuna , class:"form-text" %><br>
-                      <%= hidden_field_tag "user[comuna_ids][]", nil %>
-                      <% Comuna.all.each do |comuna| %>
-                          <%= check_box_tag "user[comuna_ids][]", comuna.id %>
-                          <%= label_tag dom_id(comuna), comuna.nombre %><br>
+                          <% array3 = Array.new %>
 
-                      <% end %>
-              </div>
+                       <%  Userprofesion.all.each do |userprofesion| %>
 
-                <div class="field" style="width: 100% ; height: 200px ; overflow-y: scroll ; overflow-x:  hidden;">
-                      <%= f.label :profesion , class:"form-text" %><br>
-                      <%# hidden_field_tag "user[profesion_ids][]", "hola" %>
-                      <% Profesion.all.each do |profesion| %>
-                          <%= check_box_tag "user[profesion_ids][]", profesion.id, id: dom_id(profesion) %>
-                          <%= label_tag dom_id(profesion), profesion.nombre %><br>
-                      <% end %>
-                </div>
+                         <% array3.push userprofesion.profesion_id %>
+
+                       <% end %>
 
 
 
-                <div class="field">
+
+
+
+                        <div onclick="myFunction('Demo1')" class="w3-btn w3-block w3-left-align" style="background-color: #40F23F"><%= f.label :comuna , class:"form-text" %></div>
+
+
+                        <div id="Demo1" class="w3-container w3-hide">
+                      
+
+                                <div class="field" style="width: 100% ; height: 200px ; overflow-y: scroll ; overflow-x:  hidden;">
+                                        
+                              
+                                        <% Comuna.all.each do |comuna| %>
+
+
+
+                                            <% if  array2.any? { |item| item == comuna.id } %>
+
+                                            <%= check_box_tag "user[comuna_ids][]", comuna.id , checked = true%>
+                                            <%= comuna.nombre %><br>
+
+                                            <% else %>
+
+                                              <%= check_box_tag "user[comuna_ids][]", comuna.id , checked = false %>
+                                            <%= comuna.nombre %><br>
+
+                                            <% end %>
+
+                                        <% end %>
+                                </div>
+                      
+                        </div>
+
+                    
+
+                        <script>
+
+                        function myFunction(id) {
+                            var x = document.getElementById(id);
+                            if (x.className.indexOf("w3-show") == -1) {
+                                x.className += " w3-show";
+                            } else { 
+                                x.className = x.className.replace(" w3-show", "");
+                            }
+                        }
+                        </script>
+
+
+           
+
+
+
+                      <div onclick="myFunction('Demo2')" class="w3-btn w3-block w3-left-align" style="background-color: #40F23F"> <%= f.label :profesion , class:"form-text" %></div>
+                    <div id="Demo2" class="w3-container w3-hide">
+                  
+                                   <div class="field" style="width: 100% ; height: 200px ; overflow-y: scroll ; overflow-x:  hidden;">
+                             
+
+                              <% Profesion.all.each do |profesion| %>
+
+
+                                  <% if  array3.any? { |item| item == profesion.id } %>
+
+                                  <%= check_box_tag "user[profesion_ids][]", profesion.id , checked = true %>
+                                  <%= profesion.nombre %><br>
+
+                                  <% else %>
+
+                                  <%= check_box_tag "user[profesion_ids][]", profesion.id , checked = false %>
+                                  <%= profesion.nombre %><br>
+
+                                  <% end %>
+
+                              <% end %>
+                                 </div>
+                  
+                    </div>
+
+                
+
+                    <script>
+                    function myFunction(id) {
+                        var x = document.getElementById(id);
+                        if (x.className.indexOf("w3-show") == -1) {
+                            x.className += " w3-show";
+                        } else { 
+                            x.className = x.className.replace(" w3-show", "");
+                        }
+                    }
+                    </script>
+
+
+
+
+                <div class="field" style="margin-top: 10px">
                       <%= f.label :nombre , class:"form-text"%><br />
                       <%= f.text_field :nombre , autofocus: true , class:"form-control" %>
                 </div>
@@ -87,8 +178,10 @@
                   <%= f.password_field :current_password, autocomplete: "off" , class:"form-control"  %>
                 </div>
 
-                <div class="actions">
+                <div class="actions row">
                   <%= f.submit "Actualizar Informacion" , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %>
+
+                  <%= button_to "Atras", root_path , :method => :get ,   class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %>
                 </div>
               <% end %>
 
@@ -102,7 +195,7 @@
               </div>
 
 
-              <dir class="row"><%= button_to "Atras",root_path , :method => :get ,   class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+            
 
  
 </div>
