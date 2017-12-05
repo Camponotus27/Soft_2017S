@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201000422) do
+ActiveRecord::Schema.define(version: 20171205151603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,11 +74,12 @@ ActiveRecord::Schema.define(version: 20171201000422) do
   end
 
   create_table "horarios", force: :cascade do |t|
-    t.string "comuna"
+    t.string "profesional"
+    t.string "zona"
     t.date "fecha"
-    t.time "hora"
-    t.boolean "disponible"
-    t.text "comentario"
+    t.string "hora"
+    t.boolean "disponibilidad"
+    t.string "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -4,7 +4,7 @@
               <h2>Registrarse</h2>
 
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-              
+
                 <%= devise_error_messages! %>
 
 
@@ -56,9 +56,18 @@
                   <%= f.label :password_confirmation, "Confirmar contraseña" ,class:"form-text" %><br />
                   <%= f.password_field :password_confirmation, autocomplete: "off" , class:"form-control"%>
                 </div>
-                
-               
-          
+                <div class="field">
+                 <h1>Esto de rol es temporal!!</h1>
+                 <%= f.label :rol %><br />
+                 <select name = "user[permiso]" id="user_permiso">
+                   <option value="">selecione rol</option>
+                   <option value="cliente">Cliente</option>
+                   <option value="profesional">Especialista</option>
+                   <option value="administrador">Administrador</option>
+                 </select>
+             </div>
+
+
 
               <div class="row  around-xs">
                   <div class="col-xs-2  ">
@@ -67,7 +76,7 @@
                           </button>
                   </div>
                        <div class="col-xs-2  ">
-                         <%= button_to "Iniciar",new_user_session_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %>                                             
+                         <%= button_to "Iniciar",new_user_session_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %>
                        </div>
               </div>
 

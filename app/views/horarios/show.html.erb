@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Comuna:</strong>
-  <%= @horario.comuna %>
+  <strong>Profesional:</strong>
+  <%= @horario.profesional %>
+</p>
+
+<p>
+  <strong>Zona:</strong>
+  <%= @horario.zona %>
 </p>
 
 <p>
@@ -16,14 +21,14 @@
 </p>
 
 <p>
-  <strong>Disponible:</strong>
-  <%= @horario.disponible %>
+  <strong>Disponibilidad:</strong>
+  <%= @horario.disponibilidad %>
 </p>
 
 <p>
-  <strong>Comentario:</strong>
-  <%= @horario.comentario %>
+  <strong>Descripcion:</strong>
+  <%= @horario.descripcion %>
 </p>
 
-<%= link_to 'Modificar', edit_horario_path(@horario) %> |
-<%= link_to 'Volver', horarios_path %>
+<%= link_to 'Edit', edit_horario_path(@horario) %> |
+<%= link_to 'Back', horarios_path %>

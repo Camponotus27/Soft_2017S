@@ -1,7 +1,7 @@
 class ProfesionalController < ApplicationController
-  
   def index
     @profesionals = User.where( :permiso => "profesional")
+    @horarios = Horario.all
   end
 
   def show
@@ -34,7 +34,7 @@ class ProfesionalController < ApplicationController
 
       else
         format.html { render :edit  , notice: 'No se actualizo'}
-  
+
       end
     end
 
