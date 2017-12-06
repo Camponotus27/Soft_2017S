@@ -36,7 +36,7 @@ a {
 
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: none;
   }
 }
 
@@ -60,8 +60,9 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: #F26A6E;
   display: table;
+  border-radius:8px;
 }
 
 #error_explanation {
@@ -69,7 +70,12 @@ div {
   border: 2px solid red;
   padding: 7px 7px 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #F2DEDE;
+
+
+  margin: 10px;
+  border-radius:8px;
+  color: #a94442 ;
 
   h2 {
     text-align: left;
