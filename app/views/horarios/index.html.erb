@@ -24,7 +24,20 @@
         <td><%= horario.zona %></td>
         <td><%= horario.fecha %></td>
         <td><%= horario.hora %></td>
-        <td><%= horario.disponibilidad %></td>
+
+
+      <% if horario.disponibilidad == false %>
+      <td>Disponible
+      </td>
+
+        <% end %>
+
+        <% if horario.disponibilidad == true %>
+        <td>No disponible
+
+        </td>
+    <% end %>
+
         <td><%= horario.descripcion %></td>
 
 
