@@ -44,26 +44,53 @@
 
         <div class="field">
           <%= form.label :servicio%>
-            <% @servicios.each  do |s|%>
 
-                         
-                                      <div class="field" >
-                                        
-                                            <% if  array.any? { |item| item == s.id }%>
+           <% if array.empty? == false%>
+                    <% @servicios.each  do |s|%>
 
-                                                  <%= check_box_tag  "servicios[]" , s.id  %> <%= s.nombre %>    
+                                 
+                                        <div class="field" >
+                                                         
+                                                                  <% if  array.any? { |item| item == s.id }%>
+                                                               
+                                                                        <%= check_box_tag  "servicios[]" , s.id  %> <%= s.nombre %>   
 
-                                            <% end  %>
+                                                                  <% end  %> 
+                                                          
+                                                    
 
-                                      </div>
+                                        </div>
 
 
-            <% end %>    
+                    <% end %>    
+          <% else %>
+            No hay mas servicios para mostrar
+          <% end %>
+
 
         </div>
 
 
-        <div class="actions">
-          <%= form.submit %>
-        </div>
+     <div class="row  around-xs">
+                                <div class="col-xs-2  ">
+                                      
+
+                                        <button type="submit" class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'>
+                                                      Guardar
+                                        </button>
+                                  
+                                </div>
+
+                               <div class="col-xs-2  ">
+                           
+                                  <%= button_tag "Atras", :type => 'button', :class => "w3-button w3-border w3-red w3-hover-blue boton_padding", :onclick => "location.href = '#{profesions_path}'"%>
+                              </dir>
+
+
+                             
+          </div>
+
+
+
+
       <% end %>

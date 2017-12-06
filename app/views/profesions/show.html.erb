@@ -20,16 +20,25 @@
 
     <h1><%= assignment.servicio.nombre %></h1>
 
-      <div>
-        <%= assignment.servicio.tarifa %> - <%= link_to "Eliminar" , eliminarServicio_path(assignment.id) , method: :delete %>
+      <div class="row middle-xs" style="">
+         <strong> Tarifa: </strong><%= assignment.servicio.tarifa %> -> <%= button_to "Eliminar" , eliminarServicio_path(assignment.id) , method: :delete , :class => "w3-button w3-border w3-red w3-hover-blue boton_padding"  %>
       </div>
 
       <% end %>
     </p>
 
 
+          <div class="row  around-xs">
+                          
 
-    <%= link_to 'Edit', edit_profesion_path(@profesion) %> |
-    <%= link_to 'Back', profesions_path %>
+                               <div class="col-xs-2  ">
+                           
+                                  <%= button_tag "Atras", :type => 'button', :class => "w3-button w3-border w3-red w3-hover-blue boton_padding", :onclick => "location.href = '#{profesions_path}'"%>
+                              </dir>
+
+
+                             
+          </div>
+
 
   </div>

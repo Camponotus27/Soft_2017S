@@ -43,9 +43,41 @@
                          <% end %>
 
                          <% if current_user.permiso == "profesional"%>
+<<<<<<< HEAD
                             <li class="col-md top_padding_list">
                             <%= link_to "Eres un : Profesional", profesional_indexprincipal_path %>
                             </li>
+=======
+                                         <% array4 = Array.new %>
+
+                                         <%  Userprofesion.all.each do |s| %> 
+                                                    <% if  array4.include?(s.user_id)%>
+                                                    
+                                                    <%else%>
+                                                        <% array4.push s.user_id %>
+                                                    <%end%>
+
+                                         <% end %>
+
+                                         <%  Usercomuna.all.each do |s| %>                
+                                                    <% if  array4.include?(s.user_id)%>
+                                                    
+                                                    <%else%>
+                                                        <% array4.push s.user_id %>
+                                                    <%end%>
+                                         <% end %>
+
+
+                                  <% if  array4.include?(current_user.id)  %>
+                                               <li class="col-md top_padding_list">
+                                              <%= link_to "Eres un : Profesional", profesional_indexprincipal_path %>
+                                              </li>
+                                  <% else %>
+                                          <li class="col-md top_padding_list">
+                                              <%= link_to "Eres un : Profesional", edit_user_registration_path %>
+                                              </li>
+                                  <% end %>
+>>>>>>> 26e2720b9904c04b75180b0557dfb1448b3f8c31
                          <% end %>
 
                          <% if current_user.permiso == "administrador"%>

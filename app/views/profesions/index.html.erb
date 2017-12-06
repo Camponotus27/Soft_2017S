@@ -44,33 +44,42 @@
 
                 <br>
 
-                <div class="row">
-                  
-                  <dir><%= button_to "Nuevo",new_profesion_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+          
 
-               
-                        <% if current_user.permiso == "cliente"%>
+                    <div class="row  around-xs">
+                                <div class="col-xs-2  ">
+                                      
+                                    <%= button_to "Nuevo",new_profesion_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %>
+                                       
+                                  
+                                </div>
 
-                           <dir><%= button_to "Atrás", cliente_indexprincipal_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+                                 <div class="col-xs-2  ">
+                             
+                                        <% if current_user.permiso == "cliente"%>
 
-
-                          <% end %>
-
-                         <% if current_user.permiso == "profesional"%>
-                           
-                              <dir><%= button_to "Atrás", profesional_indexprincipal_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
-                            
-                         <% end %>
-
-                         <% if current_user.permiso == "administrador"%>
-
-                            <dir><%= button_to "Atrás", administrador_indexprincipal_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
-                
-                         <% end %>
+                                     <%= button_to "Atrás", cliente_indexprincipal_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %>
 
 
+                                    <% end %>
 
-                </div>
+                                   <% if current_user.permiso == "profesional"%>
+                                     
+                                        <%= button_to "Atrás", profesional_indexprincipal_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> 
+                                      
+                                   <% end %>
+
+                                   <% if current_user.permiso == "administrador"%>
+
+                                      <%= button_to "Atrás", administrador_indexprincipal_path, :method => :get , class: "w3-button w3-border w3-red w3-hover-blue boton_padding" %>
+                          
+                                   <% end %>
+
+                                </dir>
+
+
+                             
+          </div>
 
       </div>
 </div>

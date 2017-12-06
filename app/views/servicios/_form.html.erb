@@ -12,16 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nombre %>
-    <%= form.text_field :nombre, id: :servicio_nombre %>
+    <%= form.label :nombre, class:"form-text" %>
+    <%= form.text_field :nombre, id: :servicio_nombre , class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :tarifa %>
-    <%= form.text_field :tarifa, id: :servicio_tarifa %>
+    <%= form.label :tarifa, class:"form-text" %>
+    <%= form.text_field :tarifa, id: :servicio_tarifa  , class:"form-control"%>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  
+
+
+          <div class="row  around-xs">
+                                <div class="col-xs-2  ">
+                                      
+
+                                        <button type="submit" class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'>
+                                                      Guardar
+                                        </button>
+                                  
+                                </div>
+
+                               <div class="col-xs-2  ">
+                           
+                                  <%= button_tag "Atras", :type => 'button', :class => "w3-button w3-border w3-red w3-hover-blue boton_padding", :onclick => "location.href = '#{servicios_path}'"%>
+                              </dir>
+
+
+                             
+          </div>
+
+
 <% end %>
