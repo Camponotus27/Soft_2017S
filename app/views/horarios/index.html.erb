@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Horarios</h1>
+<div class="w3-container w3-white" >
 
 <table>
   <thead>
@@ -28,27 +29,46 @@
 
 
 
+        <% if current_user.permiso == "cliente"%>
+        <% if horario.disponibilidad == false%>
+
+                        <td><%= link_to 'agendar', edit_horario_path(horario) %></td>
+                        <% end %>
+
+                        <% end %>
+
                        <% if current_user.nombre == horario.profesional%>
-                       <td><%= link_to 'Edit', edit_horario_path(horario) %></td>
+                       <td><%= link_to 'Editar', edit_horario_path(horario) %></td>
                        <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                     </tr> <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                        <td><%= link_to 'Modificar', edit_horario_path(horario) %></td>
+                      </tr>
+
+                      <% end %>
 
 
-
-                  <% else %>
                   <% if current_user.permiso == "administrador"%>
-                  <td><%= link_to 'Edit', edit_horario_path(horario) %></td>
+                  <td><%= link_to 'Editar', edit_horario_path(horario) %></td>
                   <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                </tr> <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to 'Modificar', edit_horario_path(horario) %></td>
+                </tr>
 
                 <% end %>
                 <% end %>
 
 
-                <% end %>
+
+
+
+
   </tbody>
 </table>
 
 <br>
+<p>
+</div>
+<% if current_user.permiso != "cliente"%>
 
-<%= link_to 'New Horario', new_horario_path %>
+<%= link_to 'Crear nuevo horario', new_horario_path %>
+<% end %>
+
+</p>
