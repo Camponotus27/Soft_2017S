@@ -1,3 +1,7 @@
+
+
+
+
 <%= form_with(model: horario, local: true) do |form| %>
   <% if horario.errors.any? %>
     <div id="error_explanation">
@@ -43,14 +47,31 @@
 </p>
 
 
-    <div class="field">
 
 
-          <%= form.label :Direccion_de_atencion %>
 
-      <%= form.text_field :descripcion, id: :horario_descripcion %>
-    </div>
+<div class="field">
+  <%= form.label :cliente %>
+  <%= form.select(:cliente) do %>
+    <% [[current_user.nombre, current_user.nombre]].each do |c| -%>
+      <%= content_tag(:option, c.first, value: c.last) %>
+    <% end %>
+      <% end %>
+  </div>
 
+  <div class="field">
+    <%= form.label :apellido %>
+    <%= form.select(:apellido) do %>
+      <% [[current_user.apellido_paterno, current_user.apellido_paterno]].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+        <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion_de_atencion %>
+    <%= form.text_field :direccion_de_atencion, id: :horario_direccion_de_atencion %>
+  </div>
     <div class="w3-container w3-purple" style="margin-bottom: 14px">
           "recuerde indicar una direccioon de acuerdo a la zona de atencion (zona 1, zona 2, zona 3)"</h5>
         </div>
@@ -99,7 +120,8 @@
   <div class="field">
     <%= form.label :fecha %>
 
-    <%= form.date_select :fecha, date: { after: Proc.new { Date.today }, message: 'must be after today' }, id: :horario_fecha %>
+    <%= form.date_select :fecha,  id: :horario_fecha %>
+
   </div>
 
   <div class="field">
@@ -142,6 +164,11 @@
   <div class="field">
     <%= form.label :disponibilidad %>
     <%= form.check_box :disponibilidad, id: :horario_disponibilidad %>
+  </div>
+
+ <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :horario_descripcion %>
   </div>
 
 

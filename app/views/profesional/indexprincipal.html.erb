@@ -1,68 +1,41 @@
- <div class="w3-container" style="background-color: rgba(33,150,243,0.9);">
+<div class="w3-container" style="background-color: rgba(33,150,243,0.9);">
 
 
-             <% if current_user.nombre != ""  %>
-				<h1>Bienvenido <%= current_user.nombre%>! </h1>
-			 <% else %>
-			 	<h1>Bienvenido!</h1>
-          	 <% end %>
+            <% if current_user.nombre != ""  %>
+       <h1>Bienvenido <%= current_user.nombre%>! </h1>
+      <% else %>
+       <h1>Bienvenido!</h1>
+            <% end %>
 
-             <dir class="row">
-                  <h3>Elije que vamos a hacer hoy</h3>
-             </dir>
-
-
-      <div class="w3-container w3-blue">
-
-        <h2>Administrar horario de atencion:</h2>
-
-               <div class="row ">
-<<<<<<< HEAD
-                                   <% array5 = Array.new %>
-
-                                <%  HorarioSemana.all.each do |s| %> 
-                                                    <% if  array5.include?(s.users_id)%>
-                                                    
-                                                    <%else%>
-                                                        <% array5.push s.users_id %>
-                                                    <%end%>
-
-                                <% end %>
-                        
-
-                                <% if  array5.include?(current_user.id)%>
-
-                                       <dir><%= button_to "Mi horario" , horario_semana_path(current_user.id), :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
-
-                                 <% else%>
-
-                                        <dir><%= button_to "Mi horario" , new_horario_semana_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+            <dir class="row">
+                 <h3>Elije que vamos a hacer hoy</h3>
+            </dir>
 
 
-                                 <% end %>
-  
-=======
+     <div class="w3-container w3-blue">
 
-                 <      <dir><%= button_to "Agendar hora" , horarios_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
- </dir>
-
->>>>>>> 2062869b825c52678801fbc5418ff2835972377d
-              </div>
-
-      </div>
-
-      <div class="w3-container w3-blue">
-
-
-              <h2>Tus datos:</h2>
+       <h2>Administrar horario de atencion:</h2>
 
               <div class="row ">
 
-                        <dir><%= button_to "Editar perfil", edit_user_registration_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+                       <dir><%= button_to "Mis horarios" , horarios_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
 
-              </div>
+             </div>
 
-      </div>
+     </div>
+
+     <div class="w3-container w3-blue">
 
 
-			    </div>
+             <h2>Tus datos:</h2>
+
+             <div class="row ">
+
+                       <dir><%= button_to "Editar perfil", edit_user_registration_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+             </div>
+
+     </div>
+
+
+         </div>

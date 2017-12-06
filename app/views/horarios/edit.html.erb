@@ -1,11 +1,6 @@
-
-
+<h1>Editing Horario</h1>
 
 <%= render 'form', horario: @horario %>
 
-
-<% if current_user.permiso != "cliente"%>   <div class="field">
-
 <%= link_to 'Show', @horario %> |
 <%= link_to 'Back', horarios_path %>
-<% end %>
