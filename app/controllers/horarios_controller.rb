@@ -6,9 +6,8 @@ class HorariosController < ApplicationController
   def index
     @horarios = Horario.all
     @administrador  = User.name
-
-
   end
+
 
   # GET /horarios/1
   # GET /horarios/1.json
@@ -65,6 +64,8 @@ class HorariosController < ApplicationController
   end
 
   private
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_horario
       @horario = Horario.find(params[:id])

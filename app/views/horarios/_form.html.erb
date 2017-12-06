@@ -2,40 +2,88 @@
   <% if horario.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(horario.errors.count, "error") %> prohibited this horario from being saved:</h2>
-
       <ul>
       <% horario.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
+    <% end %>
+
+  <% if current_user.permiso == "cliente"%>   <div class="field">
+    <div class="field">
+      <%= form.label :disponibilidad %>
+      <%= form.check_box :disponibilidad, id: :horario_disponibilidad %>
+    </div>
+    <p>
+      <strong>Profesional:</strong>
+      <%= @horario.profesional %>
+    </p>
+
+    <p>
+      <strong>Zona:</strong>
+      <%= @horario.zona %>
+    </p>
+
+    <p>
+      <strong>Fecha:</strong>
+      <%= @horario.fecha %>
+    </p>
+
+    <p>
+      <strong>Hora:</strong>
+      <%= @horario.hora %>
+    </p>
+
+    <p>
+      <strong>Disponibilidad:</strong>
+      <%= @horario.disponibilidad %>
+    </p>
+
+    <p>
+      <strong>Descripcion:</strong>
+      <%= @horario.descripcion %>
+    </p>
+
+    <dir><%= button_to "Actualizar", horario_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+
+    <% end %>
+
+
+
+    <% if current_user.permiso != "cliente"%>   <div class="field">
+
+  <% if current_user.permiso == "administrador"%>   <div class="field">
+    <%= form.label :profesional %>
+    <%= form.text_field :profesional, id: :horario_profesional %>
+   </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :profesional %>
-    <% if current_user.permiso == "administrador"%>
-    <%= form.text_field :profesional, id: :horario_profesional %>
 
-
-<% else %>
-<%= form.select(:profesional) do %>
-
+<% if current_user.permiso == "profesional"%> <%= form.select(:profesional) do %>
   <% [[current_user.nombre, current_user.nombre]].each do |c| -%>
     <%= content_tag(:option, c.first, value: c.last) %>
   <% end %>
     <% end %>
 <% end %>
+
 </div>
-  <div class="field">
+
+
+<div class="field">
     <%= form.label :zona %>
     <%= form.select(:zona) do %>
-  <% [['zona 1 ', "zona 1"], ['zona 2', 'zona 2'], ['zona 3', 'zona 3']].each do |c| -%>
+  <% [['zona 1 ', 'zona 1'], ['zona 2', 'zona 2'], ['zona 3', 'zona 3']].each do |c| %>
     <%= content_tag(:option, c.first, value: c.last) %>
   <% end %>
 <% end %>
 </div>
+
+
   <div class="field">
     <%= form.label :fecha %>
+
     <%= form.date_select :fecha, id: :horario_fecha %>
   </div>
 
@@ -76,18 +124,21 @@
   <% end %>
   </div>
 
-
   <div class="field">
     <%= form.label :disponibilidad %>
     <%= form.check_box :disponibilidad, id: :horario_disponibilidad %>
   </div>
+
 
   <div class="field">
     <%= form.label :descripcion %>
     <%= form.text_field :descripcion, id: :horario_descripcion %>
   </div>
 
+
   <div class="actions">
     <%= form.submit %>
   </div>
+  <% end %>
+
 <% end %>
