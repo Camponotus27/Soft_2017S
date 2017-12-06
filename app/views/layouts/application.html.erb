@@ -43,8 +43,6 @@
                          <% end %>
 
                          <% if current_user.permiso == "profesional"%>
-<<<<<<< HEAD
-
                                          <% array4 = Array.new %>
 
                                          <%  Userprofesion.all.each do |s| %> 
@@ -74,11 +72,6 @@
                                               <%= link_to "Eres un : Profesional", edit_user_registration_path %>
                                               </li>
                                   <% end %>
-=======
-                            <li class="col-md top_padding_list">
-                            <%= link_to "Eres un : Profesional", profesional_indexprincipal_path %>
-                            </li>
->>>>>>> 41fb61e6a1302b9cf20248fae27769c0745ca884
                          <% end %>
 
                          <% if current_user.permiso == "administrador"%>

@@ -8,6 +8,11 @@
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
                 <%= devise_error_messages! %>
 
+
+
+
+                <%if current_user.permiso == "profesional"%>
+
                        <% array2 = Array.new %>
 
                        <%  Usercomuna.all.each do |usercomuna| %>
@@ -119,7 +124,7 @@
                     </script>
 
 
-
+    <%end%>
 
                 <div class="field" style="margin-top: 10px">
                       <%= f.label :nombre , class:"form-text"%><br />
@@ -181,7 +186,7 @@
                 <div class="actions row">
                   <%= f.submit "Actualizar Informacion" , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %>
 
-                  <%= button_to "Atras", root_path , :method => :get ,   class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %>
+                  <%= button_tag "Atras", :type => 'button', :class => "w3-button w3-border w3-red w3-hover-blue boton_padding", :onclick => "location.href = '#{root_path}'"%>
                 </div>
               <% end %>
 

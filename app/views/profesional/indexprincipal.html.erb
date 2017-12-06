@@ -16,9 +16,29 @@
 
         <h2>Administrar horario de atencion:</h2>
 
-               <div class="row ">           
-                      
-                        <dir><%= button_to "Mis horarios" , horario_mes_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+               <div class="row ">
+                                   <% array5 = Array.new %>
+
+                                <%  HorarioSemana.all.each do |s| %> 
+                                                    <% if  array5.include?(s.users_id)%>
+                                                    
+                                                    <%else%>
+                                                        <% array5.push s.users_id %>
+                                                    <%end%>
+
+                                <% end %>
+                        
+
+                                <% if  array5.include?(current_user.id)%>
+
+                                       <dir><%= button_to "Mi horario" , horario_semana_path(current_user.id), :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+                                 <% else%>
+
+                                        <dir><%= button_to "Mi horario" , new_horario_semana_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+
+                                 <% end %>
   
               </div>
 

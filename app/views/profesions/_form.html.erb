@@ -1,3 +1,6 @@
+
+
+
 <%= form_with(model: profesion, local: true) do |form| %>
   <% if profesion.errors.any? %>
     <div id="error_explanation">
@@ -12,18 +15,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nombre %>
-    <%= form.text_field :nombre, id: :profesion_nombre %>
+    <%= form.label :nombre , class:"form-text"%>
+    <%= form.text_field :nombre, id: :profesion_nombre , class:"form-control"%>
   </div>
 
   <div class="field">
-    <%= form.label :descripcion %>
-    <%= form.text_field :descripcion, id: :profesion_descripcion %>
+    <%= form.label :descripcion, class:"form-text" %>
+    <%= form.text_area :descripcion, id: :profesion_descripcion  , class:"form-control"%>
   </div>
 
   <div class="field">
     <%= form.label :servicio%>
-      <% @servicios.each  do |s|%>
+      <% Servicio.all.each  do |s|%>
        
 
             <div class="field" >
@@ -37,7 +40,27 @@
   </div>
 
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
+
+
+
+          <div class="row  around-xs">
+                                <div class="col-xs-2  ">
+                                      
+
+                                        <button type="submit" class = 'w3-button w3-border w3-green w3-hover-blue boton_padding'>
+                                                      Guardar
+                                        </button>
+                                  
+                                </div>
+
+                               <div class="col-xs-2  ">
+                           
+                                  <%= button_tag "Atras", :type => 'button', :class => "w3-button w3-border w3-red w3-hover-blue boton_padding", :onclick => "location.href = '#{profesions_path}'"%>
+                              </dir>
+
+
+                             
+          </div>
+
 <% end %>
