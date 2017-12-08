@@ -42,11 +42,6 @@
       <%= @horario.hora %>
     </p>
 
-<p>
-<%=  Date.today %>
-</p>
-
-
 
 
 
@@ -67,6 +62,7 @@
       <% end %>
         <% end %>
   </div>
+
 
   <div class="field">
     <%= form.label :direccion_de_atencion %>
@@ -90,6 +86,7 @@
 
     <% if current_user.permiso != "cliente"%>   <div class="field">
 
+
   <% if current_user.permiso == "administrador"%>   <div class="field">
     <%= form.label :profesional %>
     <%= form.text_field :profesional, id: :horario_profesional %>
@@ -97,7 +94,10 @@
   <% end %>
 
 
-<% if current_user.permiso == "profesional"%> <%= form.select(:profesional) do %>
+<% if current_user.permiso == "profesional"%>
+<%= form.label :profesional %>
+
+ <%= form.select(:profesional) do %>
   <% [[current_user.nombre, current_user.nombre]].each do |c| -%>
     <%= content_tag(:option, c.first, value: c.last) %>
   <% end %>
@@ -117,10 +117,13 @@
 </div>
 
 
+
+
+
   <div class="field">
     <%= form.label :fecha %>
 
-    <%= form.date_select :fecha,  id: :horario_fecha %>
+    <%= form.date_select :fecha,  id: :horario_fecha, start_year: Date.today.year  %>
 
   </div>
 
@@ -161,13 +164,8 @@
   <% end %>
   </div>
 
-  <div class="field">
-    <%= form.label :disponibilidad %>
-    <%= form.check_box :disponibilidad, id: :horario_disponibilidad %>
-  </div>
-
  <div class="field">
-    <%= form.label :descripcion %>
+    <%= form.label :Llenar_luego_de_realizar_atencion %>
     <%= form.text_field :descripcion, id: :horario_descripcion %>
   </div>
 

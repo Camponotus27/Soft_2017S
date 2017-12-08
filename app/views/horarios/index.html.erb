@@ -9,26 +9,41 @@
       <th>Zona</th>
       <th>Fecha</th>
       <th>Hora</th>
-      <% if current_user.permiso != "cliente"%>   <div class="field">
 
             <th>Disponibilidad</th>
-            <% end %>
 
       <th>Direccion de atencion</th>
-      <th>Descripcion</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
+
+<% variable = 0 %>
+
+    <% @horarios.each do |horario| %>
+    <% if horario.fecha  >= Date.today%></td>
+    <% if current_user.permiso == "cliente"%>
+    <% if  current_user.nombre == horario.cliente %>
+    <% if   current_user.apellido_paterno == horario.apellido%>
+
+    <% variable = 5 %>
+    <% end %> <% end %> <% end %> <% end %> <% end %>
+
+
     <% @horarios.each do |horario| %>
       <tr>
+
+        <% if horario.fecha  >= Date.today%></td>
+        <% if variable = 0 %>
 
 
         <td><%= horario.profesional %></td>
         <td><%= horario.zona %></td>
-        <td><%= horario.fecha %></td>
+
         <td><%= horario.hora %></td>
+
+
         <% if horario.disponibilidad == false %>
      <td>Disponible
      </td>
@@ -73,9 +88,11 @@
 
                 <% end %>
                 <% end %>
+                <% end %>
 
 
 
+                <% end %>
 
 
 
