@@ -1,4 +1,7 @@
 class ProfesionalController < ApplicationController
+
+  
+
   def index
     @profesionals = User.where( :permiso => "profesional")
     @horarios = Horario.all

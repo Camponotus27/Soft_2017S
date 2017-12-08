@@ -1,15 +1,255 @@
-<p id="notice"><%= notice %></p>
+ <div class="w3-container" style="margin-bottom: 14px ; background-color:rgba(255,255,255,0.6);">
+		<p>
+		  <strong>Fecha ini:</strong>
+		  <%= @horario_semana.fecha_ini %>
+		</p>
 
-<p>
-  <strong>Fecha ini:</strong>
-  <%= @horario_semana.fecha_ini %>
-</p>
+		<p>
+		  <strong>Fecha ter:</strong>
+		  <%= @horario_semana.fecha_ter %>
+		</p>
 
-<p>
-  <strong>Fecha ter:</strong>
-  <%= @horario_semana.fecha_ter %>
-</p>
+		<%= link_to 'Cambiar fecha calendario vigente', edit_horario_semana_path(@horario_semana) %>
 
 
-<%= link_to 'Edit', edit_horario_semana_path(@horario_semana) %> |
-<%= link_to 'Back', horario_semanas_path %>
+<table style="margin-bottom: 10px; margin-top: 10px">
+	<tr>
+		<th>No disponible</th>
+		<th>Disponble</th>
+		<th>Reservado</th>
+	</tr>
+
+	<tr>
+		<td id="No_disponible" style="background: #DEDEDE ; height: 20px;"></td>
+		<td id="Disponble" style="background: #00E818 ;height: 20px;""></td>
+		<td id="Reservado" style="background: #FA0000 ; height: 20px;"></td>
+	</tr>
+	
+</table>
+
+
+
+<script type="text/javascript">
+
+		function color(x){
+	   if($('#No_disponible').css('background') == $(x).css('background')) {
+	         x.style.background='#00E818';
+           document.getElementById(x.id).setAttribute('value','1');
+		}
+		else{
+			     x.style.background='#DEDEDE';
+           document.getElementById(x.id).setAttribute('value','0');
+		}
+
+    
+	}
+
+</script>
+
+<script type="text/javascript">
+
+</script>
+
+
+<script type="text/javascript">
+  
+    function gurdardatos(){
+
+         <% DiaHorarioSemana.create("fecha_dia" => "2017-12-05 20:16:23.646543", "hora8" => 0, "hora9" => 0 , "hora10" => 0, "hora11" => 0, "hora12" => 0 , "hora13" => 0, "hora14" => 0, "hora15" => 0 , "hora16" => 0, "hora17" => 0, "hora18" => 0 , "hora19" => 0, "hora20" => 0, "hora21" => 0 , "hora22" => 0, "hora23" => 0) %>
+       
+              alert( $("#bloque1").value);
+       
+    }
+</script>
+
+
+
+<table id="customers">
+  <tr>
+  	<th>Horas</th>
+    <th>Lunes</th>
+    <th>Mertes</th>
+    <th>Miercoles</th>
+    <th>Juebes</th>
+    <th>Viernes</th>
+    <th>Sabado</th>
+    <th>Domingo</th>
+  </tr>
+  <tr>
+    <td>08:00-09:00</td>
+    <td id="bloque1" value ="0" onclick = "color(this)"></td>
+    <td id="bloque2" onclick = "color(this)"></td>
+    <td id="bloque3" onclick = "color(this)"></td>
+    <td id="bloque4" onclick = "color(this)"></td>
+    <td id="bloque5" onclick = "color(this)"></td>
+    <td id="bloque6" onclick = "color(this)"></td>
+    <td id="bloque7" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>09:00-10:00</td>
+    <td id="bloque8" onclick = "color(this)"></td>
+    <td id="bloque9" onclick = "color(this)"></td>
+    <td id="bloque10" onclick = "color(this)"></td>
+    <td id="bloque11" onclick = "color(this)"></td>
+    <td id="bloque12" onclick = "color(this)"></td>
+    <td id="bloque13" onclick = "color(this)"></td>
+    <td id="bloque14" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+  	<td>10:00-11:00</td>
+    <td id="bloque15" onclick = "color(this)"></td>
+    <td id="bloque16" onclick = "color(this)"></td>
+    <td id="bloque17" onclick = "color(this)"></td>
+    <td id="bloque18" onclick = "color(this)"></td>
+    <td id="bloque19" onclick = "color(this)"></td>
+    <td id="bloque20" onclick = "color(this)"></td>
+    <td id="bloque21" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>11:00-12:00</td>
+    <td id="bloque22" onclick = "color(this)"></td>
+    <td id="bloque23" onclick = "color(this)"></td>
+    <td id="bloque24" onclick = "color(this)"></td>
+    <td id="bloque25" onclick = "color(this)"></td>
+    <td id="bloque26" onclick = "color(this)"></td>
+    <td id="bloque27" onclick = "color(this)"></td>
+    <td id="bloque28" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>12:00-13:00</td>
+    <td id="bloque29" onclick = "color(this)"></td>
+    <td id="bloque30" onclick = "color(this)"></td>
+    <td id="bloque31" onclick = "color(this)"></td>
+    <td id="bloque32" onclick = "color(this)"></td>
+    <td id="bloque33" onclick = "color(this)"></td>
+    <td id="bloque34" onclick = "color(this)"></td>
+    <td id="bloque35" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>13:00-14:00</td>
+    <td id="bloque36" onclick = "color(this)"></td>
+    <td id="bloque37" onclick = "color(this)"></td>
+    <td id="bloque38" onclick = "color(this)"></td>
+    <td id="bloque39" onclick = "color(this)"></td>
+    <td id="bloque40" onclick = "color(this)"></td>
+    <td id="bloque41" onclick = "color(this)"></td>
+    <td id="bloque42" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>14:00-15:00</td>
+    <td id="bloque43" onclick = "color(this)"></td>
+    <td id="bloque44" onclick = "color(this)"></td>
+    <td id="bloque45" onclick = "color(this)"></td>
+    <td id="bloque46" onclick = "color(this)"></td>
+    <td id="bloque47" onclick = "color(this)"></td>
+    <td id="bloque48" onclick = "color(this)"></td>
+    <td id="bloque49" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>15:00-16:00</td>
+    <td id="bloque50" onclick = "color(this)"></td>
+    <td id="bloque51" onclick = "color(this)"></td>
+    <td id="bloque52" onclick = "color(this)"></td>
+    <td id="bloque53" onclick = "color(this)"></td>
+    <td id="bloque54" onclick = "color(this)"></td>
+    <td id="bloque55" onclick = "color(this)"></td>
+    <td id="bloque56" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>16:00-17:00</td>
+    <td id="bloque57" onclick = "color(this)"></td>
+    <td id="bloque58" onclick = "color(this)"></td>
+    <td id="bloque59" onclick = "color(this)"></td>
+    <td id="bloque60" onclick = "color(this)"></td>
+    <td id="bloque61" onclick = "color(this)"></td>
+    <td id="bloque62" onclick = "color(this)"></td>
+    <td id="bloque63" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>17:00-18:00</td>
+    <td id="bloque64" onclick = "color(this)"></td>
+    <td id="bloque65" onclick = "color(this)"></td>
+    <td id="bloque66" onclick = "color(this)"></td>
+    <td id="bloque67" onclick = "color(this)"></td>
+    <td id="bloque68" onclick = "color(this)"></td>
+    <td id="bloque69" onclick = "color(this)"></td>
+    <td id="bloque70" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>18:00-19:00</td>
+    <td id="bloque71" onclick = "color(this)"></td>
+    <td id="bloque72" onclick = "color(this)"></td>
+    <td id="bloque73" onclick = "color(this)"></td>
+    <td id="bloque74" onclick = "color(this)"></td>
+    <td id="bloque75" onclick = "color(this)"></td>
+    <td id="bloque76" onclick = "color(this)"></td>
+    <td id="bloque77" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>19:00-20:00</td>
+    <td id="bloque78" onclick = "color(this)"></td>
+    <td id="bloque79" onclick = "color(this)"></td>
+    <td id="bloque80" onclick = "color(this)"></td>
+    <td id="bloque81" onclick = "color(this)"></td>
+    <td id="bloque82" onclick = "color(this)"></td>
+    <td id="bloque83" onclick = "color(this)"></td>
+    <td id="bloque84" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>20:00-21:00</td>
+    <td id="bloque85" onclick = "color(this)"></td>
+    <td id="bloque86" onclick = "color(this)"></td>
+    <td id="bloque87" onclick = "color(this)"></td>
+    <td id="bloque88" onclick = "color(this)"></td>
+    <td id="bloque89" onclick = "color(this)"></td>
+    <td id="bloque90" onclick = "color(this)"></td>
+    <td id="bloque91" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>21:00-22:00</td>
+    <td id="bloque92" onclick = "color(this)"></td>
+    <td id="bloque93" onclick = "color(this)"></td>
+    <td id="bloque94" onclick = "color(this)"></td>
+    <td id="bloque95" onclick = "color(this)"></td>
+    <td id="bloque96" onclick = "color(this)"></td>
+    <td id="bloque97" onclick = "color(this)"></td>
+    <td id="bloque98" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>22:00-23:00</td>
+    <td id="bloque99" onclick = "color(this)"></td>
+    <td id="bloque100" onclick = "color(this)"></td>
+    <td id="bloque101" onclick = "color(this)"></td>
+    <td id="bloque102" onclick = "color(this)"></td>
+    <td id="bloque103" onclick = "color(this)"></td>
+    <td id="bloque104" onclick = "color(this)"></td>
+    <td id="bloque105" onclick = "color(this)"></td>
+  </tr>
+  <tr>
+    <td>23:00-24:00</td>
+    <td id="bloque106" onclick = "color(this)"></td>
+    <td id="bloque107" onclick = "color(this)"></td>
+    <td id="bloque108" onclick = "color(this)"></td>
+    <td id="bloque109" onclick = "color(this)"></td>
+    <td id="bloque110" onclick = "color(this)"></td>
+    <td id="bloque111" onclick = "color(this)"></td>
+    <td id="bloque112" onclick = "color(this)"></td>
+  </tr>
+</table>
+
+
+          <div class="row  around-xs">
+                          <div class="col-xs-2  ">
+                                
+                                <button class = "w3-button w3-border w3-green w3-hover-blue boton_padding"  onclick = " gurdardatos() ">Guardar Horario</button>
+                                  
+                          </div>
+                               <div class="col-xs-2  ">
+                           
+                                <%= button_to 'Back', profesional_indexprincipal_path , class: "w3-button w3-border w3-red w3-hover-blue boton_padding" %>
+
+                          </dir>
+          </div>
+
+
+</div>

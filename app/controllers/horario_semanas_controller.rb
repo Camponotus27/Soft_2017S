@@ -1,4 +1,5 @@
 class HorarioSemanasController < ApplicationController
+
   before_action :set_horario_semana, only: [:show, :edit, :update, :destroy]
 
   # GET /horario_semanas
@@ -15,6 +16,8 @@ class HorarioSemanasController < ApplicationController
   # GET /horario_semanas/new
   def new
     @horario_semana = HorarioSemana.new
+    @horario_semana.users_id = current_user.id
+    @horario_semana.id = current_user.id
   end
 
   # GET /horario_semanas/1/edit
@@ -25,7 +28,9 @@ class HorarioSemanasController < ApplicationController
   # POST /horario_semanas.json
   def create
     @horario_semana = HorarioSemana.new(horario_semana_params)
-
+    @horario_semana.users_id = current_user.id
+    @horario_semana.id = current_user.id
+    
     respond_to do |format|
       if @horario_semana.save
         format.html { redirect_to @horario_semana, notice: 'Horario semana was successfully created.' }
@@ -69,6 +74,8 @@ class HorarioSemanasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def horario_semana_params
-      params.require(:horario_semana).permit(:fecha_ini, :fecha_ter, :dia_horario_semana_lunes_id, :dia_horario_semana_martes_id, :dia_horario_semana_miercoles_id, :dia_horario_semana_jueves_id, :dia_horario_semana_viernes_id, :dia_horario_semana_sabado_id, :dia_horario_semana_domingo_id)
+      params.require(:horario_semana).permit(:fecha_ini, :fecha_ter)
     end
+
+
 end
