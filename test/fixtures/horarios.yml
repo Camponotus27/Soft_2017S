@@ -3,15 +3,23 @@
 one:
   profesional: MyString
   zona: MyString
-  fecha: 2017-12-05
+  fecha: 2017-12-06
   hora: MyString
   disponibilidad: false
+  cliente: MyString
+  apellido: MyString
+  direccion_de_atencion: MyString
+  habilitado: false
   descripcion: MyString
 
 two:
   profesional: MyString
   zona: MyString
-  fecha: 2017-12-05
+  fecha: 2017-12-06
   hora: MyString
   disponibilidad: false
+  cliente: MyString
+  apellido: MyString
+  direccion_de_atencion: MyString
+  habilitado: false
   descripcion: MyString

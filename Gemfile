@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rut_validation'
-
+gem 'date_validator', '~> 0.9.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'

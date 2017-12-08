@@ -1,4 +1,5 @@
  <div class="w3-container" style="background-color: rgba(33,150,243,0.9);">
+<div class="w3-container" style="background-color: rgba(33,150,243,0.9);">
 
 
              <% if current_user.nombre != ""  %>
@@ -6,16 +7,22 @@
 			 <% else %>
 			 	<h1>Bienvenido!</h1>
           	 <% end %>
+            <% if current_user.nombre != ""  %>
+       <h1>Bienvenido <%= current_user.nombre%>! </h1>
+      <% else %>
+       <h1>Bienvenido!</h1>
+            <% end %>
 
-             <dir class="row">
-                  <h3>Elije que vamos a hacer hoy</h3>
-             </dir>
+            <dir class="row">
+                 <h3>Elije que vamos a hacer hoy</h3>
+            </dir>
 
 
-      <div class="w3-container w3-blue">
+     <div class="w3-container w3-blue">
 
-        <h2>Administrar horario de atencion:</h2>
+       <h2>Administrar horario de atencion:</h2>
 
+<<<<<<< HEAD
                <div class="row ">
 
                                    <% array5 = Array.new %>
@@ -47,9 +54,17 @@
 
 
               </div>
+=======
+              <div class="row ">
 
-      </div>
+                       <dir><%= button_to "Mis horarios" , horarios_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
 
+             </div>
+>>>>>>> d7e08b4ccbee52ddfe024ec2dcc574ff128f3e38
+
+     </div>
+
+<<<<<<< HEAD
                   <div class="w3-container w3-blue">
 
 
@@ -62,6 +77,20 @@
                             </div>
 
                   </div>
+=======
+     <div class="w3-container w3-blue">
 
 
-			    </div>
+             <h2>Tus datos:</h2>
+
+             <div class="row ">
+
+                       <dir><%= button_to "Editar perfil", edit_user_registration_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+             </div>
+
+     </div>
+>>>>>>> d7e08b4ccbee52ddfe024ec2dcc574ff128f3e38
+
+
+         </div>

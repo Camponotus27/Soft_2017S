@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="w3-container w3-yellow" style="margin-bottom: 14px">
+
 <p>
   <strong>Profesional:</strong>
   <%= @horario.profesional %>
@@ -20,15 +23,33 @@
   <%= @horario.hora %>
 </p>
 
+
+<% if current_user.permiso != "cliente"%>   <div class="field">
+
 <p>
-  <strong>Disponibilidad:</strong>
-  <%= @horario.disponibilidad %>
+  <strong>Cliente:</strong>
+  <%= @horario.cliente %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @horario.apellido %>
+</p>
+<% end %>
+
+<p>
+  <strong>Direccion de atencion:</strong>
+  <%= @horario.direccion_de_atencion %>
 </p>
 
 <p>
   <strong>Descripcion:</strong>
   <%= @horario.descripcion %>
 </p>
+<% if current_user.permiso != "cliente"%>   <div class="field">
 
-<%= link_to 'Edit', edit_horario_path(@horario) %> |
-<%= link_to 'Back', horarios_path %>
+<%= link_to 'Modificar', edit_horario_path(@horario) %> |
+<% end %>
+
+<%= link_to 'Volver a horarios', horarios_path %>
+</div>

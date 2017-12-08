@@ -1,3 +1,7 @@
+
+
+
+
 <%= form_with(model: horario, local: true) do |form| %>
   <% if horario.errors.any? %>
     <div id="error_explanation">
@@ -9,12 +13,15 @@
       </ul>
     </div>
     <% end %>
-
+    <% if current_user.permiso != "cliente"%>   <div class="field">
+    <h1>Creacion de horario</h1>
+    <% end %>
   <% if current_user.permiso == "cliente"%>   <div class="field">
-    <div class="field">
-      <%= form.label :disponibilidad %>
-      <%= form.check_box :disponibilidad, id: :horario_disponibilidad %>
-    </div>
+    <div class="w3-container w3-yellow" style="margin-bottom: 14px">
+      <% if current_user.permiso == "cliente"%>   <div class="field">
+      <h1>Reserva de hora</h1>
+      <% end %>
+
     <p>
       <strong>Profesional:</strong>
       <%= @horario.profesional %>
@@ -35,24 +42,50 @@
       <%= @horario.hora %>
     </p>
 
-    <p>
-      <strong>Disponibilidad:</strong>
-      <%= @horario.disponibilidad %>
-    </p>
 
-    <p>
-      <strong>Descripcion:</strong>
-      <%= @horario.descripcion %>
-    </p>
 
-    <dir><%= button_to "Actualizar", horario_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
 
+<div class="field">
+  <%= form.label :cliente %>
+  <%= form.select(:cliente) do %>
+    <% [[current_user.nombre, current_user.nombre]].each do |c| -%>
+      <%= content_tag(:option, c.first, value: c.last) %>
+    <% end %>
+      <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellido %>
+    <%= form.select(:apellido) do %>
+      <% [[current_user.apellido_paterno, current_user.apellido_paterno]].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+        <% end %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :direccion_de_atencion %>
+    <%= form.text_field :direccion_de_atencion, id: :horario_direccion_de_atencion %>
+  </div>
+    <div class="w3-container w3-purple" style="margin-bottom: 14px">
+          "recuerde indicar una direccioon de acuerdo a la zona de atencion (zona 1, zona 2, zona 3)"</h5>
+        </div>
+        <div class="field">
+          <%= form.label :marque_aqui_para_reservar %>
+          <%= form.check_box :disponibilidad, id: :horario_disponibilidad%>
+        </div>
+    <dir><%= button_to "Agendar", horario_path,  data: { confirm: '¿Esta usted segur@?' } , :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
+
+
+  </div>
 
     <% end %>
 
 
 
     <% if current_user.permiso != "cliente"%>   <div class="field">
+
 
   <% if current_user.permiso == "administrador"%>   <div class="field">
     <%= form.label :profesional %>
@@ -61,7 +94,10 @@
   <% end %>
 
 
-<% if current_user.permiso == "profesional"%> <%= form.select(:profesional) do %>
+<% if current_user.permiso == "profesional"%>
+<%= form.label :profesional %>
+
+ <%= form.select(:profesional) do %>
   <% [[current_user.nombre, current_user.nombre]].each do |c| -%>
     <%= content_tag(:option, c.first, value: c.last) %>
   <% end %>
@@ -81,10 +117,14 @@
 </div>
 
 
+
+
+
   <div class="field">
     <%= form.label :fecha %>
 
-    <%= form.date_select :fecha, id: :horario_fecha %>
+    <%= form.date_select :fecha,  id: :horario_fecha, start_year: Date.today.year  %>
+
   </div>
 
   <div class="field">
@@ -124,21 +164,79 @@
   <% end %>
   </div>
 
-  <div class="field">
-    <%= form.label :disponibilidad %>
-    <%= form.check_box :disponibilidad, id: :horario_disponibilidad %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :descripcion %>
+ <div class="field">
+    <%= form.label :Llenar_luego_de_realizar_atencion %>
     <%= form.text_field :descripcion, id: :horario_descripcion %>
   </div>
+
+
 
 
   <div class="actions">
     <%= form.submit %>
   </div>
   <% end %>
+
+  <div class="w3-container w3-purple" style="margin-bottom: 14px">
+
+
+
+  <div class="cuadro container">
+   <%= image_tag "comunas.png",  :alt => "comunas_santiago", :title => "zonas_de_atencion"%>
+  </div>
+
+
+  <div class="fourteen columns offset-one  left">
+  <%= image_tag "sectores.png", :alt => "colores_comunas", :title => "colores_comunas"%>
+  </div>
+  <P> LISTADO DE COMUNAS </P>
+
+  <div class="w3-container w3-blue" style="margin-bottom: 14px">
+Huechuraba,
+La florida,
+La reina,
+Las condes,
+Lo barnechea,
+Peñalolen,
+Vitacura,
+</div>
+<div class="w3-container w3-green" style="margin-bottom: 14px">
+
+Cerro navia,
+Conchali,
+Estacion central,
+Independencia,
+La granja,
+Lo prado,
+Macul,
+Ñuñoa,
+Quilicura,
+Providencia,
+Pudahuel,
+Quinta normal,
+Recoleta,
+Renca,
+San joaquin,
+Santiago,
+</div>
+<div class="w3-container w3-red" style="margin-bottom: 14px">
+Cerrillos,
+El bosque,
+La cisterna,
+La pintana,
+Lo espejo,
+Maipu,
+Pac,
+Puente alto,
+San bernardo,
+San miguel,
+San ramon,
+</div>
+
+</div>
+
+</div>
+
+
 
 <% end %>

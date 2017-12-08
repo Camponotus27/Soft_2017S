@@ -6,6 +6,10 @@ class CreateHorarios < ActiveRecord::Migration[5.1]
       t.date :fecha
       t.string :hora
       t.boolean :disponibilidad
+      t.string :cliente
+      t.string :apellido
+      t.string :direccion_de_atencion
+      t.boolean :habilitado
       t.string :descripcion
 
       t.timestamps

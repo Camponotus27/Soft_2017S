@@ -5,9 +5,8 @@ class HorariosController < ApplicationController
   # GET /horarios.json
   def index
     @horarios = Horario.all
-    @administrador  = User.name
+        @administrador  = User.name
   end
-
 
   # GET /horarios/1
   # GET /horarios/1.json
@@ -64,8 +63,6 @@ class HorariosController < ApplicationController
   end
 
   private
-
-
     # Use callbacks to share common setup or constraints between actions.
     def set_horario
       @horario = Horario.find(params[:id])
@@ -73,6 +70,6 @@ class HorariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def horario_params
-      params.require(:horario).permit(:profesional, :zona, :fecha, :hora, :disponibilidad, :descripcion)
+      params.require(:horario).permit(:profesional, :zona, :fecha, :hora, :disponibilidad, :cliente, :apellido, :direccion_de_atencion, :habilitado, :descripcion)
     end
 end

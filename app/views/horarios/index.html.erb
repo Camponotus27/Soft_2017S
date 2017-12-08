@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Horarios</h1>
-<div class="w3-container w3-white" >
 
 <table>
   <thead>
@@ -10,32 +9,67 @@
       <th>Zona</th>
       <th>Fecha</th>
       <th>Hora</th>
-      <th>Disponibilidad</th>
-      <th>Descripcion</th>
+
+            <th>Disponibilidad</th>
+
+      <th>Direccion de atencion</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
 
+<% variable = 0 %>
+
+    <% @horarios.each do |horario| %>
+    <% if horario.fecha  >= Date.today%></td>
+    <% if current_user.permiso == "cliente"%>
+    <% if  current_user.nombre == horario.cliente %>
+    <% if   current_user.apellido_paterno == horario.apellido%>
+
+    <% variable = 5 %>
+    <% end %> <% end %> <% end %> <% end %> <% end %>
+
+
     <% @horarios.each do |horario| %>
       <tr>
+
+        <% if horario.fecha  >= Date.today%></td>
+        <% if variable = 0 %>
+
+
         <td><%= horario.profesional %></td>
         <td><%= horario.zona %></td>
-        <td><%= horario.fecha %></td>
+
         <td><%= horario.hora %></td>
-        <td><%= horario.disponibilidad %></td>
+
+
+        <% if horario.disponibilidad == false %>
+     <td>Disponible
+     </td>
+
+       <% end %>
+
+       <% if horario.disponibilidad == true %>
+       <td>No disponible
+
+       </td>
+   <% end %>
+        <td><%= horario.direccion_de_atencion %></td>
         <td><%= horario.descripcion %></td>
-
-
-
-        <% if current_user.permiso == "cliente"%>
+         <% if current_user.permiso == "cliente"%>
         <% if horario.disponibilidad == false%>
+        <% if  current_user.nombre == horario.cliente %>
+        <% if   current_user.apellido_paterno == horario.apellido%>
 
-                        <td><%= link_to 'agendar', edit_horario_path(horario) %></td>
-                        <% end %>
 
-                        <% end %>
+                        <td><%= link_to 'modificar', edit_horario_path(horario) %></td>
+                        <% end %>  <% end %>  <% end %>  <% end %>
+
+
+
+
+
 
                        <% if current_user.nombre == horario.profesional%>
                        <td><%= link_to 'Editar', edit_horario_path(horario) %></td>
@@ -54,9 +88,11 @@
 
                 <% end %>
                 <% end %>
+                <% end %>
 
 
 
+                <% end %>
 
 
 
