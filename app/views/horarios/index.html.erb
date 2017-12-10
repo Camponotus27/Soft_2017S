@@ -11,8 +11,10 @@
       <th>Zona</th>
       <th>Fecha</th>
       <th>Disponibilidad</th>
-      <th>Direccion de atencion</th>
+      <% if current_user.permiso != "cliente"%>
 
+      <th>Direccion de atencion</th>
+ <% end %>
       <th colspan="7">
       Opciones  </th>
     </tr>
@@ -21,67 +23,108 @@
   <tbody>
 
 <% variable = 0 %>    <% @horarios.each do |horario| %>
-    <% if horario.fecha  >= Date.today%></td>
+    <% if horario.fecha  > Date.today%></td>
     <% if current_user.permiso == "cliente"%>
     <% if current_user.nombre == horario.cliente %>
     <% if current_user.apellido_paterno == horario.apellido%>
+    <% if horario.disponibilidad == false%>
 
     <% variable = 5 %>
 
     <% end %> <% end %> <% end %> <% end %> <% end %>
 
-
+ <% end %>
     <% @horarios.each do |horario| %>
       <tr>
-        <% if horario.fecha  > Date.today%></td>
+        <% if horario.fecha  > Date.today.to_time%></td>
         <td><%= horario.profesional %></td>
         <td><%= horario.zona %></td>
         <td><%= horario.fecha %></td>
 
 
 
-      <% if horario.disponibilidad == false %>
+
+
+        <% if current_user.permiso != "cliente"%>
+
+        <% if horario.disponibilidad != false %>
+       <td>no reservada
+       </td>
+         <% end %>
+
+         <% if horario.disponibilidad == false %>
+
+         <td>  *RESERVADO*
+         </td>
+
+      <% end %>
+
+
+  <% end %>
+
+
+
+
+  <% if current_user.permiso == "cliente"%>
+
+
+      <% if horario.disponibilidad != false %>
      <td>Disponible
      </td>
        <% end %>
-       <% if horario.disponibilidad != false %>
+
+       <% if horario.disponibilidad == false %>
 
        <td>No disponible
        </td>
 
    <% end %>
+   <% end %>
+
+   <% if horario.disponibilidad == false%>
+   <% if current_user.permiso != "cliente"%>
+
         <td><%= horario.direccion_de_atencion %></td>
+        <% end %>
+        <% end %>
+
+
+
+
+
+
         <td><%= horario.descripcion %></td>
 
+        <% if current_user.permiso == "cliente"%>
+       <% if horario.disponibilidad == false%>
+       <% if  current_user.nombre == horario.cliente %>
+       <% if   current_user.apellido_paterno == horario.apellido%>
+       <%if variable == 5 %>
 
+                       <td><%= link_to 'modificar', edit_horario_path(horario) %></td>
+                        <% end %>  <% end %>  <% end %> <% end %>
+  <% end %>
 
-
-         <% if current_user.permiso == "cliente"%>
-        <% if horario.disponibilidad != false%>
-        <% if  current_user.nombre == horario.cliente %>
-        <% if   current_user.apellido_paterno == horario.apellido%>
-
-                        <td><%= link_to 'modificar', edit_horario_path(horario) %></td>
-                         <% end %>  <% end %>  <% end %> <% end %>
 
 
   <% if current_user.permiso == "cliente"%>
-  <% if horario.disponibilidad == false%>
-  <% if variable ==  0 %>
+  <% if horario.disponibilidad != false%>
+         <%if variable == 0 %>
 
                                                  <td><%= link_to 'agendar', edit_horario_path(horario) %></td>
-                                                 <% end %>  <% end %> <% end %>
+                                                   <% end %> <% end %>
+ <% end %>
 
 
 
 
-
-
+                       <% if current_user.permiso == "profesional"%>
                        <% if current_user.nombre == horario.profesional%>
+                               <td><%= link_to 'detalles', horario %></td>
                        <td><%= link_to 'Editar', edit_horario_path(horario) %></td>
                        <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                        <td><%= link_to 'Modificar', edit_horario_path(horario) %></td>
                       </tr>
+                      <% end %>
 
                       <% end %>
 
@@ -89,7 +132,8 @@
                   <% if current_user.permiso == "administrador"%>
                   <td><%= link_to 'Editar', edit_horario_path(horario) %></td>
                   <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                  <td><%= link_to 'Modificar', edit_horario_path(horario) %></td>
+                  <td><%= link_to 'detalles', horario %></td>
+
                 </tr>
 
                 <% end %>

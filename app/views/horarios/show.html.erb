@@ -15,11 +15,8 @@
   <%= @horario.fecha %>
 </p>
 
-<p>
-  <strong>Disponibilidad:</strong>
-  <%= @horario.disponibilidad %>
-</p>
-
+<% if current_user.permiso != "cliente"%>
+<% if @horario.disponibilidad == false%>
 <p>
   <strong>Cliente:</strong>
   <%= @horario.cliente %>
@@ -39,6 +36,9 @@
   <strong>Descripcion:</strong>
   <%= @horario.descripcion %>
 </p>
+<% end %>
 
-<%= link_to 'Edit', edit_horario_path(@horario) %> |
-<%= link_to 'Back', horarios_path %>
+<% end %>
+
+<%= link_to 'Editar', edit_horario_path(@horario) %> |
+<%= link_to 'Volver', horarios_path %>

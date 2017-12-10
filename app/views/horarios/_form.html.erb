@@ -62,14 +62,36 @@
 
   <div class="field">
     <%= form.label :direccion_de_atencion %>
-    <%= form.text_field :direccion_de_atencion, id: :horario_direccion_de_atencion %>
+    <%= form.text_field  id: :horario_direccion_de_atencion %>
   </div>
     <div class="w3-container w3-purple" style="margin-bottom: 14px">
           "recuerde indicar una direccioon de acuerdo a la zona de atencion (zona 1, zona 2, zona 3)"</h5>
         </div>
         <div class="field">
-          <%= form.label :marque_aqui_para_reservar %>
-          <%= form.check_box :disponibilidad, id: :horario_disponibilidad%>
+
+       <% if  current_user.nombre == horario.cliente %>
+         <% if   current_user.apellido_paterno == horario.apellido%>
+         <% if horario.disponibilidad == false%>
+
+    <%= form.label :Para_eliminar_su_hora_marque_esta_casilla%>
+    <%= form.check_box :disponibilidad, id: :horario_disponibilidad%>
+           <% end %>
+              <% end %>
+           <% end %>
+
+
+  <% if horario.disponibilidad != false%>
+  <%= form.label :Para_reservar_su_hora_desmarque_esta_casilla%>
+
+  <%= form.check_box(:disponibilidad, {checked: true})%>
+
+               <% end %>
+
+
+
+
+
+
         </div>
     <dir><%= button_to "Agendar", horario_path,  data: { confirm: '¿Esta usted segur@?' } , :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
 
