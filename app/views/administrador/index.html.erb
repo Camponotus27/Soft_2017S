@@ -22,15 +22,15 @@
 
 
                   <td class="color-blanco-botones-tabla">
-                     <%= button_to "apdate",edit_administrador_path(administrador), :method => :get , class: "imagen_ver" %>      
+                     <%= button_to "update",edit_administrador_path(administrador), :method => :get %>
                   </td>
 
                   <td class="color-blanco-botones-tabla">
-                     <%= button_to "",administrador_path(administrador) , :method => :get , class: "imagen_ver" %>      
+                     <%= button_to "ver",administrador_path(administrador) , :method => :get %>
                   </td>
 
                   <td class = "color-blanco-botones-tabla ">
-                     <%= button_to "" , { :action => :destroy, :id => administrador.id }, :method => :delete, :data => { :confirm => 'Estas seguro de elimiarlo de los registros?' } , class: "imagen_eliminar" %>
+                     <%= button_to "eliminar" , { :action => :destroy, :id => administrador.id }, :method => :delete, :data => { :confirm => 'Estas seguro de elimiarlo de los registros?' }  %>
                   </td>
 
                 </tr>
@@ -42,10 +42,10 @@
 
 
               <div class="row ">
-          
+
                       <dir><%= button_to "Atrás", administrador_indexprincipal_path, :method => :get , class: "w3-button w3-border w3-green w3-hover-blue boton_padding" %> </dir>
-                
-                
+
+
               </div>
 
 </div>

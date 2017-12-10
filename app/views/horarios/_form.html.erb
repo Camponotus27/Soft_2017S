@@ -59,11 +59,27 @@
         <% end %>
   </div>
 
+  <% if horario.disponibilidad != false%>
 
   <div class="field">
     <%= form.label :direccion_de_atencion %>
     <%= form.text_field  id: :horario_direccion_de_atencion %>
   </div>
+
+      <% end %>
+
+  <% if  current_user.nombre == horario.cliente %>
+      <% if   current_user.apellido_paterno == horario.apellido%>
+      <% if horario.disponibilidad == false%>
+
+      <%= form.label :direccion_de_atencion %>
+      <%= form.text_field :direccion_de_atencion,  id: :horario_direccion_de_atencion %>
+
+      <% end %>
+        <% end %>
+        <% end %>
+
+
     <div class="w3-container w3-purple" style="margin-bottom: 14px">
           "recuerde indicar una direccioon de acuerdo a la zona de atencion (zona 1, zona 2, zona 3)"</h5>
         </div>
@@ -155,6 +171,14 @@
     <%= form.text_field :descripcion, id: :horario_descripcion %>
   </div>
 
+  <div class="field">
+    <%= form.label :direccion_de_atencion %>
+    <%= form.select(:direccion_de_atencion) do %>
+  <% [['sera ingresada por cliente ', 'vacio']].each do |c| %>
+    <%= content_tag(:option, c.first, value: c.last) %>
+  <% end %>
+<% end %>
+</div>
 
 
 

@@ -12,6 +12,9 @@ class HorariosController < ApplicationController
   def show
   end
 
+
+
+
   # GET /horarios/new
   def new
     @horario = Horario.new
