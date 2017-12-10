@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'horarios/historico'
 
 
   resources :horarios
@@ -25,7 +26,6 @@ Rails.application.routes.draw do
   resources :profesions
 
   get 'cliente/index'
-
 
   get 'profesional/index'
 

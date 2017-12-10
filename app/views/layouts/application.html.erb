@@ -94,9 +94,13 @@
    <% if user_signed_in?  %>
 
             <li class="col-md top_padding_list no_list">
-                          <a href="#" class="w3-bar-item w3-button menu_derecha">Reservar hora</a>
-                          <a href="#" class="w3-bar-item w3-button menu_derecha">Ver Hora</a>
-                          <a href="#" class="w3-bar-item w3-button menu_derecha">Cancelar hora</a>
+                          <a href="/horarios" class="w3-bar-item w3-button menu_derecha">Ver horarios</a>
+                          <% if current_user.permiso != "cliente"%>
+
+
+                          <a href="/horarios/historico" class="w3-bar-item w3-button menu_derecha">Historial de atenciones</a>
+                          <% end %>
+
                           <a href= "/users/edit" class="w3-bar-item w3-button menu_derecha">Perfil</a>
 
            </li>

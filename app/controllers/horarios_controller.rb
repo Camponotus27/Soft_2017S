@@ -3,14 +3,23 @@ class HorariosController < ApplicationController
 
   # GET /horarios
   # GET /horarios.json
+
+
+  def historico
+    @horarios = Horario.all
+    
+  end
   def index
     @horarios = Horario.all
+            @administrador  = User.name
   end
 
   # GET /horarios/1
   # GET /horarios/1.json
   def show
   end
+
+
 
 
 
