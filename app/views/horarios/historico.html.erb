@@ -21,7 +21,7 @@
   <tbody>
 
 
-    <% @horarios.each do |horario| %>
+    <% @horarios.order("fecha asc").each do |horario| %>
     <% if horario.disponibilidad == false%>
     <% if current_user.nombre == horario.profesional%>
 

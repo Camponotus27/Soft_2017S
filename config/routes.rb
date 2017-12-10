@@ -2,6 +2,12 @@ Rails.application.routes.draw do
 
   get 'horarios/historico'
 
+  get 'horarios/zona1'
+  get 'horarios/zona2'
+
+  get 'horarios/zona3'
+
+
 
   resources :horarios
   resources :userprofesions
