@@ -5,7 +5,6 @@ class HorariosController < ApplicationController
   # GET /horarios.json
   def index
     @horarios = Horario.all
-        @administrador  = User.name
   end
 
   # GET /horarios/1
@@ -70,6 +69,6 @@ class HorariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def horario_params
-      params.require(:horario).permit(:profesional, :zona, :fecha, :hora, :disponibilidad, :cliente, :apellido, :direccion_de_atencion, :habilitado, :descripcion)
+      params.require(:horario).permit(:profesional, :zona, :fecha, :disponibilidad, :cliente, :apellido, :direccion_de_atencion, :descripcion)
     end
 end

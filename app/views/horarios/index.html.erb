@@ -1,6 +1,8 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Horarios</h1>
+<div class="w3-container w3-white" >
 
 <table>
   <thead>
@@ -8,63 +10,67 @@
       <th>Profesional</th>
       <th>Zona</th>
       <th>Fecha</th>
-      <th>Hora</th>
-
-            <th>Disponibilidad</th>
-
+      <th>Disponibilidad</th>
       <th>Direccion de atencion</th>
-      <th colspan="3"></th>
+
+      <th colspan="7">
+      Opciones  </th>
     </tr>
   </thead>
 
   <tbody>
 
-<% variable = 0 %>
-
-    <% @horarios.each do |horario| %>
+<% variable = 0 %>    <% @horarios.each do |horario| %>
     <% if horario.fecha  >= Date.today%></td>
     <% if current_user.permiso == "cliente"%>
-    <% if  current_user.nombre == horario.cliente %>
-    <% if   current_user.apellido_paterno == horario.apellido%>
+    <% if current_user.nombre == horario.cliente %>
+    <% if current_user.apellido_paterno == horario.apellido%>
 
     <% variable = 5 %>
+
     <% end %> <% end %> <% end %> <% end %> <% end %>
 
 
     <% @horarios.each do |horario| %>
       <tr>
-
-        <% if horario.fecha  >= Date.today%></td>
-        <% if variable = 0 %>
-
-
+        <% if horario.fecha  > Date.today%></td>
         <td><%= horario.profesional %></td>
         <td><%= horario.zona %></td>
+        <td><%= horario.fecha %></td>
 
-        <td><%= horario.hora %></td>
 
 
-        <% if horario.disponibilidad == false %>
+      <% if horario.disponibilidad == false %>
      <td>Disponible
      </td>
-
        <% end %>
+       <% if horario.disponibilidad != false %>
 
-       <% if horario.disponibilidad == true %>
        <td>No disponible
-
        </td>
+
    <% end %>
         <td><%= horario.direccion_de_atencion %></td>
         <td><%= horario.descripcion %></td>
+
+
+
+
          <% if current_user.permiso == "cliente"%>
-        <% if horario.disponibilidad == false%>
+        <% if horario.disponibilidad != false%>
         <% if  current_user.nombre == horario.cliente %>
         <% if   current_user.apellido_paterno == horario.apellido%>
 
-
                         <td><%= link_to 'modificar', edit_horario_path(horario) %></td>
-                        <% end %>  <% end %>  <% end %>  <% end %>
+                         <% end %>  <% end %>  <% end %> <% end %>
+
+
+  <% if current_user.permiso == "cliente"%>
+  <% if horario.disponibilidad == false%>
+  <% if variable ==  0 %>
+
+                                                 <td><%= link_to 'agendar', edit_horario_path(horario) %></td>
+                                                 <% end %>  <% end %> <% end %>
 
 
 
@@ -89,22 +95,18 @@
                 <% end %>
                 <% end %>
                 <% end %>
-
-
-
-                <% end %>
-
-
-
   </tbody>
-</table>
 
-<br>
+</table>
+<br></div>
 <p>
 </div>
+
+
 <% if current_user.permiso != "cliente"%>
+<div class="w3-container w3-red" >
 
 <%= link_to 'Crear nuevo horario', new_horario_path %>
-<% end %>
+</div>
 
-</p>
+<% end %>
