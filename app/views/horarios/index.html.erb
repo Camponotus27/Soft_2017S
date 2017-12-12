@@ -34,7 +34,7 @@
     <% end %> <% end %> <% end %> <% end %> <% end %>
 
  <% end %>
-    <% @horarios.order("fecha asc").each do |horario| %>
+    <% @horarios.each do |horario| %>
       <tr>
         <% if horario.fecha  > Date.today.to_time%></td>
         <td><%= horario.profesional %></td>
@@ -154,72 +154,3 @@
 </div>
 
 <% end %>
-<div class="w3-container w3-blue" style="margin-bottom: 14px">
-<td><%= link_to 'Mostrar atenciones disponibles para zona 1', '/horarios/zona1' %></td>
-</div>
-<div class="w3-container w3-yellow" style="margin-bottom: 14px">
-<td><%= link_to 'Mostrar atenciones disponibles para zona 2', '/horarios/zona2' %></td>
-</div>
-<div class="w3-container w3-blue" style="margin-bottom: 14px">
-<td><%= link_to 'Mostrar atenciones disponibles para zona 3', '/horarios/zona3' %></td>
-</div>
-
-<div class="w3-container w3-purple" style="margin-bottom: 14px">
-
-
-
-<div class="cuadro container">
- <%= image_tag "comunas.png",  :alt => "comunas_santiago", :title => "zonas_de_atencion"%>
-</div>
-
-
-<div class="fourteen columns offset-one  left">
-<%= image_tag "sectores.png", :alt => "colores_comunas", :title => "colores_comunas"%>
-</div>
-<P> LISTADO DE COMUNAS </P>
-
-<div class="w3-container w3-blue" style="margin-bottom: 14px">
-Huechuraba,
-La florida,
-La reina,
-Las condes,
-Lo barnechea,
-Peñalolen,
-Vitacura,
-</div>
-<div class="w3-container w3-green" style="margin-bottom: 14px">
-
-Cerro navia,
-Conchali,
-Estacion central,
-Independencia,
-La granja,
-Lo prado,
-Macul,
-Ñuñoa,
-Quilicura,
-Providencia,
-Pudahuel,
-Quinta normal,
-Recoleta,
-Renca,
-San joaquin,
-Santiago,
-</div>
-<div class="w3-container w3-red" style="margin-bottom: 14px">
-Cerrillos,
-El bosque,
-La cisterna,
-La pintana,
-Lo espejo,
-Maipu,
-Pac,
-Puente alto,
-San bernardo,
-San miguel,
-San ramon,
-</div>
-
-</div>
-
-</div>
